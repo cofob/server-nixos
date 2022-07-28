@@ -11,14 +11,25 @@
   };
 
   outputs = { self, nixpkgs, flake-utils, agenix }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in
-      {
-        devShell = pkgs.mkShell {
-          nativeBuildInputs = [ agenix.defaultPackage.${system} ];
-          buildInputs = [ ];
+    {
+      nixosConfigurations = {
+        example = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            agenix.nixosModule
+            ./example.nix
+          ];
         };
-      });
+      };
+    } // flake-utils.lib.eachDefaultSystem
+      (system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        {
+          devShell = pkgs.mkShell {
+            nativeBuildInputs = [ agenix.defaultPackage.${system} ];
+            buildInputs = [ ];
+          };
+        });
 }

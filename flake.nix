@@ -27,7 +27,7 @@
           pkgs = nixpkgs.legacyPackages.${system};
         in
         {
-          devShell = pkgs.mkShell {
+          devShells.default = pkgs.mkShell {
             nativeBuildInputs = [ agenix.defaultPackage.${system} ];
             buildInputs = [ ];
           };

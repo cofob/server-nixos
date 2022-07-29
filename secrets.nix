@@ -7,6 +7,6 @@ let
   systems = [ diamond ];
 in
 {
-  "secrets/passwords/alex.age".publicKeys = [ alex ] ++ systems;
-  "secrets/passwords/cofob.age".publicKeys = [ cofob ] ++ systems;
+  "secrets/passwords/alex.age".publicKeys = users ++ systems;
+  "secrets/passwords/cofob.age".publicKeys = users ++ systems;
 }

@@ -23,6 +23,13 @@
   users.mutableUsers = false;
 
   time.timeZone = "Europe/Moscow";
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    font = "Lat2-Terminus16";
+    keyMap = "us";
+  };
+
+  networking.nameservers = [ "8.8.8.8" "9.9.9.9" ];
 
   system = {
     stateVersion = "22.05";

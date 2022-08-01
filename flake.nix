@@ -20,6 +20,13 @@
             ./example.nix
           ];
         };
+        bat = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            agenix.nixosModule
+            ./bat.nix
+          ];
+        };
       };
     } // flake-utils.lib.eachDefaultSystem
       (system:

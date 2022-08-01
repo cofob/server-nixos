@@ -1,6 +1,15 @@
-{ args, config, lib, pkgs, ... }:
+{ config, home-manager, alex-home, ... }:
 
 {
+  imports = [
+    home-manager.nixosModule
+  ];
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+
+  home-manager.users.alex = alex-home.nixosModules.home-headless;
+
   age.secrets.password-alex.file = ./secrets/passwords/alex.age;
   age.secrets.password-cofob.file = ./secrets/passwords/cofob.age;
 

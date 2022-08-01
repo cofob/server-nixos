@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   imports =
     [ ./hardware/aeza.nix ./mounts/aeza.nix ./common.nix ];

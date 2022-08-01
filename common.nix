@@ -1,7 +1,10 @@
-{ args, config, lib, pkgs, ... }:
+{ agenix, ... }:
 
 {
-  imports = [ ./users.nix ];
+  imports = [
+    agenix.nixosModule
+    ./users.nix
+  ];
 
   services.openssh = {
     enable = true;

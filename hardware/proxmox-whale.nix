@@ -1,5 +1,3 @@
-{ config, lib, pkgs, modulesPath, ... }:
-
 {
   imports = [ ./proxmox.nix ];
 

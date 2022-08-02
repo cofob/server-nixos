@@ -27,9 +27,18 @@
         agenix.follows = "agenix";
       };
     };
+
+    cofob-home = {
+      url = "git+https://codeberg.org/cofob/nixos";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+        agenix.follows = "agenix";
+      };
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, flake-utils, agenix, home-manager, alex-home }@attrs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, flake-utils, agenix, home-manager, alex-home, cofob-home }@attrs:
     {
       nixosConfigurations = {
         example = nixpkgs.lib.nixosSystem {

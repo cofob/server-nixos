@@ -1,4 +1,4 @@
-{ config, home-manager, alex-home, ... }:
+{ config, home-manager, alex-home, cofob-home, ... }:
 
 {
   imports = [
@@ -9,6 +9,7 @@
   home-manager.useUserPackages = true;
 
   home-manager.users.alex = alex-home.nixosModules.home-headless;
+  home-manager.users.cofob = cofob-home.nixosModules.home-headless;
 
   age.secrets.password-alex.file = ./secrets/passwords/alex.age;
   age.secrets.password-cofob.file = ./secrets/passwords/cofob.age;

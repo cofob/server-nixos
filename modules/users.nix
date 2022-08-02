@@ -11,8 +11,8 @@
   home-manager.users.alex = alex-home.nixosModules.home-headless;
   home-manager.users.cofob = cofob-home.nixosModules.home-headless;
 
-  age.secrets.password-alex.file = ./secrets/passwords/alex.age;
-  age.secrets.password-cofob.file = ./secrets/passwords/cofob.age;
+  age.secrets.password-alex.file = ../secrets/passwords/alex.age;
+  age.secrets.password-cofob.file = ../secrets/passwords/cofob.age;
 
   users = {
     users = {

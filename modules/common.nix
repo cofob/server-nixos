@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 
 {
   imports = [
@@ -63,4 +64,6 @@
       dates = [ "weekly" ];
     };
   };
+
+  environment.systemPackages = with pkgs; [ git ];
 }

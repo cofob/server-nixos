@@ -52,6 +52,11 @@ in
     };
   };
 
+  networking.firewall.allowedUDPPortRanges = [{
+    from = 51821;
+    to = 51899;
+  }];
+
   networking = {
     hostName = "bat";
 
@@ -59,9 +64,6 @@ in
       address = "10.0.0.1";
       interface = "ens3";
     };
-
-    nat.enable = false;
-    firewall.enable = false;
 
     interfaces = {
       ens3 = {

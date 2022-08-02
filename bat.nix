@@ -3,6 +3,7 @@
 let
   commonNginxHost = {
     kTLS = true;
+    onlySSL = true; # TODO: nixos must set hasSSL = true if some listen has ssl = true
     useACMEHost = "nm.frsqr.xyz";
     listen = [{
       addr = "127.0.0.1";

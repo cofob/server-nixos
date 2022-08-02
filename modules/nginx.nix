@@ -13,5 +13,7 @@
 
     # TODO: auto open ports based on nginx settings
     networking.firewall.allowedTCPPorts = [ 80 443 ];
+
+    users.users.${config.services.nginx.user}.extraGroups = lib.mkIf (config.security.acme.certs != { }) [ "acme" ];
   };
 }

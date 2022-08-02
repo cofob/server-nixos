@@ -1,3 +1,3 @@
 {
-  imports = [ ./common.nix ./mounts/example.nix ./hardware/proxmox-whale.nix ];
+  imports = [ ./modules/modules.nix ./mounts/example.nix ./hardware/proxmox-whale.nix ];
 }

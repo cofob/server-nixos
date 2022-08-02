@@ -10,4 +10,6 @@ in
 {
   "secrets/passwords/alex.age".publicKeys = users ++ systems;
   "secrets/passwords/cofob.age".publicKeys = users ++ systems;
+
+  "secrets/credentials/cloudflare.age".publicKeys = users ++ [ bat ];
 }

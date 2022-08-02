@@ -1,6 +1,19 @@
+{ pkgs, ... }:
+
 {
-  imports =
-    [ ./hardware/aeza.nix ./mounts/aeza.nix ./common.nix ];
+  imports = [
+    ./modules/modules.nix
+    ./hardware/aeza.nix
+    ./mounts/aeza.nix
+  ];
+
+  virtualisation.docker.enable = true;
+  users.users.alex.extraGroups = [ "docker" ];
+  environment.systemPackages = [ pkgs.docker-compose_2 ];
+
+  security.acme.certs = {
+    "nm.frsqr.xyz" = { extraDomainNames = [ "*.nm.frsqr.xyz" ]; };
+  };
 
   networking = {
     hostName = "bat";

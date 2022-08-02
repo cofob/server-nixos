@@ -1,8 +1,6 @@
-{ agenix, ... }:
 
 {
   imports = [
-    agenix.nixosModule
     ./users.nix
   ];
 

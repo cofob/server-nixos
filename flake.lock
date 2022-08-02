@@ -53,6 +53,32 @@
         "type": "github"
       }
     },
+    "cofob-home": {
+      "inputs": {
+        "agenix": [
+          "agenix"
+        ],
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1659421930,
+        "narHash": "sha256-VHeygRSGzK7jq/rpq8XYuGLb60L+GRv1GlM8Zkzguqo=",
+        "ref": "master",
+        "rev": "330e6c6d58fffa2e901b992e29c44f22cec5ac28",
+        "revCount": 49,
+        "type": "git",
+        "url": "https://codeberg.org/cofob/nixos"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/cofob/nixos"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1656065134,
@@ -140,6 +166,7 @@
       "inputs": {
         "agenix": "agenix",
         "alex-home": "alex-home",
+        "cofob-home": "cofob-home",
         "flake-utils": "flake-utils_2",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",

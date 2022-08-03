@@ -4,9 +4,10 @@
   imports = [
     agenix.nixosModule
 
-    ./acme.nix
     ./common.nix
     ./nginx.nix
     ./users.nix
+    ./acme.nix
+    ./dns.nix
   ];
 }

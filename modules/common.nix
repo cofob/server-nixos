@@ -3,6 +3,7 @@
 {
   imports = [
     ./users.nix
+    ./dns.nix
   ];
 
   services.openssh = {
@@ -30,8 +31,6 @@
     font = "Lat2-Terminus16";
     keyMap = "us";
   };
-
-  networking.nameservers = [ "8.8.8.8" "9.9.9.9" ];
 
   system = {
     stateVersion = "22.05";

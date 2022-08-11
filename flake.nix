@@ -29,7 +29,7 @@
     };
 
     cofob-home = {
-      url = "git+https://codeberg.org/cofob/nixos";
+      url = "github:cofob/nixos";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";

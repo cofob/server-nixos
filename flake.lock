@@ -68,17 +68,17 @@
         "nur": "nur"
       },
       "locked": {
-        "lastModified": 1659986681,
-        "narHash": "sha256-yZfQRH54Klx+Wf+mLXJdweWuVKB7ASmIgS9c+ct7eUE=",
-        "ref": "master",
-        "rev": "254b767cd6a3d1695d109a6b488b612d85cebcae",
-        "revCount": 76,
-        "type": "git",
-        "url": "https://codeberg.org/cofob/nixos"
+        "lastModified": 1660230656,
+        "narHash": "sha256-/oxrhWNwLDdjh+gO4KxgFeJC+Y6qyvH9thbAUuPtBx0=",
+        "owner": "cofob",
+        "repo": "nixos",
+        "rev": "e66aba2ed81f7fcd5ca30193558c4d5f3d71652d",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://codeberg.org/cofob/nixos"
+        "owner": "cofob",
+        "repo": "nixos",
+        "type": "github"
       }
     },
     "flake-utils": {

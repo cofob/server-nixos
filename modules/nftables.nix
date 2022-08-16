@@ -5,6 +5,9 @@ with lib;
 let
   fw-cfg = config.networking.firewall;
   nft-cfg = config.networking.nft-firewall;
+
+  defaultInterface = { default = mapAttrs (name: value: fw-cfg.${name}) commonOptions; };
+  allInterfaces = defaultInterface // fw-cfg.interfaces;
 in
 {
   options = {
@@ -49,6 +52,22 @@ in
               "limit rate ${fw-cfg.pingLimit} "
             }accept
           ''}
+
+          ${concatStrings (mapAttrsToList (iface: fw-cfg:
+            concatMapStrings (port:
+              ''
+                tcp dport ${toString port} ${optionalString (iface != "default") "iifname ${iface}"} accept
+              ''
+            ) fw-cfg.allowedTCPPorts
+          ) allInterfaces)}
+
+          ${concatStrings (mapAttrsToList (iface: fw-cfg:
+            concatMapStrings (port:
+              ''
+                udp dport ${toString port} ${optionalString (iface != "default") "iifname ${iface}"} accept
+              ''
+            ) fw-cfg.allowedUDPPorts
+          ) allInterfaces)}
 
           accept
         }

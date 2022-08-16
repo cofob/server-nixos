@@ -49,7 +49,7 @@ with lib;
 
     proxyWebsockets = mkOption {
       type = types.bool;
-      default = false;
+      default = true;
       example = true;
       description = ''
         Whether to support proxying websocket connections with HTTP/1.1.

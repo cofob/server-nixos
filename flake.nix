@@ -48,11 +48,11 @@
             ./example.nix
           ];
         };
-        bat = nixpkgs.lib.nixosSystem {
+        eagle = nixpkgs.lib.nixosSystem {
           specialArgs = attrs;
           system = "x86_64-linux";
           modules = [
-            ./bat.nix
+            ./eagle.nix
           ];
         };
       };

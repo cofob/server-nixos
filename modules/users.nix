@@ -1,10 +1,6 @@
 { config, home-manager, alex-home, cofob-home, ... }:
 
 {
-  imports = [
-    home-manager.nixosModule
-  ];
-
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
 

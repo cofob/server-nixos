@@ -1,11 +1,6 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./users.nix
-    ./dns.nix
-  ];
-
   services.openssh = {
     enable = true;
     permitRootLogin = "no";

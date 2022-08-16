@@ -404,7 +404,7 @@ in
   options = {
     services.fs-nginx = {
       enable = mkOption {
-        default = cfg.virtualHosts != {};
+        default = cfg.virtualHosts != { };
         type = types.bool;
         description = "
           Whether to enable FS-Nginx Web Server.
@@ -471,8 +471,8 @@ in
       };
 
       package = mkOption {
-        default = pkgs.nginxStable;
-        defaultText = literalExpression "pkgs.nginxStable";
+        default = pkgs.nginxQuic;
+        defaultText = literalExpression "pkgs.nginxQuic";
         type = types.package;
         apply = p: p.override {
           modules = p.modules ++ cfg.additionalModules;
@@ -485,7 +485,7 @@ in
       };
 
       additionalModules = mkOption {
-        default = [ ];
+        default = [ pkgs.nginxModules.brotli ];
         type = types.listOf (types.attrsOf types.anything);
         example = literalExpression "[ pkgs.nginxModules.brotli ]";
         description = ''

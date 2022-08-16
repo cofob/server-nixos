@@ -1,5 +1,7 @@
 { lib, config, ... }:
 
+with lib;
+
 let
   cfg = config.networking.nebula-global;
 in
@@ -33,7 +35,7 @@ in
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     age.secrets.nebula-ca.file = ../secrets/nebula/ca-crt.age;
     age.secrets.nebula-key.file = ../secrets/nebula/${config.networking.hostName}-key.age;
     age.secrets.nebula-crt.file = ../secrets/nebula/${config.networking.hostName}-crt.age;
@@ -45,8 +47,8 @@ in
 
       isLighthouse = cfg.isLighthouse;
 
-      lighthouses = lib.mkIf (!cfg.isLighthouse) [ "10.3.7.10" ];
-      staticHostMap = lib.mkIf (!cfg.isLighthouse) {
+      lighthouses = mkIf (!cfg.isLighthouse) [ "10.3.7.10" ];
+      staticHostMap = mkIf (!cfg.isLighthouse) {
         "10.3.7.10" = [
           "185.112.83.178:4242"
         ];

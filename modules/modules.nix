@@ -11,5 +11,6 @@
     ./nginx/default.nix
     ./acme.nix
     ./nebula.nix
+    ./nftables.nix
   ];
 }

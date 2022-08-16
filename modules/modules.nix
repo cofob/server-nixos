@@ -12,5 +12,6 @@
     ./acme.nix
     ./nebula.nix
     ./nftables.nix
+    ./ssh.nix
   ];
 }

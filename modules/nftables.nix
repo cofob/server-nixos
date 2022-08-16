@@ -18,7 +18,11 @@ in
   };
 
   config.networking = mkIf nft-cfg.enable {
-    firewall.enable = false;
+    firewall = {
+      enable = false;
+      trustedInterfaces = [ "lo" ];
+    };
+
     nat.enable = false;
 
     nftables.enable = true;

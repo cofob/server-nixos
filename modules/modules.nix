@@ -10,5 +10,6 @@
     ./dns.nix
     ./nginx/default.nix
     ./acme.nix
+    ./nebula.nix
   ];
 }

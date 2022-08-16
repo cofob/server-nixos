@@ -91,6 +91,9 @@ in
             iifname ${iface} accept
           '')}
 
+          # Accept packets from established or related connections.
+          ct state { established, related } accept
+
           # Accept connections to the allowed TCP ports.
           ${concatStrings (mapAttrsToList (iface: fw-cfg:
             concatMapStrings (port:

@@ -15,6 +15,18 @@
     cert = config.age.secrets.nebula-crt.path;
     ca = config.age.secrets.nebula-ca.path;
     isLighthouse = true;
+    firewall = {
+      inbound = [{
+        host = "any";
+        port = "any";
+        proto = "any";
+      }];
+      outbound = [{
+        host = "any";
+        port = "any";
+        proto = "any";
+      }];
+    };
   };
 
   networking = {

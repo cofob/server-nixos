@@ -1,1 +1,3 @@
 .direnv
+/ca.key
+/ca.crt

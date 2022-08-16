@@ -13,6 +13,8 @@ in
 
   "secrets/nebula/ca-crt.age".publicKeys = users ++ systems;
   "secrets/nebula/ca-key.age".publicKeys = users;
+  "secrets/nebula/eagle-crt.age".publicKeys = users ++ systems;
+  "secrets/nebula/eagle-key.age".publicKeys = users ++ [ eagle ];
 
   "secrets/credentials/cloudflare.age".publicKeys = users ++ [ eagle ];
 }

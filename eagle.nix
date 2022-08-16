@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   imports = [
@@ -6,6 +6,16 @@
     ./hardware/aeza.nix
     ./mounts/aeza.nix
   ];
+
+  age.secrets.nebula-ca.file = ./secrets/nebula/ca-crt.age;
+  age.secrets.nebula-key.file = ./secrets/nebula/${config.networking.hostName}-key.age;
+  age.secrets.nebula-crt.file = ./secrets/nebula/${config.networking.hostName}-crt.age;
+  services.nebula.networks.global = {
+    key = config.age.secrets.nebula-key.path;
+    cert = config.age.secrets.nebula-crt.path;
+    ca = config.age.secrets.nebula-ca.path;
+    isLighthouse = true;
+  };
 
   networking = {
     hostName = "eagle";

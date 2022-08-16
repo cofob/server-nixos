@@ -29,6 +29,10 @@
     };
   };
 
+  services.fs-nginx = {
+    enable = true;
+  };
+
   networking = {
     hostName = "eagle";
 

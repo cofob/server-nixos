@@ -472,7 +472,7 @@ in
           modules = p.modules ++ cfg.additionalModules;
         };
         description = "
-          Nginx package to use. This defaults to the stable version. Note
+          Nginx package to use. This defaults to the QUIC version. Note
           that the nginx team recommends to use the mainline version which
           available in nixpkgs as <literal>nginxMainline</literal>.
         ";

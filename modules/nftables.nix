@@ -86,19 +86,12 @@ in
         chain input {
           type filter hook input priority 0;
 
+          # Accept all traffic on the trusted interfaces.
           ${flip concatMapStrings fw-cfg.trustedInterfaces (iface: ''
             iifname ${iface} accept
           '')}
 
-          ${optionalString fw-cfg.allowPing ''
-            icmp type echo-request ${optionalString (fw-cfg.pingLimit != null)
-              "limit rate ${fw-cfg.pingLimit} "
-            }accept
-            icmpv6 type echo-request ${optionalString (fw-cfg.pingLimit != null)
-              "limit rate ${fw-cfg.pingLimit} "
-            }accept
-          ''}
-
+          # Accept connections to the allowed TCP ports.
           ${concatStrings (mapAttrsToList (iface: fw-cfg:
             concatMapStrings (port:
               ''
@@ -107,6 +100,17 @@ in
             ) fw-cfg.allowedTCPPorts
           ) allInterfaces)}
 
+          # Accept connections to the allowed TCP port ranges.
+          ${concatStrings (mapAttrsToList (iface: fw-cfg:
+            concatMapStrings (rangeAttr:
+              let range = toString rangeAttr.from + "-" + toString rangeAttr.to; in
+              ''
+                tcp dport ${range} ${optionalString (iface != "default") "iifname ${iface}"} accept
+              ''
+            ) fw-cfg.allowedTCPPortRanges
+          ) allInterfaces)}
+
+          # Accept packets on the allowed UDP ports.
           ${concatStrings (mapAttrsToList (iface: fw-cfg:
             concatMapStrings (port:
               ''
@@ -114,6 +118,26 @@ in
               ''
             ) fw-cfg.allowedUDPPorts
           ) allInterfaces)}
+
+          # Accept connections to the allowed UDP port ranges.
+          ${concatStrings (mapAttrsToList (iface: fw-cfg:
+            concatMapStrings (rangeAttr:
+              let range = toString rangeAttr.from + "-" + toString rangeAttr.to; in
+              ''
+                udp dport ${range} ${optionalString (iface != "default") "iifname ${iface}"} accept
+              ''
+            ) fw-cfg.allowedUDPPortRanges
+          ) allInterfaces)}
+
+          # Optionally respond to ICMP pings.
+          ${optionalString fw-cfg.allowPing ''
+            icmp type echo-request ${optionalString (fw-cfg.pingLimit != null)
+              "limit rate ${fw-cfg.pingLimit} "
+            }accept
+            icmpv6 type echo-request ${optionalString (fw-cfg.pingLimit != null)
+              "limit rate ${fw-cfg.pingLimit} "
+            }accept
+          ''}
 
           accept
         }

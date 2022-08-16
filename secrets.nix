@@ -11,5 +11,8 @@ in
   "secrets/passwords/alex.age".publicKeys = users ++ systems;
   "secrets/passwords/cofob.age".publicKeys = users ++ systems;
 
+  "secrets/nebula/ca-crt.age".publicKeys = users ++ systems;
+  "secrets/nebula/ca-key.age".publicKeys = users;
+
   "secrets/credentials/cloudflare.age".publicKeys = users ++ [ eagle ];
 }

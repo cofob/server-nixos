@@ -69,11 +69,11 @@
         "nur": "nur_2"
       },
       "locked": {
-        "lastModified": 1660644021,
-        "narHash": "sha256-48M3I1eWlZG/d3dGa1QkxmHKDYt8vMc0LdqgCeVeokA=",
+        "lastModified": 1660647750,
+        "narHash": "sha256-gaXho0eIXuodipAS6VcOHAJ4wt/14Uchznhv50/Pis8=",
         "owner": "cofob",
         "repo": "nixos",
-        "rev": "8dd95024348094b2d9de7a2b5a6e9015f3b2aff9",
+        "rev": "47e218c26ca5efc7a9d14eecde7c7765bf6cee81",
         "type": "github"
       },
       "original": {

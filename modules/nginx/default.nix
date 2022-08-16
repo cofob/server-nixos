@@ -403,13 +403,7 @@ in
 {
   options = {
     services.fs-nginx = {
-      enable = mkOption {
-        default = cfg.virtualHosts != { };
-        type = types.bool;
-        description = "
-          Whether to enable FS-Nginx Web Server.
-        ";
-      };
+      enable = mkEnableOption "Nginx Web Server";
 
       statusPage = mkOption {
         default = false;

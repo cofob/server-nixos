@@ -28,7 +28,7 @@ in
     "nm.frsqr.xyz" = { extraDomainNames = [ "*.nm.frsqr.xyz" ]; };
   };
 
-  services.nginx = {
+  services.fs-nginx = {
     streamConfig = ''
       map $ssl_preread_server_name $target {
         broker.nm.frsqr.xyz 127.0.0.1:8883;

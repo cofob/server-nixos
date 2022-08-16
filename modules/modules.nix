@@ -5,7 +5,7 @@
     agenix.nixosModule
 
     ./common.nix
-    ./nginx.nix
+    ./nginx/default.nix
     ./acme.nix
   ];
 }

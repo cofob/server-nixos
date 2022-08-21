@@ -54,6 +54,26 @@
         "type": "github"
       }
     },
+    "bps": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1661090266,
+        "narHash": "sha256-f/vIMO1JWiyNL2uk80sk2gEnMUHJOFpH6RmGhKnDlmo=",
+        "owner": "DomesticMoth",
+        "repo": "bps",
+        "rev": "64b0d3481f8524f4a1147c77013a0363298b858f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DomesticMoth",
+        "repo": "bps",
+        "type": "github"
+      }
+    },
     "cofob-home": {
       "inputs": {
         "agenix": [
@@ -215,6 +235,7 @@
       "inputs": {
         "agenix": "agenix",
         "alex-home": "alex-home",
+        "bps": "bps",
         "cofob-home": "cofob-home",
         "flake-utils": "flake-utils_2",
         "home-manager": "home-manager",

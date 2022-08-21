@@ -17,6 +17,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    bps = {
+      url = "github:DomesticMoth/bps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     alex-home = {
       url = "github:averyanalex/nixos";
       inputs = {
@@ -38,7 +43,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, flake-utils, agenix, home-manager, alex-home, cofob-home }@attrs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, flake-utils, agenix, home-manager, bps, alex-home, cofob-home }@attrs:
     {
       nixosConfigurations = {
         example = nixpkgs.lib.nixosSystem {
@@ -53,6 +58,7 @@
           system = "x86_64-linux";
           modules = [
             ./eagle.nix
+            bps.nixosModule
           ];
         };
       };

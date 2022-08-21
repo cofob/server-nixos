@@ -17,4 +17,6 @@ in
   "secrets/nebula/eagle-key.age".publicKeys = users ++ [ eagle ];
 
   "secrets/credentials/cloudflare.age".publicKeys = users ++ [ eagle ];
+
+  "secrets/credentials/bps.age".publicKeys = users ++ [ eagle ];
 }

@@ -11,6 +11,13 @@
     enable = true;
   };
 
+  age.secrets.credentials-bps.file = secrets/credentials/bps.age;
+  services.bps = {
+    enable = true;
+    tokenEnvFile = config.age.secrets.credentials-bps.path;
+    for-all-stickers = true;
+  };
+
   networking = {
     hostName = "eagle";
 

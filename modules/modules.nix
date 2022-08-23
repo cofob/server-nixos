@@ -1,9 +1,10 @@
-{ agenix, home-manager, ... }:
+{ agenix, home-manager, bps, ... }:
 
 {
   imports = [
     home-manager.nixosModule
     agenix.nixosModule
+    bps.nixosModule
 
     ./common.nix
     ./users.nix

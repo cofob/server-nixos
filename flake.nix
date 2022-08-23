@@ -54,11 +54,10 @@
           ];
         };
         eagle = nixpkgs.lib.nixosSystem {
-          specialArgs = attrs;
           system = "x86_64-linux";
+          specialArgs = attrs;
           modules = [
             ./eagle.nix
-            bps.nixosModule
           ];
         };
       };

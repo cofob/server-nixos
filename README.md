@@ -6,9 +6,8 @@ This is a read only mirror of the repository on our [gitlab instance](https://l.
 
 ## Servers
 
-### Proxies
-
-Eagle: 10.3.7.10
+* Eagle: 10.3.7.10
+* Rat: 10.3.7.11
 
 ## Desktops
 

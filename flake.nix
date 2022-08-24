@@ -75,8 +75,10 @@
         in
         {
           devShells.default = pkgs.mkShell {
-            nativeBuildInputs = [ agenix.defaultPackage.${system} ];
-            buildInputs = [ ];
+            buildInputs = [
+              agenix.defaultPackage.${system}
+              pkgs.nebula
+            ];
           };
         });
 }

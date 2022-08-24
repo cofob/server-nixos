@@ -10,6 +10,8 @@
   networking = {
     hostName = "rat";
 
+    nebula-global.enable = true;
+
     defaultGateway = {
       address = "10.0.0.1";
       interface = "ens3";

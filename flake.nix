@@ -60,6 +60,13 @@
             ./eagle.nix
           ];
         };
+        rat = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = attrs;
+          modules = [
+            ./rat.nix
+          ];
+        };
       };
     } // flake-utils.lib.eachDefaultSystem
       (system:

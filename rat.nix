@@ -14,6 +14,12 @@
     for-all-stickers = true;
   };
 
+  age.secrets.credentials-tgcaptcha.file = ./secrets/credentials/tgcaptcha.age;
+  services.tg-captcha = {
+    enable = true;
+    envFile = config.age.secrets.credentials-tgcaptcha.path;
+  };
+
   networking = {
     hostName = "rat";
 

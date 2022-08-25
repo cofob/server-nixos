@@ -240,7 +240,8 @@
         "flake-utils": "flake-utils_2",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable_2"
+        "nixpkgs-unstable": "nixpkgs-unstable_2",
+        "tg-captcha": "tg-captcha"
       }
     },
     "rust-overlay": {
@@ -263,6 +264,30 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "type": "github"
+      }
+    },
+    "tg-captcha": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1661414194,
+        "narHash": "sha256-4mu+Y7eknqfKXJCqsJecASvI5YOFuifMz3fYvPhbybI=",
+        "ref": "main",
+        "rev": "65e8851fbf1f4a0846851a39e292a972d716285a",
+        "revCount": 1,
+        "type": "git",
+        "url": "https://git.averyan.ru/cofob/captcha"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "https://git.averyan.ru/cofob/captcha"
       }
     }
   },

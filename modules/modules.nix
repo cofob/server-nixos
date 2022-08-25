@@ -1,8 +1,9 @@
-{ agenix, home-manager, bps, ... }:
+{ agenix, home-manager, bps, tg-captcha, ... }:
 
 {
   imports = [
     home-manager.nixosModule
+    tg-captcha.nixosModule
     agenix.nixosModule
     bps.nixosModule
 

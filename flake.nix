@@ -22,6 +22,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    tg-captcha = {
+      url = "git+https://git.averyan.ru/cofob/captcha?ref=main";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
+    };
+
     alex-home = {
       url = "github:averyanalex/nixos";
       inputs = {
@@ -43,7 +51,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, flake-utils, agenix, home-manager, bps, alex-home, cofob-home }@attrs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, flake-utils, agenix, home-manager, bps, tg-captcha, alex-home, cofob-home }@attrs:
     {
       nixosConfigurations = {
         example = nixpkgs.lib.nixosSystem {

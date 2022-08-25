@@ -21,4 +21,5 @@ in
 
   "secrets/credentials/cloudflare.age".publicKeys = users ++ [ eagle ];
   "secrets/credentials/bps.age".publicKeys = users ++ [ rat ];
+  "secrets/credentials/tgcaptcha.age".publicKeys = users ++ [ rat ];
 }

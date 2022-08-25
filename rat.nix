@@ -23,7 +23,10 @@
   networking = {
     hostName = "rat";
 
-    nebula-global.enable = true;
+    nebula-global = {
+      enable = true;
+      isLighthouse = true;
+    };
 
     defaultGateway = {
       address = "10.0.0.1";

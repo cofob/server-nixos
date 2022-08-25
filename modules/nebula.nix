@@ -47,10 +47,13 @@ in
 
       isLighthouse = cfg.isLighthouse;
 
-      lighthouses = mkIf (!cfg.isLighthouse) [ "10.3.7.10" ];
+      lighthouses = mkIf (!cfg.isLighthouse) [ "10.3.7.10" ""10.3.7.11"" ];
       staticHostMap = mkIf (!cfg.isLighthouse) {
         "10.3.7.10" = [
           "185.112.83.178:4242"
+        ];
+        "10.3.7.11" = [
+          "89.208.104.77:4242"
         ];
       };
 

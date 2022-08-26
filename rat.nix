@@ -37,12 +37,12 @@
   };
 
   age.secrets.credentials-gitea.file = ./secrets/credentials/gitea.age;
-  services.gitea = {
+  services.gitea-fs = {
     enable = true;
-    # package = pkgs.unstable.gitea;
+    package = pkgs.unstable.gitea;
     lfs.enable = true;
     dump.enable = true;
-    cookieSecure = true;
+    settings.session.COOKIE_SECURE = true;
     domain = "git.frsqr.xyz";
     rootUrl = "https://git.frsqr.xyz/";
     appName = "gitea: Smth here";

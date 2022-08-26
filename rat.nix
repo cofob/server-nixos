@@ -43,13 +43,6 @@
     package = pkgs.unstable.gitea;
     lfs.enable = true;
     dump.enable = true;
-    settings.session.COOKIE_SECURE = true;
-    settings.database.DB_TYPE = "mysql";
-    settings.database.HOST = "127.0.0.1";
-    settings.database.PORT = "3301";
-    settings.database.NAME = "gitea";
-    settings.database.USER = "gitea";
-    settings.database.PASSWD = "#dbpass#";
     domain = "git.frsqr.xyz";
     rootUrl = "https://git.frsqr.xyz/";
     appName = "gitea: Smth here";

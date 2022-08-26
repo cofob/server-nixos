@@ -15,6 +15,5 @@
     ./nebula.nix
     ./nftables.nix
     ./ssh.nix
-    ./gitea.nix
   ];
 }

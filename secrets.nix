@@ -19,7 +19,7 @@ in
   "secrets/nebula/rat-crt.age".publicKeys = users ++ systems;
   "secrets/nebula/rat-key.age".publicKeys = users ++ [ rat ];
 
-  "secrets/credentials/cloudflare.age".publicKeys = users ++ [ eagle ];
+  "secrets/credentials/cloudflare.age".publicKeys = users ++ [ eagle rat ];
   "secrets/credentials/bps.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/tgcaptcha.age".publicKeys = users ++ [ rat ];
 }

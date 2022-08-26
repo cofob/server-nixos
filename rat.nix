@@ -47,18 +47,18 @@
     rootUrl = "https://git.frsqr.xyz/";
     appName = "gitea: Smth here";
     database = {
-      type = "postgres";
+      type = "mysql";
       passwordFile = config.age.secrets.credentials-gitea.path;
     };
   };
 
-  services.postgresql = {
+  services.mysql = {
     enable = true;
     ensureUsers = [
       {
         name = "gitea";
         ensurePermissions = {
-          "DATABASE gitea" = "ALL PRIVILEGES";
+          "gitea.*" = "ALL PRIVILEGES";
         };
       }
     ];

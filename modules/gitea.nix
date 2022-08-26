@@ -16,8 +16,6 @@ let
     RUN_USER = ${cfg.user}
     RUN_MODE = prod
 
-    ${generators.toINI {} cfg.settings}
-
     ${optionalString (cfg.extraConfig != null) cfg.extraConfig}
   '';
 in

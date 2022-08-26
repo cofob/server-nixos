@@ -11,7 +11,6 @@
   services.bps = {
     enable = true;
     tokenEnvFile = config.age.secrets.credentials-bps.path;
-    for-all-stickers = true;
   };
 
   age.secrets.credentials-tgcaptcha.file = ./secrets/credentials/tgcaptcha.age;

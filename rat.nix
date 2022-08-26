@@ -39,6 +39,7 @@
   age.secrets.credentials-gitea.file = ./secrets/credentials/gitea.age;
   services.gitea = {
     enable = true;
+    package = pkgs.unstable.gitea;
     lfs.enable = true;
     dump.enable = true;
     cookieSecure = true;

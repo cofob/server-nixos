@@ -36,12 +36,46 @@
     };
   };
 
+  age.secrets.credentials-gitea.file = ./secrets/credentials/gitea.age;
+  services.gitea = {
+    enable = true;
+    lfs.enable = true;
+    dump.enable = true;
+    cookieSecure = true;
+    domain = "git.frsqr.xyz";
+    rootUrl = "https://git.frsqr.xyz/";
+    appName = "gitea: Smth here";
+    database = {
+      type = "postgres";
+      passwordFile = config.age.secrets.credentials-gitea.path;
+    };
+  };
+
+  services.postgresql = {
+    enable = true;
+    ensureUsers = [
+      {
+        name = "gitea";
+        ensurePermissions = {
+          "DATABASE gitea" = "ALL PRIVILEGES";
+        };
+      }
+    ];
+    ensureDatabases = [
+      "gitea"
+    ];
+  };
+
   services.fs-nginx = {
     enable = true;
     virtualHosts = {
       "_" = {
         useACMEHost = "ipfsqr.ru";
         locations."/".proxyPass = "http://localhost:8080/";
+      };
+      "git.frsqr.xyz" = {
+        useACMEHost = "git.frsqr.xyz";
+        locations."/".proxyPass = "http://localhost:3000/";
       };
     };
   };
@@ -59,6 +93,7 @@
         "cofob.ru"
         "*.cofob.ru"
       ]; };
+      "git.frsqr.xyz" = {};
     };
   };
 

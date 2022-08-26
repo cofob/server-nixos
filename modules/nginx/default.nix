@@ -793,9 +793,7 @@ in
         type = types.attrsOf (types.submodule (import ./vhost-options.nix {
           inherit config lib;
         }));
-        default = {
-          localhost = { };
-        };
+        default = { };
         example = literalExpression ''
           {
             "hydra.example.com" = {

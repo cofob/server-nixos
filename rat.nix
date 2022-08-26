@@ -20,6 +20,49 @@
     envFile = config.age.secrets.credentials-tgcaptcha.path;
   };
 
+  services.ipfs = {
+    enable = true;
+    enableGC = true;
+    extraConfig.Gateway = {
+      PublicGateways = {
+        "ipfsqr.ru" = {
+          Paths = ["/ipfs" "/ipns"];
+          UseSubdomains = true;
+        };
+        "ipfs.ipfsqr.ru" = {
+          Paths = ["/ipfs" "/ipns"];
+          UseSubdomains = false;
+        };
+      };
+    };
+  };
+
+  services.fs-nginx = {
+    enable = true;
+    virtualHosts = {
+      "*" = {
+        useACMEHost = "ipfsqr.ru";
+        locations."/".proxyPass = "http://localhost:8080/";
+      };
+    };
+  };
+
+  security.acme = {
+    certs = {
+      "ipfsqr.ru" = { extraDomainNames = [
+        "*.ipfsqr.ru"
+        "*.ipfs.ipfsqr.ru"
+        "*.ipns.ipfsqr.ru"
+        "frsqr.xyz"
+        "*.frsqr.xyz"
+        "firesquare.ru"
+        "*.firesquare.ru"
+        "cofob.ru"
+        "*.cofob.ru"
+      ]; };
+    };
+  };
+
   networking = {
     hostName = "rat";
 

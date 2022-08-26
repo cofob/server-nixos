@@ -43,10 +43,6 @@
         useACMEHost = "ipfsqr.ru";
         locations."/".proxyPass = "http://localhost:8080/";
       };
-      "git.frsqr.xyz" = {
-        useACMEHost = "git.frsqr.xyz";
-        locations."/".proxyPass = "http://localhost:3000/";
-      };
     };
   };
 
@@ -63,7 +59,6 @@
         "cofob.ru"
         "*.cofob.ru"
       ]; };
-      "git.frsqr.xyz" = {};
     };
   };
 

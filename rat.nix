@@ -29,7 +29,7 @@
           Paths = ["/ipfs" "/ipns"];
           UseSubdomains = true;
         };
-        "ipfs.ipfsqr.ru" = {
+        "static.ipfsqr.ru" = {
           Paths = ["/ipfs" "/ipns"];
           UseSubdomains = false;
         };

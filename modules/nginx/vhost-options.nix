@@ -131,7 +131,7 @@ with lib;
 
     forceSSL = mkOption {
       type = types.bool;
-      default = false;
+      default = true;
       description = ''
         Whether to add a separate nginx server block that permanently redirects (301)
         all plain HTTP traffic to HTTPS. This will set defaults for

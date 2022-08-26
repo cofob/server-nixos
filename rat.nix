@@ -40,7 +40,7 @@
   services.fs-nginx = {
     enable = true;
     virtualHosts = {
-      "*" = {
+      "_" = {
         useACMEHost = "ipfsqr.ru";
         locations."/".proxyPass = "http://localhost:8080/";
       };

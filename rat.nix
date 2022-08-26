@@ -36,21 +36,6 @@
     };
   };
 
-  services.mysql = {
-    enable = true;
-    ensureUsers = [
-      {
-        name = "gitea";
-        ensurePermissions = {
-          "gitea.*" = "ALL PRIVILEGES";
-        };
-      }
-    ];
-    ensureDatabases = [
-      "gitea"
-    ];
-  };
-
   services.fs-nginx = {
     enable = true;
     virtualHosts = {

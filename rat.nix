@@ -37,6 +37,7 @@
   };
 
   age.secrets.credentials-gitea.file = ./secrets/credentials/gitea.age;
+  age.secrets.credentials-gitea.owner = "gitea";
   services.gitea-fs = {
     enable = true;
     package = pkgs.unstable.gitea;

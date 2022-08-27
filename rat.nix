@@ -70,10 +70,6 @@
   services.fs-nginx = {
     enable = true;
     virtualHosts = {
-      "_" = {
-        useACMEHost = "ipfsqr.ru";
-        locations."/".proxyPass = "http://localhost:8080/";
-      };
       "git.frsqr.xyz" = {
         useACMEHost = "git.frsqr.xyz";
         locations."/".proxyPass = "http://localhost:3000/";
@@ -84,6 +80,10 @@
           url = "https://ipfs.io/ipfs/bafybeie26qliticraktjfvtbqq6bmtjl5wedfeba7jc4j6g3xotv7wnlg4/mineflake.tar.gz";
           hash = "sha256-h2Ax9Ixse4WsBCk3WgizwSJraMfIri9IGvO3VuMmxbc=";
         };
+      };
+      "_" = {
+        useACMEHost = "ipfsqr.ru";
+        locations."/".proxyPass = "http://localhost:8080/";
       };
     };
   };

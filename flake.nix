@@ -45,6 +45,7 @@
       url = "github:cofob/nixos";
       inputs = {
         nixpkgs.follows = "nixpkgs";
+        nixpkgs-unstable.follows = "nixpkgs-unstable";
         home-manager.follows = "home-manager";
         agenix.follows = "agenix";
       };

@@ -82,7 +82,7 @@
         useACMEHost = "ipfsqr.ru";
         root = pkgs.fetchzip {
           url = "https://ipfs.io/ipfs/bafybeie26qliticraktjfvtbqq6bmtjl5wedfeba7jc4j6g3xotv7wnlg4/mineflake.tar.gz";
-          sha256 = "c925cb07b747de8ab2626ebfd3a9166ddc47536b274951c100cb814dffca937f";
+          hash = "sha256-h2Ax9Ixse4WsBCk3WgizwSJraMfIri9IGvO3VuMmxbc=";
         };
       };
     };

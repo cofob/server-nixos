@@ -41,11 +41,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1661547562,
-        "narHash": "sha256-RQJBdALi4UGqiyfEVOSUxSHXzbYT2OXz0y+KIFsPKWw=",
+        "lastModified": 1661609161,
+        "narHash": "sha256-94rHb4LF0388o6SFmZfNxcda0KGnmR3+iOwAkCdCMII=",
         "owner": "averyanalex",
         "repo": "nixos",
-        "rev": "4e08256a2b8654097ba2b0d7c7a9eabcf2233612",
+        "rev": "99aebdab9ac17d368e972e96174882f7e457c233",
         "type": "github"
       },
       "original": {
@@ -91,17 +91,17 @@
         "nur": "nur_2"
       },
       "locked": {
-        "lastModified": 1661525147,
-        "narHash": "sha256-bIQNSAZFz1QiL47ZI5qxKY8csTQB9nyDJ43ua0u9sUs=",
-        "owner": "cofob",
-        "repo": "nixos",
-        "rev": "146c18df745cd7098bd53167dbecb280aec333ca",
-        "type": "github"
+        "lastModified": 1661610414,
+        "narHash": "sha256-Dql5Sp0k82t6VowfUlXwa/oJggF1lEjhLg8tXUr0dPk=",
+        "ref": "master",
+        "rev": "0c276484032e3ce5d7a225c9ed0bf57e71d26b99",
+        "revCount": 177,
+        "type": "git",
+        "url": "https://git.frsqr.xyz/cofob/nixos"
       },
       "original": {
-        "owner": "cofob",
-        "repo": "nixos",
-        "type": "github"
+        "type": "git",
+        "url": "https://git.frsqr.xyz/cofob/nixos"
       }
     },
     "flake-utils": {

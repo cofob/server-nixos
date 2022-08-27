@@ -42,7 +42,7 @@
     };
 
     cofob-home = {
-      url = "github:cofob/nixos";
+      url = "git+https://git.frsqr.xyz/cofob/nixos";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         nixpkgs-unstable.follows = "nixpkgs-unstable";

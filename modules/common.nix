@@ -53,5 +53,14 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ git ];
+  environment.systemPackages = with pkgs; [
+    git
+    vim
+    htop
+    ncdu
+    tmux
+    wget
+    ffsend
+    pastebinit
+  ];
 }

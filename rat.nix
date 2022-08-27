@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   imports = [
@@ -77,6 +77,13 @@
       "git.frsqr.xyz" = {
         useACMEHost = "git.frsqr.xyz";
         locations."/".proxyPass = "http://localhost:3000/";
+      };
+      "mineflake.ipfsqr.xyz" = {
+        useACMEHost = "ipfsqr.ru";
+        root = pkgs.fetchzip {
+          url = "https://ipfs.io/ipfs/bafybeie26qliticraktjfvtbqq6bmtjl5wedfeba7jc4j6g3xotv7wnlg4/mineflake.tar.gz";
+          sha256 = "c925cb07b747de8ab2626ebfd3a9166ddc47536b274951c100cb814dffca937f";
+        };
       };
     };
   };

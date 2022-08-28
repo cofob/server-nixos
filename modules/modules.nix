@@ -1,11 +1,10 @@
-{ agenix, home-manager, dnsbot, bps, tg-captcha, ... }:
+{ agenix, home-manager, bps, tg-captcha, ... }:
 
 {
   imports = [
     home-manager.nixosModule
     tg-captcha.nixosModule
     agenix.nixosModule
-    dnsbot.nixosModule
     bps.nixosModule
 
     ./common.nix

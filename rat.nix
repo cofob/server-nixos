@@ -25,14 +25,6 @@
     envFile = config.age.secrets.credentials-tgcaptcha.path;
   };
 
-  age.secrets.credentials-dnsbot.file = ./secrets/credentials/dnsbot.age;
-  services.dnsbot = {
-    enable = true;
-    passwordEnvFile = config.age.secrets.credentials-dnsbot.path;
-    username = "dnsbot";
-    homeserver = "https://matrix.org/";
-  };
-
   services.ipfs = {
     enable = true;
     enableGC = true;

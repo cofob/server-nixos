@@ -104,6 +104,26 @@
         "url": "https://git.frsqr.xyz/cofob/nixos"
       }
     },
+    "dnsbot": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1661695610,
+        "narHash": "sha256-wgWopX0g/46/c6l7F9tnt/C7YPjvTOoTn4eywrFuR/Y=",
+        "ref": "master",
+        "rev": "70644242e50d11eb4fd07a6d79b5d3c06bc9b0b9",
+        "revCount": 20,
+        "type": "git",
+        "url": "https://git.frsqr.xyz/cofob/dnsbot"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.frsqr.xyz/cofob/dnsbot"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1656928814,
@@ -223,6 +243,7 @@
         "alex-home": "alex-home",
         "bps": "bps",
         "cofob-home": "cofob-home",
+        "dnsbot": "dnsbot",
         "flake-utils": "flake-utils_2",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",

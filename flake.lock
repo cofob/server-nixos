@@ -111,11 +111,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1661695610,
-        "narHash": "sha256-wgWopX0g/46/c6l7F9tnt/C7YPjvTOoTn4eywrFuR/Y=",
+        "lastModified": 1661695920,
+        "narHash": "sha256-qkZ8Z4RiHALCMvvct0Y3OedGvWIsl9qzSWHMdB8hUTM=",
         "ref": "master",
-        "rev": "70644242e50d11eb4fd07a6d79b5d3c06bc9b0b9",
-        "revCount": 20,
+        "rev": "171be19610abd97123dbd77934831a581c335392",
+        "revCount": 21,
         "type": "git",
         "url": "https://git.frsqr.xyz/cofob/dnsbot"
       },

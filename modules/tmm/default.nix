@@ -38,7 +38,10 @@ in
     tmm = {
       enable = true;
       description = "TMM telegram bot";
-      environment.RUST_LOG = cfg.log-level;
+      environment = {
+        RUST_LOG = cfg.log-level;
+        DB = "${cfg.datadir}/database.db";
+      };
       unitConfig = {
         Type = "simple";
       };

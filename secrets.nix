@@ -22,5 +22,6 @@ in
   "secrets/credentials/cloudflare.age".publicKeys = users ++ [ eagle rat ];
   "secrets/credentials/gitea.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/bps.age".publicKeys = users ++ [ rat ];
+  "secrets/credentials/tmm.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/tgcaptcha.age".publicKeys = users ++ [ rat ];
 }

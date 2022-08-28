@@ -15,5 +15,6 @@
     ./nebula.nix
     ./nftables.nix
     ./ssh.nix
+    ./tmm
   ];
 }

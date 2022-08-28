@@ -22,7 +22,7 @@
       };
       cofob = {
         isNormalUser = true;
-        description = "Cofob";
+        description = "Egor Ternovoy";
         extraGroups = [ "wheel" ];
         uid = 1001;
         passwordFile = config.age.secrets.password-cofob.path;

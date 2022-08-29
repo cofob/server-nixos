@@ -53,12 +53,10 @@
     rootUrl = "https://git.frsqr.xyz/";
     appName = "firesquare git";
     disableRegistration = true;
+    cookieSecure = true;
     database = {
       type = "mysql";
       passwordFile = config.age.secrets.credentials-gitea.path;
-    };
-    settings = {
-      session.COOKIE_SECURE = true;
     };
   };
 

@@ -52,12 +52,12 @@
     domain = "git.frsqr.xyz";
     rootUrl = "https://git.frsqr.xyz/";
     appName = "firesquare git";
+    disableRegistration = true;
     database = {
       type = "mysql";
       passwordFile = config.age.secrets.credentials-gitea.path;
     };
     settings = {
-      service.DISABLE_REGISTRATION = true;
       session.COOKIE_SECURE = true;
     };
   };

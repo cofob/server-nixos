@@ -57,6 +57,17 @@ in
         ];
       };
 
+      settings = {
+        punchy = {
+          punch = true;
+          respond = true;
+        };
+        relay = {
+          am_relay = cfg.isLighthouse;
+          relays = mkIf (!cfg.isLighthouse) [ "10.3.7.10" "10.3.7.11" ];
+        };
+      };
+
       firewall = cfg.firewall;
     };
   };

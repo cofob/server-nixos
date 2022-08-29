@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 
 with lib;
 
@@ -41,6 +41,8 @@ in
     age.secrets.nebula-crt.file = ../secrets/nebula/${config.networking.hostName}-crt.age;
 
     services.nebula.networks.global = {
+      package = pkgs.unstable.nebula;
+
       key = config.age.secrets.nebula-key.path;
       cert = config.age.secrets.nebula-crt.path;
       ca = config.age.secrets.nebula-ca.path;

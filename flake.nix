@@ -23,7 +23,7 @@
     };
 
     tg-captcha = {
-      url = "git+https://git.averyan.ru/cofob/captcha?ref=main";
+      url = "git+https://git.frsqr.xyz/cofob/captcha?ref=main";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-utils.follows = "flake-utils";

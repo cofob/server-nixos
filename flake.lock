@@ -268,12 +268,12 @@
         "rev": "65e8851fbf1f4a0846851a39e292a972d716285a",
         "revCount": 1,
         "type": "git",
-        "url": "https://git.averyan.ru/cofob/captcha"
+        "url": "https://git.frsqr.xyz/cofob/captcha"
       },
       "original": {
         "ref": "main",
         "type": "git",
-        "url": "https://git.averyan.ru/cofob/captcha"
+        "url": "https://git.frsqr.xyz/cofob/captcha"
       }
     }
   },

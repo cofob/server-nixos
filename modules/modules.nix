@@ -8,6 +8,7 @@
     bps.nixosModule
 
     ./common.nix
+    ./unstable.nix
     ./users.nix
     ./dns.nix
     ./nginx/default.nix

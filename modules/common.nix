@@ -26,7 +26,7 @@
     autoUpgrade = {
       enable = true;
       allowReboot = false;
-      flake = "github:fire-square/nixos";
+      flake = "git+https://git.frsqr.xyz/firesquare/nixos.git?ref=main";
       dates = "4:45";
     };
   };

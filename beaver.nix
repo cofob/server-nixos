@@ -7,6 +7,12 @@
     ./mounts/proxmox.nix
   ];
 
+  nixpkgs.localSystem = {
+    gcc.arch = "haswell";
+    gcc.tune = "haswell";
+    system = "x86_64-linux";
+  };
+
   networking = {
     hostName = "beaver";
 

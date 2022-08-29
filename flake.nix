@@ -55,13 +55,6 @@
   outputs = { self, nixpkgs, nixpkgs-unstable, flake-utils, agenix, home-manager, bps, tg-captcha, alex-home, cofob-home }@attrs:
     {
       nixosConfigurations = {
-        example = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = attrs;
-          modules = [
-            ./example.nix
-          ];
-        };
         eagle = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = attrs;
@@ -74,6 +67,13 @@
           specialArgs = attrs;
           modules = [
             ./rat.nix
+          ];
+        };
+        beaver = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = attrs;
+          modules = [
+            ./beaver.nix
           ];
         };
       };

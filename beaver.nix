@@ -14,6 +14,16 @@
     "gccarch-haswell"
   ];
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      stdenv = prev.stdenvAdapters.addAttrsToDerivation
+        {
+          doCheck = false;
+        }
+        prev.stdenv;
+    })
+  ];
+
   nixpkgs.localSystem = {
     gcc.arch = "haswell";
     gcc.tune = "haswell";

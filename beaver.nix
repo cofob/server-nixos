@@ -10,6 +10,8 @@
   networking = {
     hostName = "beaver";
 
+    nebula-global.enable = true;
+
     defaultGateway = {
       address = "192.168.20.1";
       interface = "enp6s18";

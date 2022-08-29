@@ -7,6 +7,13 @@
     ./mounts/proxmox.nix
   ];
 
+  nix.settings.system-features = [
+    "big-parallel"
+    "kvm"
+    "nixos-test"
+    "gccarch-haswell"
+  ];
+
   nixpkgs.localSystem = {
     gcc.arch = "haswell";
     gcc.tune = "haswell";

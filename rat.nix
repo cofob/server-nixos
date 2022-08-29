@@ -56,6 +56,10 @@
       type = "mysql";
       passwordFile = config.age.secrets.credentials-gitea.path;
     };
+    settings = {
+      service.DISABLE_REGISTRATION = true;
+      session.COOKIE_SECURE = true;
+    };
   };
 
   services.mysql = {

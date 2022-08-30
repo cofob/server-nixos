@@ -141,6 +141,10 @@
         useACMEHost = "frsqr.xyz";
         locations."/".proxyPass = "http://127.0.0.1:8000/";
       };
+      "bw.frsqr.xyz" = {
+        useACMEHost = "frsqr.xyz";
+        locations."/".proxyPass = "http://127.0.0.1:8222/";
+      };
       "mineflake.ipfsqr.xyz" = {
         useACMEHost = "ipfsqr.ru";
         root = pkgs.fetchzip {

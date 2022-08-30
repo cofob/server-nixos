@@ -132,11 +132,15 @@
     virtualHosts = {
       "_" = {
         useACMEHost = "ipfsqr.ru";
-        locations."/".proxyPass = "http://localhost:8080/";
+        locations."/".proxyPass = "http://127.0.0.1:8080/";
       };
       "git.frsqr.xyz" = {
-        useACMEHost = "git.frsqr.xyz";
-        locations."/".proxyPass = "http://localhost:3000/";
+        useACMEHost = "frsqr.xyz";
+        locations."/".proxyPass = "http://127.0.0.1:3000/";
+      };
+      "wp.frsqr.xyz" = {
+        useACMEHost = "frsqr.xyz";
+        locations."/".proxyPass = "http://127.0.0.1:8000/";
       };
       "mineflake.ipfsqr.xyz" = {
         useACMEHost = "ipfsqr.ru";
@@ -150,20 +154,18 @@
 
   security.acme = {
     certs = {
-      "ipfsqr.ru" = {
-        extraDomainNames = [
-          "*.ipfsqr.ru"
-          "*.ipfs.ipfsqr.ru"
-          "*.ipns.ipfsqr.ru"
-          "frsqr.xyz"
-          "*.frsqr.xyz"
-          "firesquare.ru"
-          "*.firesquare.ru"
-          "cofob.ru"
-          "*.cofob.ru"
-        ];
-      };
-      "git.frsqr.xyz" = { };
+      "ipfsqr.ru".extraDomainNames = [
+        "*.ipfsqr.ru"
+        "*.ipfs.ipfsqr.ru"
+        "*.ipns.ipfsqr.ru"
+        "frsqr.xyz"
+        "*.frsqr.xyz"
+        "firesquare.ru"
+        "*.firesquare.ru"
+        "cofob.ru"
+        "*.cofob.ru"
+      ];
+      "frsqr.xyz".extraDomainNames = [ "*.frsqr.xyz" ];
     };
   };
 

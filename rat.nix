@@ -79,12 +79,6 @@
     enable = true;
     ensureUsers = [
       {
-        name = "root";
-        ensurePermissions = {
-          "ALL TABLES IN SCHEMA public" = "ALL PRIVILEGES";
-        };
-      }
-      {
         name = "vaultwarden";
         ensurePermissions = {
           "DATABASE vaultwarden" = "ALL PRIVILEGES";

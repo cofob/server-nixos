@@ -84,9 +84,16 @@
           "DATABASE vaultwarden" = "ALL PRIVILEGES";
         };
       }
+      {
+        name = "woodpecker";
+        ensurePermissions = {
+          "DATABASE woodpecker" = "ALL PRIVILEGES";
+        };
+      }
     ];
     ensureDatabases = [
       "vaultwarden"
+      "woodpecker"
     ];
   };
 
@@ -104,21 +111,21 @@
 
   age.secrets.woodpecker-server.file = ./secrets/credentials/woodpecker-server.age;
   age.secrets.woodpecker-agent.file = ./secrets/credentials/woodpecker-agent.age;
-  virtualisation.oci-containers.containers.woodpecker-server = {
-    image = "woodpeckerci/woodpecker-server:0.15.3";
-    extraOptions = [ "--network=host" ];
-    volumes = [ "/var/lib/woodpecker/:/var/lib/woodpecker/" ];
-    environment = {
-      WOODPECKER_OPEN = "true";
-      WOODPECKER_HOST = "https://wp.frsqr.xyz";
-      WOODPECKER_GITEA = "true";
-      WOODPECKER_GITEA_URL = "https://git.frsqr.xyz";
-    };
-    environmentFiles = [
-      config.age.secrets.woodpecker-server.path
-      config.age.secrets.woodpecker-agent.path
-    ];
-  };
+  # virtualisation.oci-containers.containers.woodpecker-server = {
+  #   image = "docker.io/woodpeckerci/woodpecker-server:0.15.3";
+  #   extraOptions = [ "--network=host" ];
+  #   environment = {
+  #     WOODPECKER_OPEN = "true";
+  #     WOODPECKER_HOST = "https://wp.frsqr.xyz";
+  #     WOODPECKER_GITEA = "true";
+  #     WOODPECKER_GITEA_URL = "https://git.frsqr.xyz";
+  #     WOODPECKER_DATABASE_DRIVER = "postgres";
+  #   };
+  #   environmentFiles = [
+  #     config.age.secrets.woodpecker-server.path
+  #     config.age.secrets.woodpecker-agent.path
+  #   ];
+  # };
 
   services.fs-nginx = {
     enable = true;

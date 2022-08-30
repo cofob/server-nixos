@@ -32,21 +32,27 @@
   };
 
   nix = {
-    useSandbox = true;
-    autoOptimiseStore = true;
-    readOnlyStore = true;
-    allowedUsers = [ "@wheel" "@users" ];
-    trustedUsers = [ "@wheel" ];
+    settings = {
+      auto-optimise-store = true;
+      allowed-users = [ "@users" ];
+      trusted-users = [ "@wheel" ];
+    };
+
+    daemonCPUSchedPolicy = "batch";
+    daemonIOSchedPriority = 5;
+
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true
       keep-derivations = true
     '';
+
     gc = {
       automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d --max-freed $((64 * 1024**3))";
+      dates = "daily";
+      options = "--delete-older-than 7d";
     };
+
     optimise = {
       automatic = true;
       dates = [ "weekly" ];

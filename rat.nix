@@ -102,6 +102,24 @@
     };
   };
 
+  age.secrets.woodpecker-server.file = ./secrets/credentials/woodpecker-server.age;
+  age.secrets.woodpecker-agent.file = ./secrets/credentials/woodpecker-agent.age;
+  virtualisation.oci-containers.containers.woodpecker-server = {
+    image = "woodpeckerci/woodpecker-server:0.15.3";
+    extraOptions = [ "--network=host" ];
+    volumes = [ "/var/lib/woodpecker/:/var/lib/woodpecker/" ];
+    environment = {
+      WOODPECKER_OPEN = "true";
+      WOODPECKER_HOST = "https://wp.frsqr.xyz";
+      WOODPECKER_GITEA = "true";
+      WOODPECKER_GITEA_URL = "https://git.frsqr.xyz";
+    };
+    environmentFiles = [
+      config.age.secrets.woodpecker-server.path
+      config.age.secrets.woodpecker-agent.path
+    ];
+  };
+
   services.fs-nginx = {
     enable = true;
     virtualHosts = {

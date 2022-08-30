@@ -90,6 +90,19 @@
     ];
   };
 
+  services.vaultwarden = {
+    enable = true;
+    dbBackend = "postgresql";
+    config = {
+      domain = "https://bw.frsqr.xyz";
+      signupsAllowed = true;
+      rocketPort = 8222;
+    };
+    environmentFile = pkgs.writeText "vaultwarden-env" ''
+      DATABASE_URL='postgres:///vaultwarden?host=/var/run/postgresql'
+    '';
+  };
+
   services.fs-nginx = {
     enable = true;
     virtualHosts = {

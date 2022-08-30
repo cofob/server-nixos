@@ -97,10 +97,9 @@
       domain = "https://bw.frsqr.xyz";
       signupsAllowed = true;
       rocketPort = 8222;
+      rocketAddress = "127.0.0.1";
+      databaseUrl = "postgres:///vaultwarden?host=/var/run/postgresql";
     };
-    environmentFile = pkgs.writeText "vaultwarden-env" ''
-      DATABASE_URL='postgres:///vaultwarden?host=/var/run/postgresql'
-    '';
   };
 
   services.fs-nginx = {

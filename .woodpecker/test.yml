@@ -1,0 +1,5 @@
+pipeline:
+  test:
+    image: nixos/nix
+    commands:
+      - nix flake check

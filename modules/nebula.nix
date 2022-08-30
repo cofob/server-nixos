@@ -37,8 +37,8 @@ in
 
   config = mkIf cfg.enable {
     age.secrets.nebula-ca.file = ../secrets/nebula/ca-crt.age;
-    age.secrets.nebula-key.file = ../secrets/nebula/${config.networking.hostName}-key.age;
-    age.secrets.nebula-crt.file = ../secrets/nebula/${config.networking.hostName}-crt.age;
+    age.secrets.nebula-key.file = "../secrets/nebula/${config.networking.hostName}-key.age";
+    age.secrets.nebula-crt.file = "../secrets/nebula/${config.networking.hostName}-crt.age";
 
     services.nebula.networks.global = {
       package = pkgs.unstable.nebula;

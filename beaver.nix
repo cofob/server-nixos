@@ -7,12 +7,12 @@
     ./mounts/proxmox.nix
   ];
 
-  nix.settings.system-features = [
-    "big-parallel"
-    "kvm"
-    "nixos-test"
-    "gccarch-haswell"
-  ];
+  # nix.settings.system-features = [
+  #   "big-parallel"
+  #   "kvm"
+  #   "nixos-test"
+  #   "gccarch-haswell"
+  # ];
 
   # nixpkgs.overlays = [
   #   (final: prev: {
@@ -24,11 +24,11 @@
   #   })
   # ];
 
-  nixpkgs.localSystem = {
-    gcc.arch = "haswell";
-    gcc.tune = "haswell";
-    system = "x86_64-linux";
-  };
+  # nixpkgs.localSystem = {
+  #   gcc.arch = "haswell";
+  #   gcc.tune = "haswell";
+  #   system = "x86_64-linux";
+  # };
 
   networking = {
     hostName = "beaver";

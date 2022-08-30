@@ -112,7 +112,7 @@
   age.secrets.woodpecker-server.file = ./secrets/credentials/woodpecker-server.age;
   age.secrets.woodpecker-agent.file = ./secrets/credentials/woodpecker-agent.age;
   virtualisation.oci-containers.containers.woodpecker-server = {
-    image = "docker.io/woodpeckerci/woodpecker-server:0.15.3";
+    image = "docker.io/woodpeckerci/woodpecker-server:v0.15.3";
     extraOptions = [ "--network=host" ];
     environment = {
       WOODPECKER_OPEN = "true";

@@ -31,11 +31,11 @@
     extraConfig.Gateway = {
       PublicGateways = {
         "ipfsqr.ru" = {
-          Paths = ["/ipfs" "/ipns"];
+          Paths = [ "/ipfs" "/ipns" ];
           UseSubdomains = true;
         };
         "static.ipfsqr.ru" = {
-          Paths = ["/ipfs" "/ipns"];
+          Paths = [ "/ipfs" "/ipns" ];
           UseSubdomains = false;
         };
       };
@@ -75,6 +75,21 @@
     ];
   };
 
+  services.postgresql = {
+    enable = true;
+    ensureUsers = [
+      {
+        name = "vaultwarden";
+        ensurePermissions = {
+          "DATABASE vaultwarden" = "ALL PRIVILEGES";
+        };
+      }
+    ];
+    ensureDatabases = [
+      "vaultwarden"
+    ];
+  };
+
   services.fs-nginx = {
     enable = true;
     virtualHosts = {
@@ -98,18 +113,20 @@
 
   security.acme = {
     certs = {
-      "ipfsqr.ru" = { extraDomainNames = [
-        "*.ipfsqr.ru"
-        "*.ipfs.ipfsqr.ru"
-        "*.ipns.ipfsqr.ru"
-        "frsqr.xyz"
-        "*.frsqr.xyz"
-        "firesquare.ru"
-        "*.firesquare.ru"
-        "cofob.ru"
-        "*.cofob.ru"
-      ]; };
-      "git.frsqr.xyz" = {};
+      "ipfsqr.ru" = {
+        extraDomainNames = [
+          "*.ipfsqr.ru"
+          "*.ipfs.ipfsqr.ru"
+          "*.ipns.ipfsqr.ru"
+          "frsqr.xyz"
+          "*.frsqr.xyz"
+          "firesquare.ru"
+          "*.firesquare.ru"
+          "cofob.ru"
+          "*.cofob.ru"
+        ];
+      };
+      "git.frsqr.xyz" = { };
     };
   };
 

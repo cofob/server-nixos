@@ -99,13 +99,12 @@
 
   services.vaultwarden = {
     enable = true;
-    dbBackend = "postgresql";
+    dbBackend = "sqlite";
     config = {
       domain = "https://bw.frsqr.xyz";
       signupsAllowed = true;
       rocketPort = 8222;
       rocketAddress = "127.0.0.1";
-      databaseUrl = "postgres:///vaultwarden?host=/var/run/postgresql";
     };
   };
 

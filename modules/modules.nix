@@ -7,16 +7,17 @@
     agenix.nixosModule
     bps.nixosModule
 
-    ./common.nix
-    ./unstable.nix
-    ./users.nix
-    ./dns.nix
     ./nginx/default.nix
-    ./acme.nix
-    ./nebula.nix
+    ./ipfs-peers.nix
+    ./unstable.nix
     ./nftables.nix
+    ./common.nix
+    ./nebula.nix
+    ./backup.nix
+    ./users.nix
+    ./acme.nix
+    ./dns.nix
     ./ssh.nix
     ./tmm
-    ./ipfs-peers.nix
   ];
 }

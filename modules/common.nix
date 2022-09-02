@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   boot = {
@@ -7,6 +7,19 @@
   };
 
   services.fstrim.enable = true;
+
+  age.secrets.credentials-pbs.file = ../secrets/credentials/pbs.age;
+  age.secrets.credentials-pbs-key.file = ../secrets/credentials/pbs-key.age;
+  services.backup = {
+    enable = true;
+    envFile = config.age.secrets.credentials-pbs.path;
+    keyFile = config.age.secrets.credentials-pbs-key.path;
+    environment = {
+      PBS_FINGERPRINT = "";
+    };
+    # Make full backup every month
+    timers.monthly = [ "root.pxar:/" ];
+  };
 
   environment.pathsToLink = [ "/share/zsh" ];
 

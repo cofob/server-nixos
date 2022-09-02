@@ -29,4 +29,6 @@ in
   "secrets/credentials/tgcaptcha.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/woodpecker-server.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/woodpecker-agent.age".publicKeys = users ++ [ rat beaver ];
+  "secrets/credentials/pbs.age".publicKeys = users ++ systems;
+  "secrets/credentials/pbs-key.age".publicKeys = users ++ systems;
 }

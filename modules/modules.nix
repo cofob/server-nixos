@@ -17,5 +17,6 @@
     ./nftables.nix
     ./ssh.nix
     ./tmm
+    ./ipfs-peers.nix
   ];
 }

@@ -28,8 +28,8 @@
   services.ipfs = {
     enable = true;
     enableGC = true;
-    extraConfig.Gateway = {
-      PublicGateways = {
+    extraConfig = {
+      Gateway.PublicGateways = {
         "ipfsqr.ru" = {
           Paths = [ "/ipfs" "/ipns" ];
           UseSubdomains = true;

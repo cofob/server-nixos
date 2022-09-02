@@ -77,7 +77,7 @@
           ];
         };
       };
-    } // flake-utils.lib.eachDefaultSystem
+    } // flake-utils.lib.eachSystem (with flake-utils.lib.system; [ x86_64-linux i686-linux aarch64-linux ])
       (system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
@@ -88,6 +88,10 @@
               agenix.defaultPackage.${system}
               pkgs.nebula
             ];
+          };
+
+          packages = {
+            proxmox-backup-client = pkgs.callPackage ./pkgs/proxmox-backup-client { };
           };
         });
 }

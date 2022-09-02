@@ -48,7 +48,6 @@
     enable = true;
     package = pkgs.unstable.gitea;
     lfs.enable = true;
-    dump.enable = true;
     domain = "git.frsqr.xyz";
     rootUrl = "https://git.frsqr.xyz/";
     appName = "firesquare git";

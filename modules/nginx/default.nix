@@ -155,6 +155,7 @@ let
           application/json
           application/xml
           application/xml+rss
+          application/wasm
           image/svg+xml
           text/css
           text/javascript

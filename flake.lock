@@ -61,11 +61,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1661090266,
-        "narHash": "sha256-f/vIMO1JWiyNL2uk80sk2gEnMUHJOFpH6RmGhKnDlmo=",
+        "lastModified": 1662204380,
+        "narHash": "sha256-gM8qpyjBtDDCMtLRdk1pvOz1YaSvEOpRG0glE/y8NM0=",
         "owner": "DomesticMoth",
         "repo": "bps",
-        "rev": "64b0d3481f8524f4a1147c77013a0363298b858f",
+        "rev": "4b9fe284ff22a7d8cc77a85d9922cffbe1099247",
         "type": "github"
       },
       "original": {

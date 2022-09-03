@@ -156,6 +156,9 @@ let
           application/xml
           application/xml+rss
           application/wasm
+          application/font-woff2
+          font/woff2
+          font/ttf
           image/svg+xml
           text/css
           text/javascript

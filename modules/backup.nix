@@ -3,48 +3,59 @@
 with lib;
 
 let
-  cfg = config.services.backup;
+  cfg = config.services.proxmox-backup-client;
+
+  timerConf = {
+    time = {
+      type = types.str;
+      description = "Systemd time";
+      default = "daily";
+    };
+    directories = {
+      type = types.listOf types.str;
+      description = "Directories to backup";
+      default = [ ];
+    };
+  };
 in
 {
   options = {
-    services.backup = {
-      enable = mkEnableOption "Whether to enable proxmox-backup-client backups";
-
+    services.proxmox-backup-client = {
       environment = mkOption {
         type = types.attrsOf types.str;
-        default = { };
+        default = {
+          PBS_FINGERPRINT = "";
+        };
         description = "Service environment variables";
       };
 
-      envFile = mkOption {
-        type = types.path;
-        description = "Service environment file secrets path";
-      };
-
-      keyFile = mkOption {
-        type = types.path;
-        description = "Key file path";
-      };
-
       timers = mkOption {
-        type = types.attrsOf (types.listOf types.str);
+        type = types.attrsOf timerConf;
+        description = "Timer config";
+        default = { };
       };
     };
   };
 
-  config.systemd.services =
-    let
-      obj = mapAttrs
-        (timer: paths: {
-          name = "backup-${timer}";
-          value = {
-            path = [ (pkgs.callPackage ../pkgs/proxmox-backup-client { }) ];
-            environment = cfg.environment;
-            serviceConfig.EnvironmentFile = cfg.envFile;
-            script = "proxmox-backup-client backup --keyfile ${cfg.keyFile} ${toString paths}";
-            startAt = timer;
-          };
-        })
-        cfg.timers; in
-    mkIf cfg.enable (builtins.listToAttrs (map (key: getAttr key obj) (attrNames obj)));
+  config = {
+    age.secrets.credentials-pbs.file = ../secrets/credentials/pbs.age;
+    age.secrets.credentials-pbs-key.file = ../secrets/credentials/pbs-key.age;
+  } // (mkIf (cfg.timers != { }) {
+    systemd.services =
+      let
+        obj = mapAttrs
+          (timer-name: timer-cfg: {
+            name = "proxmox-backup-client-${timer-name}";
+            value = {
+              path = [ pkgs.callPackage ../pkgs/proxmox-backup-client ];
+              environment = cfg.environment;
+              serviceConfig.EnvironmentFile = config.age.secrets.credentials-pbs.path;
+              script = "proxmox-backup-client backup --keyfile ${config.age.secrets.credentials-pbs-key.path} ${toString timer-cfg.directories}";
+              startAt = timer-cfg.time;
+            };
+          })
+          cfg.timers;
+      in
+      (builtins.listToAttrs (map (key: getAttr key obj) (attrNames obj)));
+  });
 }

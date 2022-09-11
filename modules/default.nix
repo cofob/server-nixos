@@ -13,6 +13,7 @@
     ./nftables.nix
     ./common.nix
     ./nebula-frsqr.nix
+    ./nebula-averyan.nix
     # ./backup.nix TODO: refactor && fix
     ./users.nix
     ./acme.nix

@@ -22,6 +22,10 @@ in
   "secrets/nebula/beaver-crt.age".publicKeys = users ++ systems;
   "secrets/nebula/beaver-key.age".publicKeys = users ++ [ beaver ];
 
+  "secrets/nebula-averyan/ca-crt.age".publicKeys = users ++ systems;
+  "secrets/nebula-averyan/eagle-crt.age".publicKeys = users ++ systems;
+  "secrets/nebula-averyan/eagle-key.age".publicKeys = users ++ [ eagle ];
+
   "secrets/credentials/cloudflare.age".publicKeys = users ++ [ eagle rat ];
   "secrets/credentials/gitea.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/bps.age".publicKeys = users ++ [ rat ];

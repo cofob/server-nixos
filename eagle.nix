@@ -19,6 +19,11 @@
       isLighthouse = true;
     };
 
+    nebula-averyan = {
+      enable = true;
+      isLighthouse = true;
+    };
+
     defaultGateway = {
       address = "10.0.0.1";
       interface = "ens3";

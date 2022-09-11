@@ -7,12 +7,12 @@
     agenix.nixosModule
     bps.nixosModule
 
-    ./nginx/default.nix
+    ./nginx
     ./ipfs-peers.nix
     ./unstable.nix
     ./nftables.nix
     ./common.nix
-    ./nebula.nix
+    ./nebula-frsqr.nix
     ./backup.nix
     ./users.nix
     ./acme.nix

@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./modules/modules.nix
+    ./modules
     ./hardware/aeza.nix
     ./mounts/aeza.nix
   ];
@@ -174,7 +174,7 @@
   networking = {
     hostName = "rat";
 
-    nebula-global = {
+    nebula-frsqr = {
       enable = true;
       isLighthouse = true;
     };

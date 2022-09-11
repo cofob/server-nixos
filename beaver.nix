@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./modules/modules.nix
+    ./modules
     ./hardware/proxmox-whale.nix
     ./mounts/proxmox.nix
   ];
@@ -25,7 +25,7 @@
   networking = {
     hostName = "beaver";
 
-    nebula-global.enable = true;
+    nebula-frsqr.enable = true;
 
     defaultGateway = {
       address = "192.168.20.1";

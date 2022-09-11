@@ -3,15 +3,15 @@
 with lib;
 
 let
-  cfg = config.networking.nebula-global;
+  cfg = config.networking.nebula-frsqr;
 in
 {
   options = {
-    networking.nebula-global = {
+    networking.nebula-frsqr = {
       enable = mkOption {
         type = types.bool;
         default = false;
-        description = "Whether to enable global nebula network.";
+        description = "Whether to enable frsqr nebula network.";
       };
       isLighthouse = mkOption {
         type = types.bool;
@@ -40,7 +40,7 @@ in
     age.secrets.nebula-key.file = ../secrets/nebula + "/${config.networking.hostName}-key.age";
     age.secrets.nebula-crt.file = ../secrets/nebula + "/${config.networking.hostName}-crt.age";
 
-    services.nebula.networks.global = {
+    services.nebula.networks.frsqr = {
       package = pkgs.unstable.nebula;
 
       key = config.age.secrets.nebula-key.path;

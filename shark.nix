@@ -10,6 +10,8 @@
   networking = {
     hostName = "shark";
 
+    nebula-frsqr.enable = true;
+
     defaultGateway = {
       address = "192.168.12.1";
       interface = "enp1s0";

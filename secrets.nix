@@ -20,6 +20,8 @@ in
   "secrets/nebula/eagle-key.age".publicKeys = users ++ [ eagle ];
   "secrets/nebula/rat-crt.age".publicKeys = users ++ systems;
   "secrets/nebula/rat-key.age".publicKeys = users ++ [ rat ];
+  "secrets/nebula/shark-crt.age".publicKeys = users ++ systems;
+  "secrets/nebula/shark-key.age".publicKeys = users ++ [ shark ];
   "secrets/nebula/beaver-crt.age".publicKeys = users ++ systems;
   "secrets/nebula/beaver-key.age".publicKeys = users ++ [ beaver ];
 

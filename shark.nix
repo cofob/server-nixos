@@ -1,0 +1,29 @@
+{ pkgs, config, ... }:
+
+{
+  imports = [
+    ./modules
+    ./hardware/whale-vm.nix
+    ./mounts/whale-vm.nix
+  ];
+
+  networking = {
+    hostName = "shark";
+
+    defaultGateway = {
+      address = "192.168.12.1";
+      interface = "enp1s0";
+    };
+
+    interfaces = {
+      enp1s0 = {
+        ipv4 = {
+          addresses = [{
+            address = "192.168.12.2";
+            prefixLength = 24;
+          }];
+        };
+      };
+    };
+  };
+}

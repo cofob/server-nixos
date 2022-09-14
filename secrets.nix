@@ -7,7 +7,8 @@ let
   eagle = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILdFLG40/W62LpwPK0PQUSr/3zGNAn5qK4jabXDl9SIM";
   rat = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICIo9EB6kxVzY93JU602tDaEYwmo4+V8d5xoYS3c1+aN";
   beaver = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINwGJqXcekQaSnG70wFP9L5Ibz5gW22JcqwX1xkXE3R2";
-  systems = [ diamond eagle rat beaver ];
+  shark = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIuz7EJAfTBL+kG0qRVjbKCPEFtFrpPa4ZP8ZfDxuH5k";
+  systems = [ diamond eagle rat shark beaver ];
 in
 {
   "secrets/passwords/alex.age".publicKeys = users ++ systems;

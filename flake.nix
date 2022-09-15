@@ -30,6 +30,14 @@
       };
     };
 
+    cofob-ru = {
+      url = "git+https://git.frsqr.xyz/cofob/cofob.ru?ref=main";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
+    };
+
     alex-home = {
       url = "github:averyanalex/nixos";
       inputs = {
@@ -52,7 +60,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, flake-utils, agenix, home-manager, bps, tg-captcha, alex-home, cofob-home }@attrs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, flake-utils, agenix, home-manager, bps, tg-captcha, cofob-ru, alex-home, cofob-home }@attrs:
     {
       nixosConfigurations = {
         eagle = nixpkgs.lib.nixosSystem {

@@ -17,6 +17,7 @@
     # ./backup.nix TODO: refactor && fix
     ./users.nix
     ./acme.nix
+    ./cofob-ru
     ./dns.nix
     ./ssh.nix
     ./tmm

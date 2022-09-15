@@ -25,6 +25,8 @@
     envFile = config.age.secrets.credentials-tgcaptcha.path;
   };
 
+  services.cofob-ru.enable = true;
+
   services.ipfs = {
     enable = true;
     enableGC = true;
@@ -51,6 +53,7 @@
     domain = "git.frsqr.xyz";
     rootUrl = "https://git.frsqr.xyz/";
     appName = "firesquare git";
+    httpPort = 3001;
     disableRegistration = true;
     cookieSecure = true;
     database = {
@@ -134,7 +137,7 @@
       };
       "git.frsqr.xyz" = {
         useACMEHost = "frsqr.xyz";
-        locations."/".proxyPass = "http://127.0.0.1:3000/";
+        locations."/".proxyPass = "http://127.0.0.1:3001/";
       };
       "wp.frsqr.xyz" = {
         useACMEHost = "frsqr.xyz";
@@ -143,6 +146,10 @@
       "bw.frsqr.xyz" = {
         useACMEHost = "frsqr.xyz";
         locations."/".proxyPass = "http://127.0.0.1:8222/";
+      };
+      "cofob.ru" = {
+        useACMEHost = "ipfsqr.ru";
+        locations."/".proxyPass = "http://127.0.0.1:3000/";
       };
       "mineflake.ipfsqr.xyz" = {
         useACMEHost = "ipfsqr.ru";

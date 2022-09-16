@@ -15,6 +15,7 @@
     ./nebula-frsqr.nix
     ./nebula-averyan.nix
     # ./backup.nix TODO: refactor && fix
+    ./wiki-js.nix
     ./users.nix
     ./acme.nix
     ./cofob-ru

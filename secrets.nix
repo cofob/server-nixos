@@ -38,4 +38,6 @@ in
   "secrets/credentials/woodpecker-agent.age".publicKeys = users ++ [ rat beaver ];
   "secrets/credentials/pbs.age".publicKeys = users ++ systems;
   "secrets/credentials/pbs-key.age".publicKeys = users ++ systems;
+
+  "secrets/wiki-env.age".publicKeys = users ++ [ rat ];
 }

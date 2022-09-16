@@ -92,10 +92,17 @@
           "DATABASE woodpecker" = "ALL PRIVILEGES";
         };
       }
+      {
+        name = "wiki";
+        ensurePermissions = {
+          "DATABASE wiki" = "ALL PRIVILEGES";
+        };
+      }
     ];
     ensureDatabases = [
       "vaultwarden"
       "woodpecker"
+      "wiki"
     ];
   };
 
@@ -128,6 +135,16 @@
     ];
   };
 
+  age.secrets.wiki-env.file = ./secrets/wiki-env.age;
+  age.secrets.wiki-env.owner = "wiki-js";
+  services.wiki-js-fs = {
+    enable = true;
+    settings = {
+      port = 3002;
+    };
+    environmentFile = config.age.secrets.wiki-env.path;
+  };
+
   services.fs-nginx = {
     enable = true;
     virtualHosts = {
@@ -150,6 +167,10 @@
       "cofob.ru" = {
         useACMEHost = "ipfsqr.ru";
         locations."/".proxyPass = "http://127.0.0.1:3000/";
+      };
+      "wiki.firesquare.ru" = {
+        useACMEHost = "ipfsqr.ru";
+        locations."/".proxyPass = "http://127.0.0.1:3002/";
       };
       "mineflake.ipfsqr.xyz" = {
         useACMEHost = "ipfsqr.ru";

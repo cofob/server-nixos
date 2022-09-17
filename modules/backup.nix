@@ -47,7 +47,7 @@ in
           (timer-name: timer-cfg: {
             name = "proxmox-backup-client-${timer-name}";
             value = {
-              path = [ pkgs.callPackage ../pkgs/proxmox-backup-client ];
+              path = [ pkgs.callPackage ../pkgs/proxmox-backup-client { } ];
               environment = cfg.environment;
               serviceConfig.EnvironmentFile = config.age.secrets.credentials-pbs.path;
               script = "proxmox-backup-client backup --keyfile ${config.age.secrets.credentials-pbs-key.path} ${toString timer-cfg.directories}";

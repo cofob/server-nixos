@@ -4,7 +4,7 @@
   imports = [
     ./modules
     ./hardware/whale-vm.nix
-    ./mounts/whale-vm.nix
+    ./mounts/shark.nix
   ];
 
   networking = {

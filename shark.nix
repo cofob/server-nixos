@@ -7,6 +7,11 @@
     ./mounts/shark.nix
   ];
 
+  networking.nft-firewall.enable = false;
+  virtualisation.docker.enable = true;
+  environment.systemPackages = [ pkgs.docker-compose_2 ];
+  virtualisation.oci-containers.backend = "docker";
+
   networking = {
     hostName = "shark";
 

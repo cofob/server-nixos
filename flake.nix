@@ -6,6 +6,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     flake-utils.url = "github:numtide/flake-utils";
+    nur.url = "github:nix-community/NUR";
 
     agenix = {
       url = "github:ryantm/agenix";
@@ -39,11 +40,12 @@
     };
 
     alex-home = {
-      url = "github:averyanalex/nixos";
+      url = "git+https://git.frsqr.xyz/averyanalex/nixos?ref=main";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         nixpkgs-unstable.follows = "nixpkgs-unstable";
         flake-utils.follows = "flake-utils";
+        nur.follows = "nur";
         home-manager.follows = "home-manager";
         agenix.follows = "agenix";
       };
@@ -54,13 +56,14 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         nixpkgs-unstable.follows = "nixpkgs-unstable";
+        nur.follows = "nur";
         home-manager.follows = "home-manager";
         agenix.follows = "agenix";
       };
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, flake-utils, agenix, home-manager, bps, tg-captcha, cofob-ru, alex-home, cofob-home }@attrs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, flake-utils, nur, agenix, home-manager, bps, tg-captcha, cofob-ru, alex-home, cofob-home }@attrs:
     {
       nixosConfigurations = {
         eagle = nixpkgs.lib.nixosSystem {

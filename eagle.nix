@@ -19,6 +19,14 @@
 
   services.fs-nginx = {
     enable = true;
+    virtualHosts = {
+      "memefinder.ru" = {
+        useACMEHost = "memefinder.ru";
+        locations."/".proxyPass = "http://10.3.7.40:3010/";
+        locations."/api/".proxyPass = "http://10.3.7.40:3020/";
+        locations."/api/static/".proxyPass = "http://10.3.7.40:3030/";
+      };
+    };
   };
 
   networking = {

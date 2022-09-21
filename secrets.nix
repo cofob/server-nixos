@@ -30,6 +30,7 @@ in
   "secrets/nebula-averyan/eagle-key.age".publicKeys = users ++ [ eagle ];
 
   "secrets/credentials/cloudflare.age".publicKeys = users ++ [ eagle rat ];
+  "secrets/credentials/cloudflare-averyan.age".publicKeys = users ++ [ eagle rat ];
   "secrets/credentials/gitea.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/bps.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/tmm.age".publicKeys = users ++ [ rat ];

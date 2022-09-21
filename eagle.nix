@@ -7,6 +7,16 @@
     ./mounts/aeza.nix
   ];
 
+  security.acme = {
+    certs = {
+      "memefinder.ru" = {
+        extraDomainNames = [ "*.memefinder.ru" ];
+        email = "averyanalex@gmail.com";
+        credentialsFile = config.age.secrets.credentials-cloudflare-averyan.path;
+      };
+    };
+  };
+
   services.fs-nginx = {
     enable = true;
   };

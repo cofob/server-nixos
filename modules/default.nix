@@ -8,6 +8,7 @@
     bps.nixosModule
 
     ./nginx
+    ./ipfs-cluster
     ./ipfs-peers.nix
     ./unstable.nix
     ./nftables.nix

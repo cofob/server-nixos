@@ -117,11 +117,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1663423468,
-        "narHash": "sha256-NC9waEjluOurUb4WXceUxXoSGxdDSGOR5IGSLPpvTss=",
-        "ref": "master",
-        "rev": "4bed0d0f413b6787de84a38891ee9dc3ca23b5de",
-        "revCount": 240,
+        "lastModified": 1663937423,
+        "narHash": "sha256-FfDnwpR2M5v/JYWxoSAKv5BA6RMDiArej9Gag/hpMig=",
+        "ref": "refs/heads/master",
+        "rev": "46941707a64307576c7b9276804afaeda083f09a",
+        "revCount": 256,
         "type": "git",
         "url": "https://git.frsqr.xyz/cofob/nixos"
       },

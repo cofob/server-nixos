@@ -3,59 +3,57 @@
 with lib;
 
 let
-  cfg = config.services.proxmox-backup-client;
-
-  timerConf = {
-    time = {
-      type = types.str;
-      description = "Systemd time";
-      default = "daily";
-    };
-    directories = {
-      type = types.listOf types.str;
-      description = "Directories to backup";
-      default = [ ];
-    };
-  };
+  cfg = config.services.backup;
 in
 {
   options = {
-    services.proxmox-backup-client = {
+    services.backup = {
+      enable = mkEnableOption "Whether to enable proxmox-backup-client backups";
+
       environment = mkOption {
         type = types.attrsOf types.str;
         default = {
-          PBS_FINGERPRINT = "";
+          PBS_FINGERPRINT = "88:c0:0e:76:3a:4a:23:95:38:e0:d2:65:d5:37:73:86:dc:94:fa:c3:46:84:c8:e8:0b:85:8d:03:63:f0:fe:87";
         };
         description = "Service environment variables";
       };
 
+      envFile = mkOption {
+        type = types.path;
+        default = config.age.secrets.credentials-pbs.path;
+        description = "Service environment file secrets path";
+      };
+
+      keyFile = mkOption {
+        type = types.path;
+        default = config.age.secrets.credentials-pbs-key.path;
+        description = "Key file path";
+      };
+
       timers = mkOption {
-        type = types.attrsOf timerConf;
-        description = "Timer config";
-        default = { };
+        type = types.attrsOf (types.listOf types.str);
       };
     };
   };
 
-  config = {
-    age.secrets.credentials-pbs.file = ../secrets/credentials/pbs.age;
-    age.secrets.credentials-pbs-key.file = ../secrets/credentials/pbs-key.age;
-  } // (mkIf (cfg.timers != { }) {
-    systemd.services =
-      let
-        obj = mapAttrs
-          (timer-name: timer-cfg: {
-            name = "proxmox-backup-client-${timer-name}";
-            value = {
-              path = [ pkgs.callPackage ../pkgs/proxmox-backup-client { } ];
-              environment = cfg.environment;
-              serviceConfig.EnvironmentFile = config.age.secrets.credentials-pbs.path;
-              script = "proxmox-backup-client backup --keyfile ${config.age.secrets.credentials-pbs-key.path} ${toString timer-cfg.directories}";
-              startAt = timer-cfg.time;
-            };
-          })
-          cfg.timers;
-      in
-      (builtins.listToAttrs (map (key: getAttr key obj) (attrNames obj)));
-  });
+  config =
+    let
+      obj = mapAttrs
+        (timer: paths: {
+          name = "backup-${timer}";
+          value = {
+            path = [ (pkgs.callPackage ../pkgs/proxmox-backup-client { }) ];
+            environment = cfg.environment;
+            serviceConfig.EnvironmentFile = cfg.envFile;
+            script = "proxmox-backup-client backup --keyfile ${cfg.keyFile} ${toString paths}";
+            startAt = timer;
+          };
+        })
+        cfg.timers; in
+    mkIf cfg.enable ({
+      age.secrets.credentials-pbs.file = ../secrets/credentials/pbs.age;
+      age.secrets.credentials-pbs-key.file = ../secrets/credentials/pbs-key.age;
+    } // {
+      systemd.services = (builtins.listToAttrs (map (key: getAttr key obj) (attrNames obj)));
+    });
 }

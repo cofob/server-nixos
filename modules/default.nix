@@ -15,7 +15,7 @@
     ./common.nix
     ./nebula-frsqr.nix
     ./nebula-averyan.nix
-    # ./backup.nix TODO: refactor && fix
+    ./backup.nix
     ./infrared.nix
     ./wiki-js.nix
     ./users.nix

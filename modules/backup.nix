@@ -44,7 +44,11 @@ in
           value = {
             path = [ (pkgs.callPackage ../pkgs/proxmox-backup-client { }) ];
             environment = cfg.environment;
-            serviceConfig.EnvironmentFile = cfg.envFile;
+            serviceConfig = {
+              User = "root";
+              Group = "root";
+              EnvironmentFile = cfg.envFile;
+            };
             script = "proxmox-backup-client backup --keyfile ${cfg.keyFile} ${toString paths}";
             startAt = timer;
           };

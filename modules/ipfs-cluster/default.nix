@@ -56,6 +56,7 @@ in
         cp ${builtins.toFile "service.json" (builtins.toJSON cfg.service)} service.json
         chmod 640 service.json
         sed -i "s/#SECRET#/$SECRET/g" service.json
+        sed -i "s/#BASIC_PASSWORD#/$BASIC_PASSWORD/g" service.json
         rm -f peerstore
         ln -sf ${builtins.toFile "peerstore" cfg.peers} peerstore
       '';

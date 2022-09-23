@@ -44,7 +44,17 @@
     };
   };
 
-  services.ipfs-cluster.enable = true;
+  services.ipfs-cluster = {
+    enable = true;
+    service = (lib.importJSON ./modules/ipfs-cluster/service.json) // {
+      api.restapi = {
+        http_listen_multiaddress = "/ip4/0.0.0.0/tcp/9094";
+        ssl_cert_file = "${config.security.acme.certs."rat.frsqr.xyz".directory}/fullchain.pem";
+        ssl_key_file = "${config.security.acme.certs."rat.frsqr.xyz".directory}/key.pem";
+        basic_auth_credentials.default = "#BASIC_PASSWORD#";
+      };
+    };
+  };
 
   age.secrets.credentials-gitea.file = ./secrets/credentials/gitea.age;
   age.secrets.credentials-gitea.owner = "gitea";
@@ -204,11 +214,22 @@
         "*.cofob.ru"
       ];
       "frsqr.xyz".extraDomainNames = [ "*.frsqr.xyz" ];
+      "rat.frsqr.xyz" = {
+        group = "ipfs-cluster";
+      };
     };
   };
 
   networking = {
     hostName = "rat";
+
+    nft-firewall.enable = false;
+
+    firewall = {
+      trustedInterfaces = [ "lo" ];
+      allowedTCPPorts = [ 22 80 443 4001 9094 9096 ];
+      allowedUDPPorts = [ 443 4001 ];
+    };
 
     nebula-frsqr = {
       enable = true;

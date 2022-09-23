@@ -44,9 +44,7 @@
     };
   };
 
-  services.ipfs-cluster = {
-    enable = true;
-  };
+  services.ipfs-cluster.enable = true;
 
   age.secrets.credentials-gitea.file = ./secrets/credentials/gitea.age;
   age.secrets.credentials-gitea.owner = "gitea";

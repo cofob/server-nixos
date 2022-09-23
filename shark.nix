@@ -12,6 +12,9 @@
   environment.systemPackages = [ pkgs.docker-compose_2 ];
   virtualisation.oci-containers.backend = "docker";
 
+  services.ipfs.enable = true;
+  services.ipfs-cluster.enable = true;
+
   networking = {
     hostName = "shark";
 

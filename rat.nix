@@ -227,7 +227,7 @@
 
     firewall = {
       trustedInterfaces = [ "lo" ];
-      allowedTCPPorts = [ 22 80 443 4001 9094 9096 ];
+      allowedTCPPorts = [ 22 80 443 4001 9094 9096 9000 ];
       allowedUDPPorts = [ 443 4001 ];
     };
 

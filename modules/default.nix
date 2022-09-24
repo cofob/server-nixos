@@ -16,6 +16,8 @@
     ./nebula-frsqr.nix
     ./nebula-averyan.nix
     ./backup.nix
+    ./mineflake.nix
+    ./minecraft
     ./infrared.nix
     ./wiki-js.nix
     ./users.nix

@@ -42,4 +42,6 @@ in
   "secrets/credentials/ipfs-cluster.age".publicKeys = users ++ systems;
 
   "secrets/wiki-env.age".publicKeys = users ++ [ rat ];
+
+  "secrets/minecraft.age".publicKeys = users ++ [ shark ];
 }

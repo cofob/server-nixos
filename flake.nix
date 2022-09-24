@@ -23,6 +23,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mineflake = {
+      url = "git+https://git.frsqr.xyz/firesquare/mineflake?ref=main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     tg-captcha = {
       url = "git+https://git.frsqr.xyz/cofob/captcha?ref=main";
       inputs = {
@@ -63,7 +68,21 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, flake-utils, nur, agenix, home-manager, bps, tg-captcha, cofob-ru, alex-home, cofob-home }@attrs:
+  outputs =
+    { self
+    , nixpkgs
+    , nixpkgs-unstable
+    , flake-utils
+    , nur
+    , agenix
+    , home-manager
+    , bps
+    , mineflake
+    , tg-captcha
+    , cofob-ru
+    , alex-home
+    , cofob-home
+    }@attrs:
     {
       nixosConfigurations = {
         eagle = nixpkgs.lib.nixosSystem {
@@ -97,19 +116,19 @@
       };
     } // flake-utils.lib.eachSystem (with flake-utils.lib.system; [ x86_64-linux i686-linux aarch64-linux ])
       (system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-        {
-          devShells.default = pkgs.mkShell {
-            buildInputs = [
-              agenix.defaultPackage.${system}
-              pkgs.nebula
-            ];
-          };
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      {
+        devShells.default = pkgs.mkShell {
+          buildInputs = [
+            agenix.defaultPackage.${system}
+            pkgs.nebula
+          ];
+        };
 
-          packages = {
-            proxmox-backup-client = pkgs.callPackage ./pkgs/proxmox-backup-client { };
-          };
-        });
+        packages = {
+          proxmox-backup-client = pkgs.callPackage ./pkgs/proxmox-backup-client { };
+        };
+      });
 }

@@ -15,8 +15,28 @@
   services.ipfs.enable = true;
   services.ipfs-cluster.enable = true;
 
+  services.fs-minecraft.enable = true;
+
+  services.backup = {
+    enable = true;
+    timers.weekly = [
+      "mineflake.pxar:/var/lib/mineflake"
+      "minecraft.pxar:/tank/mc"
+    ];
+  };
+
   networking = {
     hostName = "shark";
+
+    firewall = {
+      allowedTCPPorts = [ 22 80 25565 ];
+    };
+
+    nat = {
+      enable = true;
+      internalInterfaces = [ "ve-+" ];
+    };
+
 
     nebula-frsqr.enable = true;
 

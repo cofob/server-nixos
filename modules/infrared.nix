@@ -7,6 +7,16 @@ in
   options.services.infrared = {
     enable = mkEnableOption "If enabled, infrared will be configured";
 
+    icons = mkOption {
+      type = types.attrsOf types.path;
+      default = {
+        firesquare = pkgs.fetchurl {
+          url = "https://static.ipfsqr.ru/ipfs/bafybeibjkfvmmdzkvap7c7be5r2zwuxr7dbl3r23huk5nxywnjtqem5uqq/server-icon.png";
+          sha256 = "0dyxha9gmzqn1mdzvkfw0133h5wvawr1fw3s7x06r792zz6k1dr8";
+        };
+      };
+    };
+
     hosts = mkOption {
       type = types.attrs;
       default = { };
@@ -30,13 +40,20 @@ in
       preStart =
         let
           obj = mapAttrs
-            (name: data: "ln -sf ${(builtins.toFile "infrared-${name}.json" (builtins.toJSON data))} ${cfg.datadir}/configs/${name}.json")
+            (name: data: "cp ${(builtins.toFile "infrared-${name}.json" (builtins.toJSON data))} ${cfg.datadir}/configs/${name}.json")
             cfg.hosts;
+          obj_icons = mapAttrs
+            (name: data: "cp ${data} ${cfg.datadir}/icons/${name}.png")
+            cfg.icons;
         in
         ''
           rm -rf ${cfg.datadir}/configs
           mkdir -p ${cfg.datadir}/configs
           ${concatStringsSep "\n" (map (key: getAttr key obj) (attrNames obj))}
+
+          rm -rf ${cfg.datadir}/icons
+          mkdir -p ${cfg.datadir}/icons
+          ${concatStringsSep "\n" (map (key: getAttr key obj_icons) (attrNames obj_icons))}
         '';
       script = "infrared";
       serviceConfig = {

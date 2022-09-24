@@ -213,6 +213,27 @@
         "type": "github"
       }
     },
+    "mineflake": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1664009243,
+        "narHash": "sha256-yB589C3BVCYazh00hwVjdsLTBobiYoYxh+BA5edAWUA=",
+        "ref": "main",
+        "rev": "a06e3ce6bea463095f20e40a93915e2222e3cfd6",
+        "revCount": 76,
+        "type": "git",
+        "url": "https://git.frsqr.xyz/firesquare/mineflake"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "https://git.frsqr.xyz/firesquare/mineflake"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1663410121,
@@ -269,6 +290,7 @@
         "cofob-ru": "cofob-ru",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
+        "mineflake": "mineflake",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",

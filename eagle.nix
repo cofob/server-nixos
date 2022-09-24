@@ -51,7 +51,6 @@
             versionName = "1.18.2";
             protocolNumber = 758;
             iconPath = "/var/lib/infrared/icons/firesquare.png";
-            maxPlayers = 1;
             motd = "§f§lFIRESQUARE.ru §7| §r[§f1.19§r]\n§fСнова в сети!";
           };
         };

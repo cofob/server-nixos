@@ -7,37 +7,36 @@ with lib; {
 
   config = mkIf config.services.fs-minecraft.enable {
     containers = {
-      mf-db = let mysql = pkgs.unstable.mariadb_109; in
-        {
-          autoStart = true;
-          privateNetwork = true;
-          hostAddress = "10.172.72.1";
-          localAddress = "10.172.72.2";
-          extraFlags = [ "--bind /var/lib/mineflake/db:/var/lib/postgresql/14" ];
-          ephemeral = true;
-          config = { config, pkgs, ... }: {
-            services.postgresql = {
-              enable = true;
-              enableTCPIP = true;
-              authentication = ''
-                host all all 10.172.72.1/24 password
-              '';
-              ensureUsers = [
-                {
-                  name = "luckperms";
-                  ensurePermissions = {
-                    "DATABASE luckperms" = "ALL PRIVILEGES";
-                  };
-                }
-              ];
-              ensureDatabases = [
-                "luckperms"
-              ];
-            };
-            networking.firewall.enable = false;
-            system.stateVersion = "22.05";
+      mf-db = {
+        autoStart = true;
+        privateNetwork = true;
+        hostAddress = "10.172.72.1";
+        localAddress = "10.172.72.2";
+        extraFlags = [ "--bind /var/lib/mineflake/db:/var/lib/postgresql/14" ];
+        ephemeral = true;
+        config = { config, pkgs, ... }: {
+          services.postgresql = {
+            enable = true;
+            enableTCPIP = true;
+            authentication = ''
+              host all all 10.172.72.1/24 password
+            '';
+            ensureUsers = [
+              {
+                name = "luckperms";
+                ensurePermissions = {
+                  "DATABASE luckperms" = "ALL PRIVILEGES";
+                };
+              }
+            ];
+            ensureDatabases = [
+              "luckperms"
+            ];
           };
+          networking.firewall.enable = false;
+          system.stateVersion = "22.05";
         };
+      };
     };
 
     age.secrets.minecraft.file = ../../secrets/minecraft.age;
@@ -91,6 +90,13 @@ with lib; {
                   "skinsrestorer.command.set.url"
                   "skinsrestorer.command.clear"
                   "skinsrestorer.command.update"
+
+                  # Clans
+                  "clans.create"
+                  "clans.invite"
+                  "clans.accept"
+                  "clans.kick"
+                  "clans.leave"
                 ]) ++ (map
                   (perm: {
                     permission = perm;
@@ -209,7 +215,7 @@ with lib; {
 
           lobby = common-base // {
             localAddress = "10.172.72.4";
-            hostdir = "/tank/mc/lobby";
+            properties.spawn-protection = 100000;
             configs = common-configs // {
               "plugins/AuthMe/config.yml".data = {
                 DataSource.mySQLtotpKey = "totpnew";
@@ -275,8 +281,21 @@ with lib; {
                 type = "yaml";
                 data = importJSON ./chatty/locale.json;
               };
+              "plugins/ClansFork/Settings/config.yml".data = {
+                PermissionEnabled = true;
+                BlacklistedClanNames = [
+                  "VIP"
+                ];
+              };
+              "plugins/ClansFork/Settings/messages.yml".data = importJSON ./clans/locale.json;
             };
-            plugins = (with pkgs.mineflake; [ coreprotect inventoryrollbackplus chatty tabtps ]) ++ common-plugins;
+            plugins = (with pkgs.mineflake; [
+              chatty
+              clans
+              coreprotect
+              inventoryrollbackplus
+              tabtps
+            ]) ++ common-plugins;
           };
         };
       };

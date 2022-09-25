@@ -197,13 +197,6 @@
         useACMEHost = "ipfsqr.ru";
         locations."/".proxyPass = "http://127.0.0.1:3002/";
       };
-      "mineflake.ipfsqr.xyz" = {
-        useACMEHost = "ipfsqr.ru";
-        root = pkgs.fetchzip {
-          url = "https://ipfs.io/ipfs/bafybeie26qliticraktjfvtbqq6bmtjl5wedfeba7jc4j6g3xotv7wnlg4/mineflake.tar.gz";
-          hash = "sha256-h2Ax9Ixse4WsBCk3WgizwSJraMfIri9IGvO3VuMmxbc=";
-        };
-      };
     };
   };
 

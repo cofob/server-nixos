@@ -44,6 +44,8 @@
     };
   };
 
+  services.fs-monitoring.enable = true;
+
   services.ipfs-cluster = {
     enable = true;
     service = (lib.importJSON ./modules/ipfs-cluster/service.json) // {
@@ -105,6 +107,12 @@
         };
       }
       {
+        name = "grafana";
+        ensurePermissions = {
+          "DATABASE grafana" = "ALL PRIVILEGES";
+        };
+      }
+      {
         name = "wiki";
         ensurePermissions = {
           "DATABASE wiki" = "ALL PRIVILEGES";
@@ -114,6 +122,7 @@
     ensureDatabases = [
       "vaultwarden"
       "woodpecker"
+      "grafana"
       "wiki"
     ];
   };
@@ -175,6 +184,10 @@
       "bw.frsqr.xyz" = {
         useACMEHost = "frsqr.xyz";
         locations."/".proxyPass = "http://127.0.0.1:8222/";
+      };
+      "grafana.frsqr.xyz" = {
+        useACMEHost = "frsqr.xyz";
+        locations."/".proxyPass = "http://127.0.0.1:3729/";
       };
       "cofob.ru" = {
         useACMEHost = "ipfsqr.ru";

@@ -9,6 +9,7 @@
 
     ./nginx
     ./ipfs-cluster
+    ./monitoring.nix
     ./ipfs-peers.nix
     ./unstable.nix
     ./nftables.nix

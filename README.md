@@ -15,11 +15,18 @@
 
 #### AveryanAlex
 
-Hamster: 10.3.7.100
-Alligator: 10.3.7.101
+- Hamster: 10.3.7.100
+- Alligator: 10.3.7.101
 
-#### cofob
+#### Cofob
 
-Fly: 10.3.7.120
-Bear: 10.3.7.121
+- Fly: 10.3.7.120
+- Bear: 10.3.7.121
 
+### Commands
+
+```shell
+EDITOR=cat agenix -e secrets/nebula/ca-crt.age > ca.crt
+EDITOR=cat agenix -e secrets/nebula/ca-key.age > ca.key
+nebula-cert sign -name "alligator" -ip "10.3.7.101/24" -groups "desktop,averyanalex"
+```

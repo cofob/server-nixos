@@ -70,13 +70,10 @@
         };
       };
   };
+  networking.firewall.allowedTCPPorts = [ 25565 ];
 
   networking = {
     hostName = "eagle";
-
-    firewall = {
-      allowedTCPPorts = [ 22 80 443 25565 ];
-    };
 
     nebula-frsqr = {
       enable = true;

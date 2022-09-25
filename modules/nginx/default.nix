@@ -1047,5 +1047,10 @@ in
       delaycompress = true;
       postrotate = "[ ! -f /var/run/nginx/nginx.pid ] || kill -USR1 `cat /var/run/nginx/nginx.pid`";
     };
+
+    networking.firewall = {
+      allowedTCPPorts = [ 80 443 ];
+      allowedUDPPorts = [ 443 ];
+    };
   };
 }

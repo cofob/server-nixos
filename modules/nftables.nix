@@ -60,7 +60,7 @@ in
     networking.nft-firewall = {
       enable = mkOption {
         type = types.bool;
-        default = true;
+        default = false;
         description = "Whether to enable nftables based firewall.";
       };
     };

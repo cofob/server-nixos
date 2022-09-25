@@ -59,6 +59,9 @@ in
             targets = [
               "rat.n.frsqr.xyz:9100"
               "eagle.n.frsqr.xyz:9100"
+              "beaver.n.frsqr.xyz:9100"
+              "shark.n.frsqr.xyz:9100"
+              "whale.n.frsqr.xyz:9100"
             ];
           }];
         }

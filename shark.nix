@@ -7,7 +7,6 @@
     ./mounts/shark.nix
   ];
 
-  networking.nft-firewall.enable = false;
   virtualisation.docker.enable = true;
   environment.systemPackages = [ pkgs.docker-compose_2 ];
   virtualisation.oci-containers.backend = "docker";
@@ -28,17 +27,16 @@
   networking = {
     hostName = "shark";
 
+    nebula-frsqr.enable = true;
+
     firewall = {
-      allowedTCPPorts = [ 22 80 25565 ];
+      allowedTCPPorts = [ 25565 ];
     };
 
     nat = {
       enable = true;
       internalInterfaces = [ "ve-+" ];
     };
-
-
-    nebula-frsqr.enable = true;
 
     defaultGateway = {
       address = "192.168.12.1";

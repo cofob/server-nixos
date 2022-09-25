@@ -12,7 +12,7 @@ in
     };
   };
 
-  config = (mkIf cfg.enable {
+  config = mkIf cfg.enable {
     services.grafana = {
       enable = true;
       package = pkgs.unstable.grafana;
@@ -64,14 +64,5 @@ in
         }
       ];
     };
-  }) // {
-    services.prometheus.exporters = {
-      node = {
-        enable = true;
-        enabledCollectors = [ "systemd" ];
-      };
-    };
-
-    networking.firewall.interfaces."nebula.frsqr".allowedTCPPorts = mkIf config.networking.nebula-frsqr.enable [ 9100 ];
   };
 }

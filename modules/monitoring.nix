@@ -19,6 +19,9 @@ in
       port = 3729;
       domain = "grafana.frsqr.xyz";
       rootUrl = "https://grafana.frsqr.xyz/";
+      extraOptions = {
+        SECURITY_COOKIE_SECURE = "true";
+      };
       database = {
         type = "postgres";
         user = "grafana";

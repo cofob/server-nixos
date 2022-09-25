@@ -193,10 +193,6 @@
         useACMEHost = "ipfsqr.ru";
         locations."/".proxyPass = "http://127.0.0.1:3000/";
       };
-      "tgchess-api.cofob.ru" = {
-        useACMEHost = "ipfsqr.ru";
-        locations."/".proxyPass = "http://127.0.0.1:8432/";
-      };
       "wiki.firesquare.ru" = {
         useACMEHost = "ipfsqr.ru";
         locations."/".proxyPass = "http://127.0.0.1:3002/";

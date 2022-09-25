@@ -28,8 +28,7 @@
     "crdt": {
       "cluster_name": "global",
       "trusted_peers": [
-        "12D3KooWPCtXz5yueZ3xynEsG4GrP9wkFez8viuEdRoV6ddj7c4J",
-        "12D3KooWKpaYfG4CETXQaxGdzsPhWreEe4XSw87GHBFQQKQYfsSE"
+        "12D3KooWPCtXz5yueZ3xynEsG4GrP9wkFez8viuEdRoV6ddj7c4J"
       ],
       "batching": {
         "max_batch_size": 0,

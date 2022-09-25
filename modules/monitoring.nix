@@ -28,6 +28,22 @@ in
         name = "grafana";
         host = "/run/postgresql";
       };
+
+      provision = {
+        enable = true;
+        datasources = [
+          {
+            name = "prometheus";
+            type = "prometheus";
+            url = "http://127.0.0.1:9090/";
+          }
+        ];
+      };
+    };
+
+    services.prometheus = {
+      enable = true;
+      listenAddress = "127.0.0.1";
     };
   };
 }

@@ -52,6 +52,16 @@ in
             targets = [ "127.0.0.1:9090" ];
           }];
         }
+        {
+          job_name = "node";
+          scrape_interval = "1m";
+          static_configs = [{
+            targets = [
+              "rat.n.frsqr.xyz:9100"
+              "eagle.n.frsqr.xyz:9100"
+            ];
+          }];
+        }
       ];
     };
   }) // {
@@ -61,5 +71,7 @@ in
         enabledCollectors = [ "systemd" ];
       };
     };
+
+    networking.firewall.interfaces."nebula.frsqr".allowedTCPPorts = mkIf config.networking.nebula-frsqr.enable [ 9100 ];
   };
 }

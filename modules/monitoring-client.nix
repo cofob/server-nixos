@@ -4,7 +4,15 @@
   services.prometheus.exporters = {
     node = {
       enable = true;
-      enabledCollectors = [ "systemd" ];
+      enabledCollectors = [
+        "buddyinfo"
+        "ksmd"
+        "mountstats"
+        "processes"
+        "qdisc"
+        "systemd"
+        "tcpstat"
+      ];
     };
   };
 

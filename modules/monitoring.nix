@@ -12,7 +12,7 @@ in
     };
   };
 
-  config = mkIf cfg.enable {
+  config = (mkIf cfg.enable {
     services.grafana = {
       enable = true;
       package = pkgs.unstable.grafana;
@@ -44,6 +44,22 @@ in
     services.prometheus = {
       enable = true;
       listenAddress = "127.0.0.1";
+      scrapeConfigs = [
+        {
+          job_name = "prometheus";
+          scrape_interval = "1m";
+          static_configs = [{
+            targets = [ "127.0.0.1:9090" ];
+          }];
+        }
+      ];
+    };
+  }) // {
+    services.prometheus.exporters = {
+      node = {
+        enable = true;
+        enabledCollectors = [ "systemd" ];
+      };
     };
   };
 }

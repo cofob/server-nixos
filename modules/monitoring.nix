@@ -21,6 +21,8 @@ in
       rootUrl = "https://grafana.frsqr.xyz/";
       extraOptions = {
         SECURITY_COOKIE_SECURE = "true";
+        RENDERING_SERVER_URL = "http://shark.n.frsqr.xyz:8081/render";
+        RENDERING_CALLBACK_URL = "http://shark.n.frsqr.xyz:8081";
       };
       database = {
         type = "postgres";

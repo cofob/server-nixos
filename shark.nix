@@ -16,6 +16,8 @@
 
   services.fs-minecraft.enable = true;
 
+  services.grafana-image-renderer.enable = true;
+
   services.backup = {
     enable = true;
     timers.weekly = [
@@ -30,7 +32,7 @@
     nebula-frsqr.enable = true;
 
     firewall = {
-      allowedTCPPorts = [ 25565 ];
+      interfaces."nebula.frsqr".allowedTCPPorts = [ 25565 8081 ];
     };
 
     nat = {

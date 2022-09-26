@@ -16,7 +16,10 @@
 
   services.fs-minecraft.enable = true;
 
-  services.grafana-image-renderer.enable = true;
+  services.grafana-image-renderer = {
+    enable = true;
+    settings.rendering.mode = "reusable";
+  };
 
   services.backup = {
     enable = true;

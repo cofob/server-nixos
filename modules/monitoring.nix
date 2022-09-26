@@ -21,8 +21,8 @@ in
       rootUrl = "https://grafana.frsqr.xyz/";
       extraOptions = {
         SECURITY_COOKIE_SECURE = "true";
-        RENDERING_SERVER_URL = "http://shark.n.frsqr.xyz:8081/render";
-        RENDERING_CALLBACK_URL = "http://shark.n.frsqr.xyz:8081";
+        RENDERING_SERVER_URL = "http://10.3.7.40:8081/render";
+        RENDERING_CALLBACK_URL = "http://10.3.7.40:8081";
         UNIFIED_ALERTING_SCREENSHOTS_CAPTURE = "true";
       };
       database = {

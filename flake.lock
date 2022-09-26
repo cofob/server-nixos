@@ -220,11 +220,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1664109739,
-        "narHash": "sha256-0XJAk8mJc/kmPlOt0xWnSmrq0RE80Nw9RBWwSl4kyB8=",
+        "lastModified": 1664218856,
+        "narHash": "sha256-5RqElANY1EizImN0qfr8PGp1XT8B5hSUWsn/KJAd/H8=",
         "ref": "main",
-        "rev": "a623d2a74c43344358d6432a78c351d93d5636b4",
-        "revCount": 80,
+        "rev": "90f474ae8fe5f8fb266bbdb2f6cf2ba934b72d45",
+        "revCount": 83,
         "type": "git",
         "url": "https://git.frsqr.xyz/firesquare/mineflake"
       },

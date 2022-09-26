@@ -53,7 +53,8 @@ in
             startAt = timer;
           };
         })
-        cfg.timers; in
+        cfg.timers;
+    in
     mkIf cfg.enable ({
       age.secrets.credentials-pbs.file = ../secrets/credentials/pbs.age;
       age.secrets.credentials-pbs-key.file = ../secrets/credentials/pbs-key.age;

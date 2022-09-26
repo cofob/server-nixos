@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 
 {
   boot = {
@@ -31,11 +31,13 @@
     };
   };
 
+  age.secrets.remote-builder.file = ../secrets/credentials/remote-builder.age;
   nix = {
     settings = {
       auto-optimise-store = true;
       allowed-users = [ "@users" ];
-      trusted-users = [ "@wheel" ];
+      trusted-users = [ "@wheel" ]
+        ++ (lib.optional (config.networking.hostName == "beaver") "builder");
     };
 
     daemonCPUSchedPolicy = "batch";
@@ -57,6 +59,22 @@
       automatic = true;
       dates = [ "weekly" ];
     };
+
+    buildMachines = [
+      {
+        sshKey = config.age.secrets.remote-builder.path;
+        system = "x86_64-linux";
+        sshUser = "builder";
+        hostName = "beaver.n.frsqr.xyz";
+        maxJobs = 3;
+      }
+    ];
+
+    distributedBuilds = true;
+  };
+
+  programs.ssh.knownHosts = {
+    "beaver.n.frsqr.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKoFVvggf2o3DQsvdAKrfbGMVnly6AmzW/Sebt+1fUW";
   };
 
   environment.systemPackages = with pkgs; [

@@ -11,6 +11,17 @@
   virtualisation.docker.enable = true;
   virtualisation.oci-containers.backend = "docker";
 
+  users = {
+    users.builder = {
+      isNormalUser = true;
+      description = "Remote builder";
+      group = "builder";
+      uid = 1100;
+      openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICcIGJ6dwrkbw41tiA9+mJsLtTC1maLeOpA64zTqdcff builder@beaver.n.frsqr.xyz" ];
+    };
+    groups.builder = { };
+  };
+
   age.secrets.woodpecker-agent.file = ./secrets/credentials/woodpecker-agent.age;
   virtualisation.oci-containers.containers.woodpecker-agent = {
     image = "docker.io/woodpeckerci/woodpecker-agent:v0.15.3";

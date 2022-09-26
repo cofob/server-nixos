@@ -139,21 +139,16 @@
   };
 
   age.secrets.woodpecker-server.file = ./secrets/credentials/woodpecker-server.age;
-  age.secrets.woodpecker-agent.file = ./secrets/credentials/woodpecker-agent.age;
-  virtualisation.oci-containers.containers.woodpecker-server = {
-    image = "docker.io/woodpeckerci/woodpecker-server:v0.15.3";
-    extraOptions = [ "--network=host" ];
-    environment = {
+  services.woodpecker = {
+    enable = true;
+    settings = {
       WOODPECKER_OPEN = "true";
       WOODPECKER_HOST = "https://wp.frsqr.xyz";
       WOODPECKER_GITEA = "true";
       WOODPECKER_GITEA_URL = "https://git.frsqr.xyz";
       WOODPECKER_DATABASE_DRIVER = "postgres";
     };
-    environmentFiles = [
-      config.age.secrets.woodpecker-server.path
-      config.age.secrets.woodpecker-agent.path
-    ];
+    environmentFile = config.age.secrets.woodpecker-server.path;
   };
 
   age.secrets.wiki-env.file = ./secrets/wiki-env.age;

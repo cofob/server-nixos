@@ -28,5 +28,6 @@
     ./dns.nix
     ./ssh.nix
     ./tmm
+    ./woodpecker.nix
   ];
 }

@@ -77,7 +77,11 @@
     "beaver.n.frsqr.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKoFVvggf2o3DQsvdAKrfbGMVnly6AmzW/Sebt+1fUW";
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; let
+    upgrade-system = pkgs.writeScriptBin "upgrade-system" ''
+      sudo rm -rf /root/.cache && sudo nixos-rebuild switch --flake "git+https://git.frsqr.xyz/firesquare/nixos.git?ref=main"
+    ''; in
+  [
     git
     vim
     htop
@@ -86,5 +90,6 @@
     wget
     ffsend
     pastebinit
+    upgrade-system
   ];
 }

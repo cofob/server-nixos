@@ -23,6 +23,7 @@ in
         SECURITY_COOKIE_SECURE = "true";
         RENDERING_SERVER_URL = "http://shark.n.frsqr.xyz:8081/render";
         RENDERING_CALLBACK_URL = "http://shark.n.frsqr.xyz:8081";
+        UNIFIED_ALERTING_SCREENSHOTS_CAPTURE = "true";
       };
       database = {
         type = "postgres";

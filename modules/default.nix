@@ -7,27 +7,28 @@
     agenix.nixosModule
     bps.nixosModule
 
-    ./nginx
-    ./ipfs-cluster
-    ./monitoring.nix
-    ./monitoring-client.nix
-    ./ipfs-peers.nix
-    ./unstable.nix
-    ./nftables.nix
-    ./common.nix
-    ./nebula-frsqr.nix
-    ./nebula-averyan.nix
-    ./backup.nix
-    ./mineflake.nix
-    ./minecraft
-    ./infrared.nix
-    ./wiki-js.nix
-    ./users.nix
+		./overlay.nix
     ./acme.nix
+    ./backup.nix
     ./cofob-ru
+    ./common.nix
     ./dns.nix
+    ./infrared.nix
+    ./ipfs-cluster
+    ./ipfs-peers.nix
+    ./minecraft
+    ./mineflake.nix
+    ./monitoring-client.nix
+    ./monitoring.nix
+    ./nebula-averyan.nix
+    ./nebula-frsqr.nix
+    ./nftables.nix
+    ./nginx
     ./ssh.nix
     ./tmm
+    ./unstable.nix
+    ./users.nix
+    ./wiki-js.nix
     ./woodpecker.nix
   ];
 }

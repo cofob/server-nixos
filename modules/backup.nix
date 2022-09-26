@@ -42,7 +42,7 @@ in
         (timer: paths: {
           name = "backup-${timer}";
           value = {
-            path = [ (pkgs.callPackage ../pkgs/proxmox-backup-client { }) ];
+            path = with pkgs; [ proxmox-backup ];
             environment = cfg.environment;
             serviceConfig = {
               User = "root";

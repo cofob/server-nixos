@@ -8,6 +8,11 @@
     flake-utils.url = "github:numtide/flake-utils";
     nur.url = "github:nix-community/NUR";
 
+    pkgs-overlay = {
+      url = "git+https://git.frsqr.xyz/firesquare/nur?ref=main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -74,6 +79,7 @@
     , nixpkgs-unstable
     , flake-utils
     , nur
+    , pkgs-overlay
     , agenix
     , home-manager
     , bps
@@ -125,10 +131,6 @@
             agenix.defaultPackage.${system}
             pkgs.nebula
           ];
-        };
-
-        packages = {
-          proxmox-backup-client = pkgs.callPackage ./pkgs/proxmox-backup-client { };
         };
       });
 }

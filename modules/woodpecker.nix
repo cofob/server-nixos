@@ -27,7 +27,7 @@ in
     systemd.services.woodpecker = {
       wantedBy = [ "multi-user.target" ];
 
-      path = with pkgs; [ (callPackage ../pkgs/woodpecker.nix { }) ];
+      path = with pkgs; [ woodpecker ];
 
       environment = cfg.settings;
       script = "server";

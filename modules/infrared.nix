@@ -29,7 +29,7 @@ in
 
     package = mkOption {
       type = types.package;
-      default = (pkgs.callPackage ../pkgs/infrared.nix { });
+      default = pkgs.infrared;
     };
   };
 

@@ -281,6 +281,27 @@
         "type": "github"
       }
     },
+    "pkgs-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1664212774,
+        "narHash": "sha256-4SCzS1EMJxEjt3jVnflCTmNotH2ed8oPXTUyezrvLDc=",
+        "ref": "main",
+        "rev": "cb961df1845bc0e0c44deea84d4bd02a2b27a5be",
+        "revCount": 7,
+        "type": "git",
+        "url": "https://git.frsqr.xyz/firesquare/nur"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "https://git.frsqr.xyz/firesquare/nur"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -294,6 +315,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
+        "pkgs-overlay": "pkgs-overlay",
         "tg-captcha": "tg-captcha"
       }
     },

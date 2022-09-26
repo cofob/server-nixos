@@ -3,7 +3,6 @@
 with lib; let
   cfg = config.services.tmm;
   toBool = var: if var then "true" else "false";
-  tmm = pkgs.callPackage ./package.nix { };
 in
 {
   options.services.tmm = {
@@ -29,7 +28,7 @@ in
 
     package = mkOption {
       type = types.package;
-      default = tmm;
+      default = pkgs.tmm;
       description = "TMM package to use";
     };
   };

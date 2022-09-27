@@ -161,6 +161,42 @@
     environmentFile = config.age.secrets.wiki-env.path;
   };
 
+  age.secrets.cockroach-rat-crt.file = ./secrets/cockroach/rat-crt.age;
+  age.secrets.cockroach-rat-key.file = ./secrets/cockroach/rat-key.age;
+  age.secrets.cockroach-root-crt.file = ./secrets/cockroach/root-crt.age;
+  age.secrets.cockroach-root-key.file = ./secrets/cockroach/root-key.age;
+  age.secrets.cockroach-rat-crt.owner = config.services.cockroachdb.user;
+  age.secrets.cockroach-rat-key.owner = config.services.cockroachdb.user;
+  age.secrets.cockroach-root-crt.owner = config.services.cockroachdb.user;
+  age.secrets.cockroach-root-key.owner = config.services.cockroachdb.user;
+  services.cockroachdb = {
+    enable = true;
+    crtFile = config.age.secrets.cockroach-rat-crt.path;
+    keyFile = config.age.secrets.cockroach-rat-key.path;
+    rootCrtFile = config.age.secrets.cockroach-root-crt.path;
+    rootKeyFile = config.age.secrets.cockroach-root-key.path;
+    locality = "country=nl,datacenter=aeza-nl";
+    openPorts = true;
+    http = {
+      port = 8081;
+      address = "10.3.7.11";
+    };
+    listen.address = "10.3.7.11";
+    join = "shark.n.frsqr.xyz";
+  };
+
+  age.secrets.api-server.file = ./secrets/credentials/api-server.age;
+  virtualisation.oci-containers.containers.api-server = {
+    image = "git.frsqr.xyz/firesquare/pyapi:latest";
+    extraOptions = [ "--network=host" ];
+    environment = {
+      PORT = "3003";
+    };
+    environmentFiles = [
+      config.age.secrets.api-server.path
+    ];
+  };
+
   services.fs-nginx = {
     enable = true;
     virtualHosts = {
@@ -191,6 +227,10 @@
       "wiki.firesquare.ru" = {
         useACMEHost = "ipfsqr.ru";
         locations."/".proxyPass = "http://127.0.0.1:3002/";
+      };
+      "api.firesquare.ru" = {
+        useACMEHost = "ipfsqr.ru";
+        locations."/".proxyPass = "http://127.0.0.1:3003/";
       };
     };
   };
@@ -223,6 +263,7 @@
       "gitea.pxar:/var/lib/gitea"
       "wiki-js.pxar:/var/lib/wiki-js"
       "bitwarden.pxar:/var/lib/bitwarden_rs"
+      "cockroachdb.pxar:/var/lib/cockroachdb"
     ];
   };
 

@@ -7,9 +7,9 @@
     agenix.nixosModule
     bps.nixosModule
 
-    ./overlay.nix
     ./acme.nix
     ./backup.nix
+    ./cockroach.nix
     ./cofob-ru
     ./common.nix
     ./dns.nix
@@ -24,6 +24,7 @@
     ./nebula-frsqr.nix
     ./nftables.nix
     ./nginx
+    ./overlay.nix
     ./ssh.nix
     ./tmm
     ./unstable.nix

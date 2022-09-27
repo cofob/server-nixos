@@ -2,3 +2,5 @@
 *.key
 *.crt
 /result
+key
+certs/

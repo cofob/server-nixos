@@ -30,5 +30,8 @@
     ./users.nix
     ./wiki-js.nix
     ./woodpecker.nix
+
+    ./schedulers.nix
+    ./network.nix
   ];
 }

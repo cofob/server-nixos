@@ -23,17 +23,16 @@
     ./monitoring.nix
     ./nebula-averyan.nix
     ./nebula-frsqr.nix
+    ./network.nix
     ./nftables.nix
     ./nginx
     ./overlay.nix
+    ./schedulers.nix
     ./ssh.nix
     ./tmm
     ./unstable.nix
     ./users.nix
     ./wiki-js.nix
     ./woodpecker.nix
-
-    ./schedulers.nix
-    ./network.nix
   ];
 }

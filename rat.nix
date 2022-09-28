@@ -179,6 +179,14 @@
     join = "shark.n.frsqr.xyz";
   };
 
+  services.glusterfs.enable = true;
+
+  fileSystems."/gluster/mounts/global" = {
+    device = "rat.n.frsqr.xyz:/gv0";
+    fsType = "glusterfs";
+    options = [ "defaults" ];
+  };
+
   age.secrets.api-server.file = ./secrets/credentials/api-server.age;
   virtualisation.oci-containers.containers.api-server = {
     image = "git.frsqr.xyz/firesquare/pyapi:latest";

@@ -13,6 +13,7 @@
     ./cofob-ru
     ./common.nix
     ./dns.nix
+    ./glusterfs.nix
     ./infrared.nix
     ./ipfs-cluster
     ./ipfs-peers.nix

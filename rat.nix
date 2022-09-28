@@ -72,26 +72,11 @@
     cookieSecure = true;
     stateDir = "/gluster/mounts/global/gitea";
     database = {
-      type = "mysql";
+      type = "postgres";
       passwordFile = config.age.secrets.credentials-gitea.path;
     };
   };
   systemd.services.gitea.requires = [ "glusterd.service" ];
-
-  services.mysql = {
-    enable = true;
-    ensureUsers = [
-      {
-        name = "gitea";
-        ensurePermissions = {
-          "gitea.*" = "ALL PRIVILEGES";
-        };
-      }
-    ];
-    ensureDatabases = [
-      "gitea"
-    ];
-  };
 
   services.postgresql = {
     enable = true;
@@ -115,6 +100,12 @@
         };
       }
       {
+        name = "gitea";
+        ensurePermissions = {
+          "DATABASE gitea" = "ALL PRIVILEGES";
+        };
+      }
+      {
         name = "wiki";
         ensurePermissions = {
           "DATABASE wiki" = "ALL PRIVILEGES";
@@ -125,6 +116,7 @@
       "vaultwarden"
       "woodpecker"
       "grafana"
+      "gitea"
       "wiki"
     ];
   };

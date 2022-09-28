@@ -72,6 +72,8 @@
   };
   networking.firewall.allowedTCPPorts = [ 25565 ];
 
+  services.glusterfs.enable = true;
+
   networking = {
     hostName = "eagle";
 

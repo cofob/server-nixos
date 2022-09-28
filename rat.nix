@@ -70,11 +70,13 @@
     httpPort = 3001;
     disableRegistration = true;
     cookieSecure = true;
+    stateDir = "/gluster/mounts/global/gitea";
     database = {
       type = "mysql";
       passwordFile = config.age.secrets.credentials-gitea.path;
     };
   };
+  systemd.services.gitea.requires = [ "glusterd.service" ];
 
   services.mysql = {
     enable = true;
@@ -262,7 +264,7 @@
     timers.weekly = [
       "postgresql.pxar:/var/lib/postgresql/14"
       "mysql.pxar:/var/lib/mysql"
-      "gitea.pxar:/var/lib/gitea"
+      "gitea.pxar:/gluster/mounts/global/gitea"
       "wiki-js.pxar:/var/lib/wiki-js"
       "bitwarden.pxar:/var/lib/bitwarden_rs"
       "cockroachdb.pxar:/var/lib/cockroachdb"

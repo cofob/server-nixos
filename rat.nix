@@ -163,18 +163,12 @@
 
   age.secrets.cockroach-rat-crt.file = ./secrets/cockroach/rat-crt.age;
   age.secrets.cockroach-rat-key.file = ./secrets/cockroach/rat-key.age;
-  age.secrets.cockroach-root-crt.file = ./secrets/cockroach/root-crt.age;
-  age.secrets.cockroach-root-key.file = ./secrets/cockroach/root-key.age;
   age.secrets.cockroach-rat-crt.owner = config.services.cockroachdb.user;
   age.secrets.cockroach-rat-key.owner = config.services.cockroachdb.user;
-  age.secrets.cockroach-root-crt.owner = config.services.cockroachdb.user;
-  age.secrets.cockroach-root-key.owner = config.services.cockroachdb.user;
   services.cockroachdb = {
     enable = true;
     crtFile = config.age.secrets.cockroach-rat-crt.path;
     keyFile = config.age.secrets.cockroach-rat-key.path;
-    rootCrtFile = config.age.secrets.cockroach-root-crt.path;
-    rootKeyFile = config.age.secrets.cockroach-root-key.path;
     locality = "country=nl,datacenter=aeza-nl";
     openPorts = true;
     http = {

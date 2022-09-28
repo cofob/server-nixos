@@ -23,18 +23,12 @@
 
   age.secrets.cockroach-shark-crt.file = ./secrets/cockroach/shark-crt.age;
   age.secrets.cockroach-shark-key.file = ./secrets/cockroach/shark-key.age;
-  age.secrets.cockroach-root-crt.file = ./secrets/cockroach/root-crt.age;
-  age.secrets.cockroach-root-key.file = ./secrets/cockroach/root-key.age;
   age.secrets.cockroach-shark-crt.owner = config.services.cockroachdb.user;
   age.secrets.cockroach-shark-key.owner = config.services.cockroachdb.user;
-  age.secrets.cockroach-root-crt.owner = config.services.cockroachdb.user;
-  age.secrets.cockroach-root-key.owner = config.services.cockroachdb.user;
   services.cockroachdb = {
     enable = true;
     crtFile = config.age.secrets.cockroach-shark-crt.path;
     keyFile = config.age.secrets.cockroach-shark-key.path;
-    rootCrtFile = config.age.secrets.cockroach-root-crt.path;
-    rootKeyFile = config.age.secrets.cockroach-root-key.path;
     locality = "country=ru,datacenter=averyan";
     openPorts = true;
     http.port = 8082;

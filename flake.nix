@@ -41,6 +41,14 @@
       };
     };
 
+    firesquare-ru = {
+      url = "git+https://git.frsqr.xyz/firesquare/frontend?ref=main";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
+    };
+
     cofob-ru = {
       url = "git+https://git.frsqr.xyz/cofob/cofob.ru?ref=main";
       inputs = {
@@ -86,6 +94,7 @@
     , mineflake
     , tg-captcha
     , cofob-ru
+    , firesquare-ru
     , alex-home
     , cofob-home
     }@attrs:

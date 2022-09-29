@@ -1,7 +1,14 @@
-{ agenix, home-manager, bps, tg-captcha, ... }:
+{ agenix
+, home-manager
+, bps
+, tg-captcha
+, firesquare-ru
+, ...
+}:
 
 {
   imports = [
+    firesquare-ru.nixosModules.default
     home-manager.nixosModule
     tg-captcha.nixosModule
     agenix.nixosModule

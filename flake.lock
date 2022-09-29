@@ -78,6 +78,27 @@
         "type": "github"
       }
     },
+    "bp_2": {
+      "inputs": {
+        "nixpkgs": [
+          "firesquare-ru",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1664286682,
+        "narHash": "sha256-OBdpqW2zpwYF/JWUk013rbMdIC3R17ynX78tQPbfHNw=",
+        "owner": "serokell",
+        "repo": "nix-npm-buildpackage",
+        "rev": "bc0c4989f664ff262d3ab39cad9dc0f6f1c10017",
+        "type": "github"
+      },
+      "original": {
+        "owner": "serokell",
+        "repo": "nix-npm-buildpackage",
+        "type": "github"
+      }
+    },
     "bps": {
       "inputs": {
         "nixpkgs": [
@@ -153,6 +174,31 @@
         "ref": "main",
         "type": "git",
         "url": "https://git.frsqr.xyz/cofob/cofob.ru"
+      }
+    },
+    "firesquare-ru": {
+      "inputs": {
+        "bp": "bp_2",
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1664489491,
+        "narHash": "sha256-KsGk/wnXR81/l/5fRjXqi1+vjPvlt6broT5UsED0aMc=",
+        "ref": "main",
+        "rev": "8528d8ad19e0da2ca95728a3a37dc8689860a7c2",
+        "revCount": 1,
+        "type": "git",
+        "url": "https://git.frsqr.xyz/firesquare/frontend"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "https://git.frsqr.xyz/firesquare/frontend"
       }
     },
     "flake-utils": {
@@ -309,6 +355,7 @@
         "bps": "bps",
         "cofob-home": "cofob-home",
         "cofob-ru": "cofob-ru",
+        "firesquare-ru": "firesquare-ru",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "mineflake": "mineflake",

@@ -28,6 +28,10 @@
         useACMEHost = "ipfsqr.ru";
         locations."/".proxyPass = "http://127.0.0.1:3000/";
       };
+      "firesquare.ru" = {
+        useACMEHost = "ipfsqr.ru";
+        locations."/".proxyPass = "http://127.0.0.1:3004/";
+      };
       "wiki.firesquare.ru" = {
         useACMEHost = "ipfsqr.ru";
         locations."/".proxyPass = "http://127.0.0.1:3002/";
@@ -40,6 +44,11 @@
   };
 
   services.cofob-ru.enable = true;
+
+  services.firesquare-ru = {
+    enable = true;
+    port = 3004;
+  };
 
   services.vaultwarden = {
     enable = true;

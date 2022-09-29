@@ -11,6 +11,8 @@
   virtualisation.docker.enable = true;
   virtualisation.oci-containers.backend = "docker";
 
+  services.distributedBuilds.enable = false;
+
   users = {
     users.builder = {
       isNormalUser = true;

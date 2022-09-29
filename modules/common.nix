@@ -31,7 +31,6 @@
     };
   };
 
-  age.secrets.remote-builder.file = ../secrets/credentials/remote-builder.age;
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -59,18 +58,6 @@
       automatic = true;
       dates = [ "weekly" ];
     };
-
-    buildMachines = [
-      {
-        sshKey = config.age.secrets.remote-builder.path;
-        system = "x86_64-linux";
-        sshUser = "builder";
-        hostName = "beaver.n.frsqr.xyz";
-        maxJobs = 3;
-      }
-    ];
-
-    distributedBuilds = true;
   };
 
   programs.ssh.knownHosts = {

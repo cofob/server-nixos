@@ -12,6 +12,7 @@
     ./cockroach.nix
     ./cofob-ru
     ./common.nix
+    ./distributed-builds.nix
     ./dns.nix
     ./glusterfs.nix
     ./infrared.nix

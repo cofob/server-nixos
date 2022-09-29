@@ -1,11 +1,16 @@
 { lib, config, pkgs, ... }:
 
-with lib; {
+with lib; let
+  cfg = config.services.fs-minecraft;
+in
+{
   options.services.fs-minecraft = {
     enable = mkEnableOption "Whether to enable minecraft servers.";
+
+    staging = mkEnableOption "This instance of server is testing?";
   };
 
-  config = mkIf config.services.fs-minecraft.enable {
+  config = mkIf cfg.enable {
     containers = {
       mf-db = {
         autoStart = true;
@@ -18,9 +23,12 @@ with lib; {
           services.postgresql = {
             enable = true;
             enableTCPIP = true;
-            authentication = ''
-              host all all 10.172.72.1/24 password
-            '';
+            authentication =
+              if cfg.staging then ''
+                host all all 10.172.72.1/24 trust
+              '' else ''
+                host all all 10.172.72.1/24 password
+              '';
             ensureUsers = [
               {
                 name = "luckperms";
@@ -177,20 +185,23 @@ with lib; {
             bungeecord = {
               enable = true;
               online_mode = false;
-              ip_forward = true;
               listeners = [
-                {
+                ({
                   host = "0.0.0.0:25565";
                   priorities = [ "lobby" ];
                   force_default_server = true;
                   proxy_protocol = true;
-                }
+                } // (optionalAttrs cfg.staging {
+                  motd = "STAGING INSTANCE";
+                }))
               ];
               servers = {
                 lobby.address = "10.172.72.4";
                 main.address = "10.172.72.5";
               };
-            };
+            } // (optionalAttrs (cfg.staging == false) {
+              ip_forward = true;
+            });
             plugins = with pkgs.mineflake; [ authmebungee skinsrestorer ];
             configs = {
               "plugins/AuthMeBungee/config.yml".data = {
@@ -252,7 +263,6 @@ with lib; {
 
           main = common-base // {
             localAddress = "10.172.72.5";
-            hostdir = "/tank/mc/main";
             maxMemory = "4096M";
             configs = common-configs // {
               "plugins/Chatty/config.yml".data = {
@@ -296,7 +306,9 @@ with lib; {
               inventoryrollbackplus
               tabtps
             ]) ++ common-plugins;
-          };
+          } // (optionalAttrs (cfg.staging == false) {
+            hostdir = "/tank/mc/main";
+          });
         };
       };
 
@@ -307,5 +319,7 @@ with lib; {
       serviceConfig.Type = "oneshot";
       serviceConfig.RemainAfterExit = true;
     };
+
+    networking.firewall.interfaces."nebula.frsqr".allowedTCPPorts = [ 25565 ];
   };
 }

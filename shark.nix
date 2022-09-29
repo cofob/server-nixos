@@ -53,7 +53,7 @@
     nebula-frsqr.enable = true;
 
     firewall = {
-      interfaces."nebula.frsqr".allowedTCPPorts = [ 25565 8081 ];
+      interfaces."nebula.frsqr".allowedTCPPorts = [ 8081 ];
     };
 
     nat = {

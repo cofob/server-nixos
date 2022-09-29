@@ -33,6 +33,11 @@
     environmentFiles = [ config.age.secrets.woodpecker-agent.path ];
   };
 
+  services.fs-minecraft = {
+    enable = true;
+    staging = true;
+  };
+
   networking = {
     hostName = "beaver";
 

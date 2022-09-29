@@ -34,12 +34,19 @@
           "DATABASE wiki" = "ALL PRIVILEGES";
         };
       }
+      {
+        name = "maddy";
+        ensurePermissions = {
+          "DATABASE maddy" = "ALL PRIVILEGES";
+        };
+      }
     ];
     ensureDatabases = [
       "vaultwarden"
       "woodpecker"
       "grafana"
       "gitea"
+      "maddy"
       "wiki"
     ];
   };

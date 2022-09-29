@@ -51,6 +51,7 @@ in
   "secrets/credentials/pbs-key.age".publicKeys = users ++ systems;
   "secrets/credentials/ipfs-cluster.age".publicKeys = users ++ systems;
   "secrets/credentials/remote-builder.age".publicKeys = users ++ systems;
+  "secrets/credentials/maddy.age".publicKeys = users ++ [ rat ];
 
   "secrets/wiki-env.age".publicKeys = users ++ [ rat ];
 

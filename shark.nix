@@ -36,8 +36,6 @@
     join = "rat.n.frsqr.xyz";
   };
 
-  services.glusterfs.enable = true;
-
   services.backup = {
     enable = true;
     timers.weekly = [

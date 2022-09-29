@@ -14,10 +14,10 @@
     ./common.nix
     ./distributed-builds.nix
     ./dns.nix
-    ./glusterfs.nix
     ./infrared.nix
     ./ipfs-cluster
     ./ipfs-peers.nix
+    ./maddy.nix
     ./minecraft
     ./mineflake.nix
     ./monitoring-client.nix

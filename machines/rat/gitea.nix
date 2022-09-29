@@ -13,11 +13,9 @@
     httpPort = 3001;
     disableRegistration = true;
     cookieSecure = true;
-    stateDir = "/gluster/mounts/global/gitea";
     database = {
       type = "postgres";
       passwordFile = config.age.secrets.credentials-gitea.path;
     };
   };
-  systemd.services.gitea.requires = [ "glusterd.service" ];
 }

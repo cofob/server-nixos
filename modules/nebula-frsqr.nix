@@ -60,6 +60,11 @@ in
       };
 
       settings = {
+        lighthouse = {
+          remote_allow_list = {
+            "10.5.3.0/24" = false;
+          };
+        };
         punchy = {
           punch = true;
           respond = true;

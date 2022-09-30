@@ -24,14 +24,6 @@
         useACMEHost = "frsqr.xyz";
         locations."/".proxyPass = "http://127.0.0.1:3729/";
       };
-      "cofob.ru" = {
-        useACMEHost = "ipfsqr.ru";
-        locations."/".proxyPass = "http://127.0.0.1:3000/";
-      };
-      "firesquare.ru" = {
-        useACMEHost = "ipfsqr.ru";
-        locations."/".proxyPass = "http://127.0.0.1:3004/";
-      };
       "wiki.firesquare.ru" = {
         useACMEHost = "ipfsqr.ru";
         locations."/".proxyPass = "http://127.0.0.1:3002/";
@@ -41,13 +33,6 @@
         locations."/".proxyPass = "http://127.0.0.1:3003/";
       };
     };
-  };
-
-  services.cofob-ru.enable = true;
-
-  services.firesquare-ru = {
-    enable = true;
-    port = 3004;
   };
 
   services.vaultwarden = {

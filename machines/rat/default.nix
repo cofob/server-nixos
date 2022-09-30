@@ -12,5 +12,7 @@
     ./ipfs.nix
     ./mail.nix
     ./nginx.nix
+
+    ../shared/stateless-sites.nix
   ];
 }

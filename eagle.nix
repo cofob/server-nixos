@@ -71,7 +71,23 @@
         };
       };
   };
-  networking.firewall.allowedTCPPorts = [ 25565 ];
+
+  services.yggdrasil = {
+    enable = true;
+    persistentKeys = true;
+    config = {
+      Listen = [ "tls://0.0.0.0:8362" ];
+      Peers = [
+        "tls://ygg.loskiq.ru:17314"
+        "tls://kazi.peer.cofob.ru:18001"
+        "tls://yggno.de:18227"
+        "tls://box.paulll.cc:13338"
+      ];
+      IfName = "ygg0";
+    };
+  };
+
+  networking.firewall.allowedTCPPorts = [ 8362 25565 ];
 
   networking = {
     hostName = "eagle";

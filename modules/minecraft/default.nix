@@ -136,6 +136,7 @@ in
                   "clans.accept"
                   "clans.kick"
                   "clans.leave"
+                  "clans.delete"
                 ]) ++ (map
                   (perm: {
                     permission = perm;

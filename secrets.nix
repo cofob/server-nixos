@@ -55,5 +55,5 @@ in
 
   "secrets/wiki-env.age".publicKeys = users ++ [ rat ];
 
-  "secrets/minecraft.age".publicKeys = users ++ [ shark ];
+  "secrets/minecraft.age".publicKeys = users ++ [ shark beaver ];
 }

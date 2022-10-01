@@ -54,11 +54,6 @@
       interfaces."nebula.frsqr".allowedTCPPorts = [ 8081 ];
     };
 
-    nat = {
-      enable = true;
-      internalInterfaces = [ "ve-+" ];
-    };
-
     defaultGateway = {
       address = "192.168.12.1";
       interface = "enp1s0";

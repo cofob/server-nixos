@@ -56,6 +56,7 @@ in
           ${concatStringsSep "\n" (map (key: getAttr key obj_icons) (attrNames obj_icons))}
         '';
       script = "infrared";
+      reloadIfChanged = true;
       serviceConfig = {
         Type = "simple";
         User = "infrared";

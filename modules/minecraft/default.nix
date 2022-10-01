@@ -60,6 +60,37 @@ in
           permissions = {
             enable = true;
             groups = {
+              superadmin = {
+                permissions = [
+                  {
+                    permission = "*";
+                    value = true;
+                  }
+                  {
+                    permission = "authme.bypassbungeesend";
+                    value = false;
+                  }
+                ];
+              };
+              moderator = {
+                permissions = [ ] ++ (map
+                  (perm: {
+                    permission = perm;
+                    value = true;
+                  }) [
+                  "coreprotect.*" # Allow all coreprotect commands
+                  "inventoryrollbackplus.*" # Allow all IRP commands
+                  "minecraft.command.ban" # Allow bans
+                  "minecraft.command.ban-ip"
+                  "minecraft.command.gamemode" # Allow gamemode change
+                  "minecraft.command.kick" # Allow kicking
+                  "minecraft.command.kill" # Allow /kill
+                  "minecraft.command.pardon" # Allow unban
+                  "minecraft.command.pardon-ip"
+                  "minecraft.command.teleport" # Allow teleportations
+                  "minecraft.command.xp" # Allow experience command
+                ]);
+              };
               default = {
                 permissions = [ ] ++ (map
                   (perm: {
@@ -88,9 +119,9 @@ in
                   "inventoryrollbackplus.leavesave"
                   "inventoryrollbackplus.worldchangesave"
 
-                  # TabTPS
-                  "tabtps.ping"
-                  "tabtps.defaultdisplay"
+                  # TPS, MSPT
+                  "bukkit.command.tps"
+                  "bukkit.command.mspt"
 
                   # SkinsRestorer
                   "skinsrestorer.command"
@@ -113,19 +144,10 @@ in
                   # InventoryRollbackPlus
                   "inventoryrollbackplus.version"
                   "inventoryrollbackplus.help"
+                  # Bukkit commands
+                  "bukkit.command.plugins"
+                  "bukkit.command.paper.version"
                 ]);
-              };
-              superadmin = {
-                permissions = [
-                  {
-                    permission = "*";
-                    value = true;
-                  }
-                  {
-                    permission = "authme.bypassbungeesend";
-                    value = false;
-                  }
-                ];
               };
             };
           };
@@ -185,23 +207,23 @@ in
             bungeecord = {
               enable = true;
               online_mode = false;
+              ip_forward = true;
               listeners = [
                 ({
                   host = "0.0.0.0:25565";
                   priorities = [ "lobby" ];
                   force_default_server = true;
-                  proxy_protocol = true;
                 } // (optionalAttrs cfg.staging {
                   motd = "STAGING INSTANCE";
+                }) // (optionalAttrs (cfg.staging == false) {
+                  proxy_protocol = true;
                 }))
               ];
               servers = {
                 lobby.address = "10.172.72.4";
                 main.address = "10.172.72.5";
               };
-            } // (optionalAttrs (cfg.staging == false) {
-              ip_forward = true;
-            });
+            };
             plugins = with pkgs.mineflake; [ authmebungee skinsrestorer ];
             configs = {
               "plugins/AuthMeBungee/config.yml".data = {
@@ -226,6 +248,12 @@ in
 
           lobby = common-base // {
             localAddress = "10.172.72.4";
+            worlds.world = pkgs.fetchzip {
+              url = "https://static.ipfsqr.ru/ipfs/QmRxTeMxnFeG6MDyNjVbsJkUGPnWGMgSrN8YDJ2cLjkc5P/world.tgz";
+              sha256 = "07bfncaabbqgaw6c0s6zv978hv41b7pgzyjldgm8lh08jpm32kbg";
+            };
+            properties.enable = true;
+            properties.online-mode = false;
             properties.spawn-protection = 100000;
             configs = common-configs // {
               "plugins/AuthMe/config.yml".data = {
@@ -273,7 +301,7 @@ in
                     range = 300;
                   };
                   global = {
-                    format = "<{player}> {message}";
+                    format = "<%clans_clan_tag_chat%&r{player}> {message}";
                     range = -2;
                   };
                   notify.enable = false;
@@ -286,6 +314,16 @@ in
                   chat.enable = false;
                   title.enable = false;
                 };
+                miscellaneous.vanilla = {
+                  death.enable = false;
+                  join.enable = false;
+                  quit.enable = false;
+                };
+                moderation.advertisement.whitelist = [
+                  "discord.gg"
+                  "firesquare.ru"
+                  "2buldzha2t.ru"
+                ];
               };
               "plugins/Chatty/locale/ru.yml" = {
                 type = "yaml";
@@ -298,6 +336,14 @@ in
                 ];
               };
               "plugins/ClansFork/Settings/messages.yml".data = importJSON ./clans/locale.json;
+              "plugins/TabList/groups.yml".data = {
+                globalGroup.prefix = "%clans_clan_tag_tab%&r";
+              };
+              "plugins/TabList/tablist.yml".data = {
+                footer = [
+                  "Пинг: %ping%"
+                ];
+              };
             };
             plugins = (with pkgs.mineflake; [
               chatty
@@ -305,6 +351,7 @@ in
               coreprotect
               inventoryrollbackplus
               tabtps
+              tablist
             ]) ++ common-plugins;
           } // (optionalAttrs (cfg.staging == false) {
             hostdir = "/tank/mc/main";
@@ -321,5 +368,9 @@ in
     };
 
     networking.firewall.interfaces."nebula.frsqr".allowedTCPPorts = [ 25565 ];
+    networking.nat = {
+      enable = true;
+      internalInterfaces = [ "ve-+" ];
+    };
   };
 }

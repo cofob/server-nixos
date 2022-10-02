@@ -66,6 +66,8 @@
       table.chain local_rewrites {
           optional_step regexp "(.+)\+(.+)@(.+)" "$1@$3"
           optional_step regexp "(.+)@cofob\.ru" "cofob@cofob.ru"
+          optional_step regexp "(.+)@firesquare\.ru" "cofob@cofob.ru"
+          optional_step regexp "(.+)@frsqr\.xyz" "cofob@cofob.ru"
           optional_step static {
               entry postmaster postmaster@$(primary_domain)
           }

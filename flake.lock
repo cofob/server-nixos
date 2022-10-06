@@ -334,11 +334,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1664212774,
-        "narHash": "sha256-4SCzS1EMJxEjt3jVnflCTmNotH2ed8oPXTUyezrvLDc=",
+        "lastModified": 1665092083,
+        "narHash": "sha256-z4CKM4SM8IotarnVhQCwVGfdxtG4GwNpNDnyaOr/jEI=",
         "ref": "main",
-        "rev": "cb961df1845bc0e0c44deea84d4bd02a2b27a5be",
-        "revCount": 7,
+        "rev": "2385a067cb679c5adef10baea10e0e926bd81051",
+        "revCount": 9,
         "type": "git",
         "url": "https://git.frsqr.xyz/firesquare/nur"
       },

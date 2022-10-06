@@ -38,9 +38,10 @@
   services.vaultwarden = {
     enable = true;
     dbBackend = "sqlite";
+    backupDir = "/var/lib/bitwarden_rs/backup";
     config = {
       domain = "https://bw.frsqr.xyz";
-      signupsAllowed = true;
+      signupsAllowed = false;
       rocketPort = 8222;
       rocketAddress = "127.0.0.1";
     };

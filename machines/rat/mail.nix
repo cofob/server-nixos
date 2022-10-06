@@ -60,6 +60,18 @@
           msg_store fs /var/lib/maddy/mail
       }
 
+
+      # ----------------------------------------------------------------------------
+      # Anti-spam
+
+      checks inbound_checks {
+          require_mx_record
+          spf
+          dkim
+          rspamd
+      }
+
+
       # ----------------------------------------------------------------------------
       # SMTP endpoints + message routing
 
@@ -86,6 +98,8 @@
                   replace_rcpt &local_rewrites
               }
 
+              check &inbound_checks
+
               deliver_to &local_mailboxes
           }
 
@@ -102,12 +116,7 @@
           }
 
           dmarc yes
-          check {
-              require_mx_record
-              dkim
-              spf
-              rspamd
-          }
+          check &inbound_checks
 
           source $(local_domains) {
               reject 501 5.1.8 "Use Submission for outgoing SMTP"
@@ -136,7 +145,6 @@
                       prepare_email &local_rewrites
                       user_to_email identity
                   }
-                  rspamd
               }
 
               destination postmaster $(local_domains) {

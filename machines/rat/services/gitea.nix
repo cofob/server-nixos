@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  age.secrets.credentials-gitea.file = ../../secrets/credentials/gitea.age;
+  age.secrets.credentials-gitea.file = ../../../secrets/credentials/gitea.age;
   age.secrets.credentials-gitea.owner = "gitea";
   services.gitea = {
     enable = true;
@@ -18,4 +18,15 @@
       passwordFile = config.age.secrets.credentials-gitea.path;
     };
   };
+
+  security.acme.certs."git.frsqr.xyz" = { };
+
+  services.fs-nginx.virtualHosts."git.frsqr.xyz" = {
+    useACMEHost = "git.frsqr.xyz";
+    locations."/".proxyPass = "http://127.0.0.1:3001/";
+  };
+
+  services.backup.timers.daily = [
+    "gitea.pxar:${config.services.gitea.stateDir}"
+  ];
 }

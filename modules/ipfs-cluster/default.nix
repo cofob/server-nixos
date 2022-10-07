@@ -84,5 +84,8 @@ in
     };
 
     environment.systemPackages = [ cfg.package ];
+
+    networking.firewall.allowedTCPPorts = [ 9094 9096 ];
+    networking.firewall.allowedUDPPorts = [ 9096 ];
   };
 }

@@ -111,7 +111,7 @@
           system = "x86_64-linux";
           specialArgs = attrs;
           modules = [
-            ./rat.nix
+            ./machines/rat
           ];
         };
         beaver = nixpkgs.lib.nixosSystem {

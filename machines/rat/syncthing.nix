@@ -35,6 +35,4 @@
       };
     };
   };
-
-  networking.firewall.interfaces."nebula.frsqr".allowedTCPPorts = [ 8384 ];
 }

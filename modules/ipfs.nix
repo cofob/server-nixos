@@ -100,5 +100,8 @@ with lib; {
         Addrs = [ "/ip4/147.75.63.131/tcp/4001" ];
       }
     ];
+
+    networking.firewall.allowedTCPPorts = [ 4001 ];
+    networking.firewall.allowedUDPPorts = [ 4001 ];
   };
 }

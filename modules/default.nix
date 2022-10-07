@@ -23,7 +23,7 @@
     ./dns.nix
     ./infrared.nix
     ./ipfs-cluster
-    ./ipfs-peers.nix
+    ./ipfs.nix
     ./maddy.nix
     ./minecraft
     ./mineflake.nix

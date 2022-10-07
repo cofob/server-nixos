@@ -187,11 +187,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1664489491,
-        "narHash": "sha256-KsGk/wnXR81/l/5fRjXqi1+vjPvlt6broT5UsED0aMc=",
+        "lastModified": 1665003649,
+        "narHash": "sha256-lfO6+DTsAP4H4T78+7zHHztY98ZqvO3gjIo1aXA5uuM=",
         "ref": "main",
-        "rev": "8528d8ad19e0da2ca95728a3a37dc8689860a7c2",
-        "revCount": 1,
+        "rev": "484ac4869d89521ab4e9c71f74d6397bae05ee72",
+        "revCount": 15,
         "type": "git",
         "url": "https://git.frsqr.xyz/firesquare/frontend"
       },

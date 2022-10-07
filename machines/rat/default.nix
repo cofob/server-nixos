@@ -22,10 +22,6 @@
 
     nft-firewall.enable = false;
 
-    firewall = {
-      trustedInterfaces = [ "lo" ];
-    };
-
     nebula-frsqr = {
       enable = true;
       isLighthouse = true;

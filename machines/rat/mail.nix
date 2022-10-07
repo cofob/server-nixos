@@ -89,6 +89,10 @@
               deliver_to &local_mailboxes
           }
 
+          check {
+            rspamd
+          }
+
           default_destination {
               reject 550 5.1.1 "User doesn't exist"
           }

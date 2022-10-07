@@ -5,8 +5,6 @@
     ../../modules
     ../../hardware/aeza.nix
     ../../mounts/aeza.nix
-
-    ../../configs/stateless-sites.nix
   ];
 
   security.acme = {

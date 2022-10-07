@@ -17,7 +17,7 @@ with lib; {
           sshKey = config.age.secrets.remote-builder.path;
           system = "x86_64-linux";
           sshUser = "builder";
-          hostName = "beaver.n.frsqr.xyz";
+          hostName = "10.3.7.30";
           maxJobs = 3;
         }
       ];

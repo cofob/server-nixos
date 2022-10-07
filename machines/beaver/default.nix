@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ./modules
-    ./hardware/whale-vm.nix
-    ./mounts/whale-vm.nix
+    ../../modules
+    ../../hardware/whale-vm.nix
+    ../../mounts/whale-vm.nix
   ];
 
   networking.nft-firewall.enable = false;
@@ -24,7 +24,7 @@
     groups.builder = { };
   };
 
-  age.secrets.woodpecker-agent.file = ./secrets/credentials/woodpecker-agent.age;
+  age.secrets.woodpecker-agent.file = ../../secrets/credentials/woodpecker-agent.age;
   virtualisation.oci-containers.containers.woodpecker-agent = {
     image = "docker.io/woodpeckerci/woodpecker-agent:v0.15.3";
     volumes = [ "/var/run/docker.sock:/var/run/docker.sock" ];

@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ./modules
-    ./hardware/whale-vm.nix
-    ./mounts/shark.nix
+    ../../modules
+    ../../hardware/whale-vm.nix
+    ./mounts.nix
   ];
 
   virtualisation.docker.enable = true;
@@ -21,8 +21,8 @@
     settings.rendering.mode = "reusable";
   };
 
-  age.secrets.cockroach-shark-crt.file = ./secrets/cockroach/shark-crt.age;
-  age.secrets.cockroach-shark-key.file = ./secrets/cockroach/shark-key.age;
+  age.secrets.cockroach-shark-crt.file = ../../secrets/cockroach/shark-crt.age;
+  age.secrets.cockroach-shark-key.file = ../../secrets/cockroach/shark-key.age;
   age.secrets.cockroach-shark-crt.owner = config.services.cockroachdb.user;
   age.secrets.cockroach-shark-key.owner = config.services.cockroachdb.user;
   services.cockroachdb = {

@@ -10,7 +10,7 @@
     ./syncthing.nix
     ./services
 
-    ../shared/stateless-sites.nix
+    ../../configs/stateless-sites.nix
   ];
 
   services.fs-nginx.enable = true;

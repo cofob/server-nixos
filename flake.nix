@@ -99,36 +99,18 @@
     , cofob-home
     }@attrs:
     {
-      nixosConfigurations = {
-        eagle = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = attrs;
-          modules = [
-            ./eagle.nix
-          ];
-        };
-        rat = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = attrs;
-          modules = [
-            ./machines/rat
-          ];
-        };
-        beaver = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = attrs;
-          modules = [
-            ./beaver.nix
-          ];
-        };
-        shark = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = attrs;
-          modules = [
-            ./shark.nix
-          ];
-        };
-      };
+      nixosConfigurations =
+        builtins.mapAttrs
+          (key: value: (
+            nixpkgs.lib.nixosSystem {
+              system = "x86_64-linux";
+              specialArgs = attrs;
+              modules = [
+                ./machines/${key}
+              ];
+            }
+          ))
+          (builtins.readDir ./machines);
     } // flake-utils.lib.eachSystem (with flake-utils.lib.system; [ x86_64-linux i686-linux aarch64-linux ])
       (system:
       let

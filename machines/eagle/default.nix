@@ -36,7 +36,7 @@
     hosts =
       let
         offline = {
-          versionName = "1.19.2";
+          versionName = "1.18.2";
           protocolNumber = 760;
           maxPlayers = 0;
           playersOnline = 0;
@@ -49,12 +49,6 @@
           proxyProtocol = true;
           disconnectMessage = "{{username}}, cервер сейчас недоступен!\nПроверь дискорд для большей информации!";
           offlineStatus = offline // { motd = "Сервер сейчас недоступен\n -> firesquare.ru"; };
-          onlineStatus = {
-            versionName = "1.18.2";
-            protocolNumber = 758;
-            iconPath = "/var/lib/infrared/icons/firesquare.png";
-            motd = "§f§lFIRESQUARE.ru §7| §r[§f1.19§r]\n§fСнова в сети!";
-          };
         };
       in
       {

@@ -12,6 +12,7 @@
     ./ipfs.nix
     ./mail.nix
     ./nginx.nix
+    ./syncthing.nix
 
     ../shared/stateless-sites.nix
   ];

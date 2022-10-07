@@ -53,6 +53,9 @@ in
   "secrets/credentials/remote-builder.age".publicKeys = users ++ systems;
   "secrets/credentials/maddy.age".publicKeys = users ++ [ rat ];
 
+  "secrets/syncthing/rat-cert.age".publicKeys = users ++ systems;
+  "secrets/syncthing/rat-key.age".publicKeys = users ++ [ rat ];
+
   "secrets/wiki-env.age".publicKeys = users ++ [ rat ];
 
   "secrets/minecraft.age".publicKeys = users ++ [ shark beaver ];

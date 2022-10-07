@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1664140963,
-        "narHash": "sha256-pFxDtOLduRFlol0Y4ShE+soRQX4kbhaCNBtDOvx7ykw=",
+        "lastModified": 1662241716,
+        "narHash": "sha256-urqPvSvvGUhkwzTDxUI8N1nsdMysbAfjmBNZaTYBZRU=",
         "owner": "ryantm",
         "repo": "agenix",
-        "rev": "6acb1fe5f8597d5ce63fc82bc7fcac7774b1cdf0",
+        "rev": "c96da5835b76d3d8e8d99a0fec6fe32f8539ee2e",
         "type": "github"
       },
       "original": {
@@ -43,11 +43,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1664723459,
-        "narHash": "sha256-Hm5YPRNizYT/PEPJfwTulYLy5qNyeNRLQLwUXy+KpMw=",
+        "lastModified": 1664113315,
+        "narHash": "sha256-1oyXZWpLJFKSLV2Xyu0aeuiYzpH2e9F6HMsrX0GNv4A=",
         "ref": "main",
-        "rev": "7aa986e83ff2c9ab256cab4ad71a49ef63aff776",
-        "revCount": 47,
+        "rev": "0e4797aa46407938a813bbb6e349db19b036747b",
+        "revCount": 22,
         "type": "git",
         "url": "https://git.frsqr.xyz/averyanalex/nixos"
       },
@@ -138,11 +138,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1665058747,
-        "narHash": "sha256-bGDobnI5pkFwqozoD7pdG2Mk95/mNhC2TpCAo2GLcvM=",
-        "ref": "refs/heads/master",
-        "rev": "7ab873456acc7a9a2faab1ccfabeaac55fcee2df",
-        "revCount": 273,
+        "lastModified": 1663937423,
+        "narHash": "sha256-FfDnwpR2M5v/JYWxoSAKv5BA6RMDiArej9Gag/hpMig=",
+        "ref": "master",
+        "rev": "46941707a64307576c7b9276804afaeda083f09a",
+        "revCount": 256,
         "type": "git",
         "url": "https://git.frsqr.xyz/cofob/nixos"
       },
@@ -187,11 +187,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1665003649,
-        "narHash": "sha256-lfO6+DTsAP4H4T78+7zHHztY98ZqvO3gjIo1aXA5uuM=",
+        "lastModified": 1664489491,
+        "narHash": "sha256-KsGk/wnXR81/l/5fRjXqi1+vjPvlt6broT5UsED0aMc=",
         "ref": "main",
-        "rev": "484ac4869d89521ab4e9c71f74d6397bae05ee72",
-        "revCount": 15,
+        "rev": "8528d8ad19e0da2ca95728a3a37dc8689860a7c2",
+        "revCount": 1,
         "type": "git",
         "url": "https://git.frsqr.xyz/firesquare/frontend"
       },
@@ -282,11 +282,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1664883812,
-        "narHash": "sha256-wqBAcVRBxls2nVaNeQaOy9SRg/bvEUiD26TQDprIg8U=",
+        "lastModified": 1664029467,
+        "narHash": "sha256-ir7JbsLp2mqseCs3qI+Z/pkt+Gh+GfANbYcI5I+Gvnk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fe76645aaf2fac3baaa2813fd0089930689c53b5",
+        "rev": "893b6b9f6c4ed0c7efdb84bd300a499a2da9fa51",
         "type": "github"
       },
       "original": {
@@ -298,11 +298,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1664989420,
-        "narHash": "sha256-Q8IxomUjjmewsoJgO3htkXLfCckQ7HkDJ/ZhdYVf/fA=",
+        "lastModified": 1664017330,
+        "narHash": "sha256-919WZKBTxFdTkzIK6uJXE7hwSPQb7e/ekybxxWaotR4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "37bd39839acf99c5b738319f42478296f827f274",
+        "rev": "fde244a8c7655bc28616864e2290ad9c95409c2c",
         "type": "github"
       },
       "original": {
@@ -314,11 +314,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1665080590,
-        "narHash": "sha256-zeEPZG/nVXnZbaFNaFcfNOtgfBJPtijPDf8HkXr9lH0=",
+        "lastModified": 1664113009,
+        "narHash": "sha256-DCVvpC7T+iA5XsvIhS6tREYz0Z7+xW/iSXbWTzPzgJ4=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "fd9aff4c4e529fe2684acdd5ee856cc2c000c66c",
+        "rev": "e6be6d12caf049df8cd58fcba38e65a7f9550e73",
         "type": "github"
       },
       "original": {
@@ -334,11 +334,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1665092083,
-        "narHash": "sha256-z4CKM4SM8IotarnVhQCwVGfdxtG4GwNpNDnyaOr/jEI=",
+        "lastModified": 1665146439,
+        "narHash": "sha256-wJWxxDbjh6OAVw18y+9JFkBfL1LvgIIFAuxPVrs2BJ8=",
         "ref": "main",
-        "rev": "2385a067cb679c5adef10baea10e0e926bd81051",
-        "revCount": 9,
+        "rev": "64be6a904eed96a2524280457d3c31254cc5a907",
+        "revCount": 10,
         "type": "git",
         "url": "https://git.frsqr.xyz/firesquare/nur"
       },

@@ -57,7 +57,7 @@
   age.secrets.cockroach-rat-key.owner = config.services.cockroachdb.user;
   services.cockroachdb = {
     enable = true;
-    package = pkgs.cockroachdb;
+    # package = pkgs.cockroachdb;
     crtFile = config.age.secrets.cockroach-rat-crt.path;
     keyFile = config.age.secrets.cockroach-rat-key.path;
     locality = "country=nl,datacenter=aeza-nl";

@@ -11,13 +11,20 @@ with lib; {
   config = mkIf config.services.distributedBuilds.enable {
     age.secrets.remote-builder.file = ../secrets/credentials/remote-builder.age;
 
+    programs.ssh.knownHosts =
+      let
+        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKoFVvggf2o3DQsvdAKrfbGMVnly6AmzW/Sebt+1fUW"; in
+      {
+        "beaver".publicKey = key;
+      };
+
     nix = {
       buildMachines = [
         {
           sshKey = config.age.secrets.remote-builder.path;
           system = "x86_64-linux";
           sshUser = "builder";
-          hostName = "10.3.7.30";
+          hostName = "beaver";
           maxJobs = 3;
         }
       ];

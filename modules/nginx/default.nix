@@ -192,6 +192,14 @@ let
         server_names_hash_max_size ${toString cfg.serverNamesHashMaxSize};
       ''}
 
+      # Path without query string
+      map $request_uri $request_uri_path {
+        "~^(?P<path>[^?]*)(\?.*)?$"  $path;
+      }
+
+      # Default cache
+      proxy_cache_path /var/cache/nginx/global_cache levels=1:2 keys_zone=global_cache:15m max_size=1G inactive=60m use_temp_path=off;
+
       # $connection_upgrade is used for websocket proxying
       map $http_upgrade $connection_upgrade {
           default upgrade;
@@ -909,6 +917,8 @@ in
       stopIfChanged = false;
       preStart = ''
         ${cfg.preStart}
+        mkdir -p /var/cache/nginx/global_cache
+        ${concatStringsSep "\n" (mapAttrsToList (vhostName: vhost: "mkdir -p /var/cache/nginx/web/${vhostName}") virtualHosts)}
         ${execCommand} -t
       '';
 

@@ -21,6 +21,7 @@
     ./common.nix
     ./distributed-builds.nix
     ./dns.nix
+    ./hosts.nix
     ./infrared.nix
     ./ipfs-cluster
     ./ipfs.nix

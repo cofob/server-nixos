@@ -60,10 +60,6 @@
     };
   };
 
-  programs.ssh.knownHosts = {
-    "beaver.n.frsqr.xyz".publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKoFVvggf2o3DQsvdAKrfbGMVnly6AmzW/Sebt+1fUW";
-  };
-
   environment.systemPackages = with pkgs; let
     upgrade-system = pkgs.writeScriptBin "upgrade-system" ''
       sudo rm -rf /root/.cache && sudo nixos-rebuild switch --flake "git+https://git.frsqr.xyz/firesquare/nixos.git?ref=main"
@@ -82,10 +78,4 @@
   ];
 
   networking.firewall.trustedInterfaces = [ "lo" ];
-  networking.hosts = {
-    "10.3.7.10" = [ "eagle.n.frsqr.xyz" "eagle" ];
-    "10.3.7.11" = [ "rat.n.frsqr.xyz" "rat" ];
-    "10.3.7.30" = [ "beaver.n.frsqr.xyz" "beaver" ];
-    "10.3.7.40" = [ "shark.n.frsqr.xyz" "shark" ];
-  };
 }

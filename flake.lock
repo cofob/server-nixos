@@ -162,11 +162,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1663942327,
-        "narHash": "sha256-vTHfRlwA3Ho95AgFBD6KFVAmRr2s4r4Q8tuMZbIVMeg=",
+        "lastModified": 1666108420,
+        "narHash": "sha256-QEfYkKfe22CQ3cz+f+ccooprmlNjcfOBY49d1jsSInI=",
         "ref": "main",
-        "rev": "2a2d3455742b9def8e840576af735af15082d6b3",
-        "revCount": 35,
+        "rev": "06966454d5559198f3d84fc6329e689b6d8affb7",
+        "revCount": 36,
         "type": "git",
         "url": "https://git.frsqr.xyz/cofob/cofob.ru"
       },
@@ -187,11 +187,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1665003649,
-        "narHash": "sha256-lfO6+DTsAP4H4T78+7zHHztY98ZqvO3gjIo1aXA5uuM=",
+        "lastModified": 1666108205,
+        "narHash": "sha256-d/crhqJ5HFUB8eCRb2TZcN9MHMN7nOFRYWaVc3685NY=",
         "ref": "main",
-        "rev": "484ac4869d89521ab4e9c71f74d6397bae05ee72",
-        "revCount": 15,
+        "rev": "5dda6f41f63b1d231f1975516d4489fd4f31c7c1",
+        "revCount": 21,
         "type": "git",
         "url": "https://git.frsqr.xyz/firesquare/frontend"
       },

@@ -21,6 +21,8 @@
     keyMap = "us";
   };
 
+  services.earlyoom.enable = true;
+
   system = {
     stateVersion = "22.05";
     autoUpgrade = {

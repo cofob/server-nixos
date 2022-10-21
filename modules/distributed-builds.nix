@@ -26,6 +26,9 @@ with lib; {
           sshUser = "builder";
           hostName = "beaver";
           maxJobs = 3;
+          supportedFeatures = [
+            "big-parallel"
+          ];
         }
       ];
 

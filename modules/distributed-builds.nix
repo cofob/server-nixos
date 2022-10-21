@@ -8,7 +8,7 @@ with lib; {
     };
   };
 
-  config = mkIf config.services.distributedBuilds.enable {
+  config = mkIf (config.services.distributedBuilds.enable && config.networking.hostName != "beaver") {
     age.secrets.remote-builder.file = ../secrets/credentials/remote-builder.age;
 
     programs.ssh.knownHosts =

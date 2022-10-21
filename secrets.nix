@@ -25,15 +25,6 @@ in
   "secrets/nebula/beaver-crt.age".publicKeys = users ++ systems;
   "secrets/nebula/beaver-key.age".publicKeys = users ++ [ beaver ];
 
-  "secrets/cockroach/ca-crt.age".publicKeys = users ++ systems;
-  "secrets/cockroach/ca-key.age".publicKeys = users;
-  "secrets/cockroach/rat-crt.age".publicKeys = users ++ systems;
-  "secrets/cockroach/rat-key.age".publicKeys = users ++ [ rat ];
-  "secrets/cockroach/shark-crt.age".publicKeys = users ++ systems;
-  "secrets/cockroach/shark-key.age".publicKeys = users ++ [ shark ];
-  "secrets/cockroach/root-crt.age".publicKeys = users ++ systems;
-  "secrets/cockroach/root-key.age".publicKeys = users ++ systems;
-
   "secrets/nebula-averyan/ca-crt.age".publicKeys = users ++ systems;
   "secrets/nebula-averyan/eagle-crt.age".publicKeys = users ++ systems;
   "secrets/nebula-averyan/eagle-key.age".publicKeys = users ++ [ eagle ];

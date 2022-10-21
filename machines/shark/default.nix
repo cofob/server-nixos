@@ -21,27 +21,11 @@
     settings.rendering.mode = "reusable";
   };
 
-  age.secrets.cockroach-shark-crt.file = ../../secrets/cockroach/shark-crt.age;
-  age.secrets.cockroach-shark-key.file = ../../secrets/cockroach/shark-key.age;
-  age.secrets.cockroach-shark-crt.owner = config.services.cockroachdb.user;
-  age.secrets.cockroach-shark-key.owner = config.services.cockroachdb.user;
-  services.cockroachdb = {
-    enable = true;
-    crtFile = config.age.secrets.cockroach-shark-crt.path;
-    keyFile = config.age.secrets.cockroach-shark-key.path;
-    locality = "country=ru,datacenter=averyan";
-    openPorts = true;
-    http.port = 8082;
-    listen.address = "10.3.7.40";
-    join = "rat.n.frsqr.xyz";
-  };
-
   services.backup = {
     enable = true;
     timers.weekly = [
       "mineflake.pxar:/var/lib/mineflake"
       "minecraft.pxar:/tank/mc"
-      "cockroachdb.pxar:/var/lib/cockroachdb"
     ];
   };
 

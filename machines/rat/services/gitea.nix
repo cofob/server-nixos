@@ -11,7 +11,7 @@
     rootUrl = "https://git.frsqr.xyz/";
     appName = "firesquare git";
     httpPort = 3001;
-    disableRegistration = true;
+    disableRegistration = false;
     cookieSecure = true;
     database = {
       type = "postgres";

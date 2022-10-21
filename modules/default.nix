@@ -2,6 +2,7 @@
 , home-manager
 , bps
 , tg-captcha
+, erk-archive
 , firesquare-ru
 , ...
 }:
@@ -9,6 +10,7 @@
 {
   imports = [
     firesquare-ru.nixosModules.default
+    erk-archive.nixosModules.default
     home-manager.nixosModule
     tg-captcha.nixosModule
     agenix.nixosModule

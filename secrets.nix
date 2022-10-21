@@ -35,6 +35,7 @@ in
   "secrets/credentials/bps.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/tmm.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/tgcaptcha.age".publicKeys = users ++ [ rat ];
+  "secrets/credentials/archive-bot.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/woodpecker-server.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/woodpecker-agent.age".publicKeys = users ++ [ rat beaver ];
   "secrets/credentials/api-server.age".publicKeys = users ++ [ rat ];

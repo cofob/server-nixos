@@ -252,6 +252,8 @@ in
             RuntimeDirectory = "maddy";
             CapabilityBoundingSet = "CAP_NET_BIND_SERVICE";
             AmbientCapabilities = "CAP_NET_BIND_SERVICE";
+            Restart = "on-failure";
+            RestartSec = "5s";
           };
           preStart = ''
             cp ${configFile} /var/lib/maddy/maddy.conf

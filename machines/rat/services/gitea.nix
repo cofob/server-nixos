@@ -13,6 +13,11 @@
     httpPort = 3001;
     disableRegistration = false;
     cookieSecure = true;
+    settings = {
+      oauth2_client = {
+        ENABLE_AUTO_REGISTRATION = true;
+      };
+    };
     database = {
       type = "postgres";
       passwordFile = config.age.secrets.credentials-gitea.path;

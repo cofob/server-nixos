@@ -13,7 +13,8 @@ with lib; {
 
     programs.ssh.knownHosts =
       let
-        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKoFVvggf2o3DQsvdAKrfbGMVnly6AmzW/Sebt+1fUW"; in
+        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKoFVvggf2o3DQsvdAKrfbGMVnly6AmzW/Sebt+1fUW";
+      in
       {
         "beaver".publicKey = key;
       };

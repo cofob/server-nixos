@@ -128,9 +128,6 @@
           "home-manager"
         ],
         "nixpkgs": [
-          "nixpkgs"
-        ],
-        "nixpkgs-unstable": [
           "nixpkgs-unstable"
         ],
         "nur": [
@@ -138,11 +135,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1666238507,
-        "narHash": "sha256-cuuBVprQtprSrQh0WA4javMSbBrh7m+j7aCYJEtkMus=",
+        "lastModified": 1666368921,
+        "narHash": "sha256-OXbTMOEthmo1C1kRmG49Q77XAX1nec5Yp0ks1enBoMc=",
         "ref": "refs/heads/master",
-        "rev": "a322a4ee4a3536458bcf9b62b39d957bc5883910",
-        "revCount": 293,
+        "rev": "4b3420cbe912326f34b0d8cc3e5b164768e42794",
+        "revCount": 295,
         "type": "git",
         "url": "https://git.frsqr.xyz/cofob/nixos"
       },

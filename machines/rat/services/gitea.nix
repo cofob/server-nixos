@@ -17,6 +17,10 @@
       oauth2_client = {
         ENABLE_AUTO_REGISTRATION = true;
       };
+      service = {
+        ENABLE_CAPTCHA = true;
+        DEFAULT_ALLOW_CREATE_ORGANIZATION = false;
+      };
     };
     database = {
       type = "postgres";

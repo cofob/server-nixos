@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./api.nix
     ./bots.nix
     ./bw.nix
     ./gitea.nix

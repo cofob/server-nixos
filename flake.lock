@@ -43,11 +43,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1664723459,
-        "narHash": "sha256-Hm5YPRNizYT/PEPJfwTulYLy5qNyeNRLQLwUXy+KpMw=",
+        "lastModified": 1667419502,
+        "narHash": "sha256-B9TYnwt1qs8IOd5e13Ad6BYkv8Q3zR3BEd0monzvdoo=",
         "ref": "main",
-        "rev": "7aa986e83ff2c9ab256cab4ad71a49ef63aff776",
-        "revCount": 47,
+        "rev": "2b654d1249f526acb783a7279a4ff0e1c37974e4",
+        "revCount": 49,
         "type": "git",
         "url": "https://git.frsqr.xyz/averyanalex/nixos"
       },
@@ -153,14 +153,15 @@
         ],
         "nur": [
           "nur"
-        ]
+        ],
+        "pkgs-overlay": "pkgs-overlay"
       },
       "locked": {
-        "lastModified": 1666368921,
-        "narHash": "sha256-OXbTMOEthmo1C1kRmG49Q77XAX1nec5Yp0ks1enBoMc=",
-        "ref": "refs/heads/master",
-        "rev": "4b3420cbe912326f34b0d8cc3e5b164768e42794",
-        "revCount": 295,
+        "lastModified": 1667566358,
+        "narHash": "sha256-xjDOL3mRm/6h69Ehe99Kx2qmlgrs49HHlz+Hux7RmCM=",
+        "ref": "master",
+        "rev": "7fbc99ecfd3c58abdb221c42e897d81bc3ea8149",
+        "revCount": 328,
         "type": "git",
         "url": "https://git.frsqr.xyz/cofob/nixos"
       },
@@ -246,11 +247,11 @@
     },
     "flake-utils": {
       "locked": {
-        "lastModified": 1659877975,
-        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "lastModified": 1667395993,
+        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
         "type": "github"
       },
       "original": {
@@ -266,11 +267,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1665996265,
-        "narHash": "sha256-/k9og6LDBQwT+f/tJ5ClcWiUl8kCX5m6ognhsAxOiCY=",
+        "lastModified": 1667907331,
+        "narHash": "sha256-bHkAwkYlBjkupPUFcQjimNS8gxWSWjOTevEuwdnp5m0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "b81e128fc053ab3159d7b464d9b7dedc9d6a6891",
+        "rev": "6639e3a837fc5deb6f99554072789724997bc8e5",
         "type": "github"
       },
       "original": {
@@ -289,11 +290,11 @@
         "wlroots": "wlroots"
       },
       "locked": {
-        "lastModified": 1664050038,
-        "narHash": "sha256-Q+dLA0bPW0RqYs9ONiu5/KalJYVjoFX2kG6p9G/hzDc=",
+        "lastModified": 1667417767,
+        "narHash": "sha256-SugnSkWSYyPIMwmm/R2ZN+3KifFbVPhw28j0J8C7aFI=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "fad5fc587d4281a5d399e61dc1243bc333d94d4d",
+        "rev": "0d7176792b6ceed2ade337278f54e1112cdc957e",
         "type": "github"
       },
       "original": {
@@ -309,11 +310,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1664457032,
-        "narHash": "sha256-3tzYZXA1KVCWJRdmgHVEGR/4Jv3hZfB4X1QJk/eTXO0=",
+        "lastModified": 1667217867,
+        "narHash": "sha256-lhkdIILLjIZazeU9SbcdiQSiGgSQKxPrfgUgEOKyPpM=",
         "ref": "main",
-        "rev": "56011ff787e395bd5873cead5daf04c64af2d2b0",
-        "revCount": 86,
+        "rev": "705b9994819060a31dba72c69953ed51c7135378",
+        "revCount": 89,
         "type": "git",
         "url": "https://git.frsqr.xyz/firesquare/mineflake"
       },
@@ -325,11 +326,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1666249138,
-        "narHash": "sha256-CzK8NA8xEMKAhvHXB8UMODckcH97sZXm6lziKNWLv0M=",
+        "lastModified": 1667921968,
+        "narHash": "sha256-EI+//LbhUzX471LHq8GgB+oUHpdA2rsiXpY1q5tDYGw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "44fc3cb097324c9f9f93313dd3f103e78d722968",
+        "rev": "df2bcbbd1c2aa144261cf1b0003c889c075dc693",
         "type": "github"
       },
       "original": {
@@ -341,11 +342,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1666198336,
-        "narHash": "sha256-VTrWD8Bb48h2pi57P1++LuvZIgum3gSLiRzZ/8q3rg0=",
+        "lastModified": 1667901915,
+        "narHash": "sha256-IkSou5ox/yZ2YUhGpk8vxd2TNU2pwRlYtir5k55NaxE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "db25c4da285c5989b39e4ce13dea651a88b7a9d4",
+        "rev": "093268502280540a7f5bf1e2a6330a598ba3b7d0",
         "type": "github"
       },
       "original": {
@@ -357,11 +358,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1666336791,
-        "narHash": "sha256-B/LYqgVVyEAu7Cz9GromUMzjeT2xwawY8oJKE4IAysk=",
+        "lastModified": 1668062644,
+        "narHash": "sha256-RHWOXxCmBint8LUB/g7kBpZWSWhaQd4ISF45l/dYB9o=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "3d1418d2e156f39c4e938f98deef003763048461",
+        "rev": "05d7230aa5e3868ede9ed9c4e10fe3efbed97812",
         "type": "github"
       },
       "original": {
@@ -373,15 +374,37 @@
     "pkgs-overlay": {
       "inputs": {
         "nixpkgs": [
+          "cofob-home",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1665146439,
-        "narHash": "sha256-wJWxxDbjh6OAVw18y+9JFkBfL1LvgIIFAuxPVrs2BJ8=",
+        "lastModified": 1666372285,
+        "narHash": "sha256-iIrb3URs7h3VdUNhQ+izlNsbcW0nztK2/KfVAJXeBI0=",
         "ref": "main",
-        "rev": "64be6a904eed96a2524280457d3c31254cc5a907",
-        "revCount": 10,
+        "rev": "0229f7b9fffdfb26e5bc88a260ec2186d6adeadb",
+        "revCount": 11,
+        "type": "git",
+        "url": "https://git.frsqr.xyz/firesquare/nur"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "https://git.frsqr.xyz/firesquare/nur"
+      }
+    },
+    "pkgs-overlay_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1666372285,
+        "narHash": "sha256-iIrb3URs7h3VdUNhQ+izlNsbcW0nztK2/KfVAJXeBI0=",
+        "ref": "main",
+        "rev": "0229f7b9fffdfb26e5bc88a260ec2186d6adeadb",
+        "revCount": 11,
         "type": "git",
         "url": "https://git.frsqr.xyz/firesquare/nur"
       },
@@ -406,7 +429,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
-        "pkgs-overlay": "pkgs-overlay",
+        "pkgs-overlay": "pkgs-overlay_2",
         "tg-captcha": "tg-captcha"
       }
     },
@@ -438,11 +461,11 @@
       "flake": false,
       "locked": {
         "host": "gitlab.freedesktop.org",
-        "lastModified": 1663507239,
-        "narHash": "sha256-LISZtkPVe8lQ2N8YwVe+KxCkXWLP9mdw6Q2kG93wE8A=",
+        "lastModified": 1666466001,
+        "narHash": "sha256-ZjxAnqtcGmHQHKL1Z9sIraDnzIqrJleWcJXfPtzAm74=",
         "owner": "wlroots",
         "repo": "wlroots",
-        "rev": "2ad25b1460400e66ea26bd6489b04072be7d9dbb",
+        "rev": "c2d2773df57750081b16d56da13b5015d752cbd7",
         "type": "gitlab"
       },
       "original": {

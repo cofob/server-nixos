@@ -23,6 +23,7 @@
     ./common.nix
     ./distributed-builds.nix
     ./dns.nix
+    ./docker.nix
     ./hosts.nix
     ./infrared.nix
     ./ipfs-cluster

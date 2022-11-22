@@ -4,7 +4,7 @@ with lib; {
   options.services.distributedBuilds = {
     enable = mkOption {
       type = types.bool;
-      default = true;
+      default = false;
     };
   };
 

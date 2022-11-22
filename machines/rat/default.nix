@@ -22,11 +22,6 @@
 
     nft-firewall.enable = false;
 
-    nebula-frsqr = {
-      enable = true;
-      isLighthouse = true;
-    };
-
     defaultGateway = {
       address = "10.0.0.1";
       interface = "ens3";

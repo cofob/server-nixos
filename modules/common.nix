@@ -28,7 +28,7 @@
     autoUpgrade = {
       enable = true;
       allowReboot = false;
-      flake = "git+https://git.frsqr.xyz/firesquare/nixos.git?ref=main";
+      flake = "github:cofob/server-nixos";
       dates = "4:45";
     };
   };
@@ -64,7 +64,7 @@
 
   environment.systemPackages = with pkgs; let
     upgrade-system = pkgs.writeScriptBin "upgrade-system" ''
-      sudo rm -rf /root/.cache && sudo nixos-rebuild switch --flake "git+https://git.frsqr.xyz/firesquare/nixos.git?ref=main"
+      sudo rm -rf /root/.cache && sudo nixos-rebuild switch --flake "github:cofob/server-nixos"
     '';
   in
   [

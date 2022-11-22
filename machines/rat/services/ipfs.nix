@@ -10,10 +10,6 @@ with lib; {
           Paths = [ "/ipfs" "/ipns" ];
           UseSubdomains = true;
         };
-        "static.ipfsqr.ru" = {
-          Paths = [ "/ipfs" "/ipns" ];
-          UseSubdomains = false;
-        };
       };
     };
   };

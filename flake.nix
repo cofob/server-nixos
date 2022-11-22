@@ -6,10 +6,11 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     flake-utils.url = "github:numtide/flake-utils";
+
     nur.url = "github:nix-community/NUR";
 
     pkgs-overlay = {
-      url = "git+https://git.frsqr.xyz/firesquare/nur?ref=main";
+      url = "github:cofob/nixos-pkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -23,62 +24,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    bps = {
-      url = "github:DomesticMoth/bps";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    bps.url = "github:DomesticMoth/bps";
 
-    mineflake = {
-      url = "git+https://git.frsqr.xyz/firesquare/mineflake?ref=main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    mineflake.url = "github:nix-community/mineflake";
 
-    tg-captcha = {
-      url = "git+https://git.frsqr.xyz/cofob/captcha?ref=main";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-      };
-    };
+    tg-captcha.url = "github:cofob/captcha";
 
-    erk-archive = {
-      url = "git+https://git.frsqr.xyz/cofob/erk-archive?ref=main";
-      inputs = {
-        nixpkgs.follows = "nixpkgs-unstable";
-        flake-utils.follows = "flake-utils";
-      };
-    };
+    erk-archive.url = "github:cofob/erk-archive";
 
-    firesquare-ru = {
-      url = "git+https://git.frsqr.xyz/firesquare/frontend?ref=main";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-      };
-    };
+    firesquare-ru.url = "github:cofob/2bu2t-frontend";
 
-    cofob-ru = {
-      url = "git+https://git.frsqr.xyz/cofob/cofob.ru?ref=main";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-      };
-    };
-
-    alex-home = {
-      url = "git+https://git.frsqr.xyz/averyanalex/nixos?ref=main";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        nixpkgs-unstable.follows = "nixpkgs-unstable";
-        flake-utils.follows = "flake-utils";
-        nur.follows = "nur";
-        home-manager.follows = "home-manager";
-        agenix.follows = "agenix";
-      };
-    };
+    cofob-ru.url = "github:cofob/cofob.ru";
 
     cofob-home = {
-      url = "git+https://git.frsqr.xyz/cofob/nixos";
+      url = "github:cofob/nixos";
       inputs = {
         nixpkgs.follows = "nixpkgs-unstable";
         nur.follows = "nur";
@@ -103,7 +62,6 @@
     , erk-archive
     , cofob-ru
     , firesquare-ru
-    , alex-home
     , cofob-home
     }@attrs:
     {

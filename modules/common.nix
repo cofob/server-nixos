@@ -39,6 +39,10 @@
       allowed-users = [ "@users" ];
       trusted-users = [ "@wheel" ]
         ++ (lib.optional (config.networking.hostName == "beaver") "builder");
+      substituters = [
+        "https://cache.nixos.org"
+        "https://nix-community.cachix.org"
+      ];
     };
 
     daemonCPUSchedPolicy = "batch";

@@ -6,7 +6,7 @@
     ../../hardware/diamond.nix
   ];
 
-  services.backup.enable = true;
+  services.backup.enable = false;
 
   networking.hostName = "diamond";
 }

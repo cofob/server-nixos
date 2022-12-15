@@ -26,8 +26,8 @@
     ./docker.nix
     ./hosts.nix
     ./infrared.nix
-    # ./ipfs-cluster
-    # ./ipfs.nix
+    ./ipfs-cluster
+    ./ipfs.nix
     ./maddy.nix
     # ./minecraft
     # ./mineflake.nix

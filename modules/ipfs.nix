@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 
 with lib; {
-  options.services.ipfs = {
+  options.services.kubo = {
     public-peers = mkOption {
       type = types.bool;
       default = true;
@@ -9,8 +9,8 @@ with lib; {
     };
   };
 
-  config = mkIf config.services.ipfs.public-peers {
-    services.ipfs.extraConfig.Peering.Peers = [
+  config = mkIf config.services.kubo.public-peers {
+    services.kubo.settings.Peering.Peers = [
       {
         ID = "QmcFf2FH3CEgTNHeMRGhN7HNHU1EXAxoEk6EFuSyXCsvRE";
         Addrs = [ "/dnsaddr/node-1.ingress.cloudflare-ipfs.com" ];

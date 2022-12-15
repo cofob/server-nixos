@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 with lib; {
-  services.ipfs = {
+  services.kubo = {
     enable = true;
     enableGC = true;
-    extraConfig = {
+    settings = {
       Gateway.PublicGateways = {
         "ipfsqr.ru" = {
           Paths = [ "/ipfs" "/ipns" ];

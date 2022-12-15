@@ -3,7 +3,8 @@ let
   users = [ cofob ];
 
   rat = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICIo9EB6kxVzY93JU602tDaEYwmo4+V8d5xoYS3c1+aN";
-  systems = [ rat ];
+  diamond = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKI3lWpGU0TE74z0STnC1WuUAUNlMYipvUChSaJ/k0pw";
+  systems = [ rat diamond ];
 
   all = users ++ systems;
 in

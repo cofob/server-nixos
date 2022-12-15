@@ -38,7 +38,7 @@ in
   config = mkIf cfg.enable {
     assertions =
       [{
-        assertion = config.services.ipfs.enable;
+        assertion = config.services.kubo.enable;
         message = "IPFS daemon must be enabled";
       }];
 

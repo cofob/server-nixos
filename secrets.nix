@@ -26,6 +26,9 @@ in
   "secrets/credentials/remote-builder.age".publicKeys = all;
   "secrets/credentials/maddy.age".publicKeys = users ++ [ rat ];
 
+  "secrets/wg/rat.age".publicKeys = users ++ [ rat ];
+  "secrets/wg/diamond.age".publicKeys = users ++ [ diamond ];
+
   "secrets/syncthing/rat-cert.age".publicKeys = all;
   "secrets/syncthing/rat-key.age".publicKeys = users ++ [ rat ];
 

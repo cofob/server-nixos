@@ -41,6 +41,7 @@
     ./schedulers.nix
     ./ssh.nix
     ./tmm
+    ./overlay.nix
     ./unstable.nix
     ./users.nix
     ./wiki-js.nix

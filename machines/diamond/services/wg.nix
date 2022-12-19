@@ -12,7 +12,7 @@
       peers = [
         {
           publicKey = "k8XDvqLf9eZzVkY0NpAU3TXgisDAsOOtg+wImiootA8=";
-          allowedIPs = [ "10.100.0.1/24" ];
+          allowedIPs = [ "10.100.0.0/24" ];
           endpoint = "rat.frsqr.xyz:51820";
           persistentKeepalive = 25;
         }

@@ -38,7 +38,6 @@
     ./network.nix
     ./nftables.nix
     ./nginx
-    ./overlay.nix
     ./schedulers.nix
     ./ssh.nix
     ./tmm

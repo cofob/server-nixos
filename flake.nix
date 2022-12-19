@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     flake-utils.url = "github:numtide/flake-utils";
 
@@ -20,7 +19,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-22.05";
+      url = "github:nix-community/home-manager/release-22.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -36,21 +35,12 @@
 
     cofob-ru.url = "github:cofob/cofob.ru";
 
-    cofob-home = {
-      url = "github:cofob/nixos";
-      inputs = {
-        nixpkgs.follows = "nixpkgs-unstable";
-        nur.follows = "nur";
-        home-manager.follows = "home-manager";
-        agenix.follows = "agenix";
-      };
-    };
+    cofob-home.url = "github:cofob/nixos";
   };
 
   outputs =
     { self
     , nixpkgs
-    , nixpkgs-unstable
     , flake-utils
     , nur
     , pkgs-overlay

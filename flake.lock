@@ -580,11 +580,11 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1661414194,
-        "narHash": "sha256-4mu+Y7eknqfKXJCqsJecASvI5YOFuifMz3fYvPhbybI=",
+        "lastModified": 1671462832,
+        "narHash": "sha256-KzY7Zp0s5TLKml4Ij8sxUMkqG+GmbfthdeWNrGDR+4s=",
         "owner": "cofob",
         "repo": "captcha",
-        "rev": "65e8851fbf1f4a0846851a39e292a972d716285a",
+        "rev": "f1fbe7b3dced01e7c7fe2bd21517dfc518bd8ca0",
         "type": "github"
       },
       "original": {

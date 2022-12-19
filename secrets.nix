@@ -16,6 +16,7 @@ in
   "secrets/credentials/gitea.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/bps.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/tmm.age".publicKeys = users ++ [ rat ];
+  "secrets/credentials/botosusl.age".publicKeys = users ++ [ diamond ];
   "secrets/credentials/tgcaptcha.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/archive-bot.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/api-server.age".publicKeys = users ++ [ rat ];

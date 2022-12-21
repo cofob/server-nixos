@@ -7,7 +7,7 @@
 
   services.nextcloud = {
     enable = true;
-    https = true;
+    https = false;
     package = pkgs.nextcloud25;
     hostName = "cloud.frsqr.xyz";
     autoUpdateApps.enable = true;
@@ -20,7 +20,7 @@
       dbuser = "nextcloud";
       adminpassFile = config.age.secrets.credentials-nextcloud-admin.path;
       trustedProxies = [ "10.100.0.1" ];
-      overwriteProtocol = "https";
+      overwriteProtocol = "http";
       extraTrustedDomains = [ "10.100.0.2" ];
     };
   };

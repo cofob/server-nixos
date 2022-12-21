@@ -18,8 +18,8 @@
     };
     config = {
       dbtype = "pgsql";
-      dbport = "5432";
-      dbhost = "127.0.0.1";
+      dbport = 0;
+      dbhost = "/run/postgresql";
       dbname = "nextcloud";
       dbuser = "nextcloud";
       adminpassFile = config.age.secrets.credentials-nextcloud-admin.path;

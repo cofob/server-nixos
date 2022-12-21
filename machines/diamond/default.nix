@@ -19,4 +19,5 @@
   services.backup.envFile = config.age.secrets.credentials-pbs-diamond.path;
 
   networking.hostName = "diamond";
+  networking.firewall.allowedTCPPorts = [ 80 ];
 }

@@ -12,7 +12,6 @@ in
   "secrets/passwords/cofob.age".publicKeys = all;
 
   "secrets/credentials/cloudflare.age".publicKeys = users ++ [ rat ];
-  "secrets/credentials/cloudflare-averyan.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/gitea.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/bps.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/tmm.age".publicKeys = users ++ [ rat ];

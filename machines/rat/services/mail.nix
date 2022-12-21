@@ -12,7 +12,6 @@
       "$(primary_domain)"
       "firesquare.ru"
       "cofob.ru"
-      "averyan.ru"
     ];
     environmentFile = config.age.secrets.credentials-maddy.path;
     config = "tls file ${config.security.acme.certs."mx1.frsqr.xyz".directory}/fullchain.pem ${config.security.acme.certs."mx1.frsqr.xyz".directory}/key.pem\n" +

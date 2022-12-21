@@ -10,9 +10,12 @@
     https = true;
     package = pkgs.nextcloud25;
     hostName = "cloud.frsqr.xyz";
-    autoUpdateApps.enable = true;
     enableBrokenCiphersForSSE = false;
     caching.redis = true;
+    extraAppsEnable = true;
+    extraApps = with pkgs.nextcloud25Packages.apps; {
+      inherit tasks polls onlyoffice notes deck;
+    };
     config = {
       dbtype = "pgsql";
       dbport = "5432";

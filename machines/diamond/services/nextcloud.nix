@@ -21,6 +21,7 @@
       adminpassFile = config.age.secrets.credentials-nextcloud-admin.path;
       trustedProxies = [ "10.100.0.1" ];
       overwriteProtocol = "https";
+      extraTrustedDomains = [ "10.100.0.2" ];
     };
   };
 

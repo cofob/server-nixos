@@ -20,6 +20,7 @@ in
   "secrets/credentials/archive-bot.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/api-server.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/pbs.age".publicKeys = all;
+  "secrets/credentials/pbs-diamond.age".publicKeys = users ++ [ diamond ];
   "secrets/credentials/pbs-key.age".publicKeys = all;
   "secrets/credentials/ipfs-cluster.age".publicKeys = all;
   "secrets/credentials/remote-builder.age".publicKeys = all;

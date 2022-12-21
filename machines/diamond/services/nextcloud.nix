@@ -2,6 +2,8 @@
 
 {
   age.secrets.credentials-nextcloud-admin.file = ../../../secrets/credentials/nextcloud-admin.age;
+  age.secrets.credentials-nextcloud-admin.owner = "nextcloud";
+  age.secrets.credentials-nextcloud-admin.group = "nextcloud";
 
   services.nextcloud = {
     enable = true;

@@ -15,14 +15,22 @@
       privateKeyFile = config.age.secrets.wg-rat.path;
 
       peers = [
+        # Diamond
         {
           publicKey = "Dt4rlhaocTBlke1ATvZlKnFgmQtN1cuIp8jTrpr0RFY=";
           allowedIPs = [ "10.100.0.2/32" ];
         }
+        # Backup
         {
           publicKey = "ONrFCsu8oi+Fw8X0YViWwIHIzjBJzY1E6SaKEKPKE1o=";
           allowedIPs = [ "10.100.0.3/32" ];
         }
+        # Whale (averyan)
+        {
+          publicKey = "gd+tQKIbvpP3KnTMdE9y8ZPMvaT44d7d3tlvDRocjVU=";
+          allowedIPs = [ "10.100.0.4/32" ];
+        }
+        # Cofob
         {
           publicKey = "Q4EswPBefxCoyD3TEoTYUheM7mQbt13RvFbLaYaC0yE=";
           allowedIPs = [ "10.100.0.100/32" ];

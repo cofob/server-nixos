@@ -19,6 +19,10 @@
           publicKey = "Dt4rlhaocTBlke1ATvZlKnFgmQtN1cuIp8jTrpr0RFY=";
           allowedIPs = [ "10.100.0.2/32" ];
         }
+        {
+          publicKey = "ONrFCsu8oi+Fw8X0YViWwIHIzjBJzY1E6SaKEKPKE1o=";
+          allowedIPs = [ "10.100.0.3/32" ];
+        }
       ];
     };
   };

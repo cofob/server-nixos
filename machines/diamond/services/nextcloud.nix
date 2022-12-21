@@ -9,6 +9,7 @@
     package = pkgs.nextcloud25;
     hostName = "cloud.frsqr.xyz";
     autoUpdateApps.enable = true;
+    enableBrokenCiphersForSSE = false;
     config = {
       dbtype = "pgsql";
       dbport = "5432";

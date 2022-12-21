@@ -3,6 +3,7 @@
 {
   services.postgresql = {
     enable = true;
+    enableTCPIP = true;
     ensureUsers = [
       {
         name = "nextcloud";

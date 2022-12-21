@@ -15,6 +15,9 @@
     config = {
       dbtype = "pgsql";
       dbport = "5432";
+      dbhost = "127.0.0.1";
+      dbname = "nextcloud";
+      dbuser = "nextcloud";
       adminpassFile = config.age.secrets.credentials-nextcloud-admin.path;
       trustedProxies = [ "10.100.0.1" ];
       overwriteProtocol = "https";

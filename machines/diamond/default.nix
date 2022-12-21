@@ -4,6 +4,9 @@
   imports = [
     ../../modules
     ../../hardware/diamond.nix
+
+    ./db.nix
+
     ./services
   ];
 

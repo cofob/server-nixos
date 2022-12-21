@@ -1,0 +1,24 @@
+{ pkgs, config, ... }:
+
+{
+  age.secrets.credentials-nextcloud-admin.file = ../../../secrets/credentials/nextcloud-admin.age;
+
+  services.nextcloud = {
+    enable = true;
+    https = true;
+    package = pkgs.nextcloud25;
+    hostName = "cloud.frsqr.xyz";
+    autoUpdateApps.enable = true;
+    config = {
+      dbtype = "pgsql";
+      dbport = "5432";
+      adminpassFile = config.age.secrets.credentials-nextcloud-admin.path;
+      trustedProxies = [ "10.100.0.1" ];
+      overwriteProtocol = "https";
+    };
+  };
+
+  services.backup.timers.daily = [
+    "nextcloud.pxar:${config.services.nextcloud.datadir}"
+  ];
+}

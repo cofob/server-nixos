@@ -391,11 +391,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1671799601,
-        "narHash": "sha256-Y8cjWqL0pv38h22L9eh8C9C/wMzAzbclMzF5x3GCjTs=",
+        "lastModified": 1671801216,
+        "narHash": "sha256-SUUY3fh/VgsrmsqbW4x34rKrJcLLcV1kSYmoeiu6Pww=",
         "owner": "fire-square",
         "repo": "ipfs-proxy",
-        "rev": "1cfafc7b30526d998ebb70b8748bedbfabb392fe",
+        "rev": "de57b3cf2ab8e112ba88b48cb12fa537e05b193e",
         "type": "github"
       },
       "original": {

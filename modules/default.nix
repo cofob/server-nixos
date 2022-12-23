@@ -27,6 +27,7 @@
     ./hosts.nix
     ./infrared.nix
     ./ipfs-cluster
+    ./ipfs-proxy.nix
     ./ipfs.nix
     ./maddy.nix
     # ./minecraft

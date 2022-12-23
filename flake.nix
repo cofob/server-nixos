@@ -23,6 +23,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    ipfs-proxy.url = "github:fire-square/ipfs-proxy";
+
     bps.url = "github:DomesticMoth/bps";
 
     mineflake.url = "github:nix-community/mineflake";
@@ -46,6 +48,7 @@
     , pkgs-overlay
     , agenix
     , home-manager
+    , ipfs-proxy
     , bps
     , mineflake
     , tg-captcha

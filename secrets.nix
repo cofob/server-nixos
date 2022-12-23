@@ -26,6 +26,7 @@ in
   "secrets/credentials/remote-builder.age".publicKeys = all;
   "secrets/credentials/maddy.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/nextcloud-admin.age".publicKeys = users ++ [ diamond ];
+  "secrets/credentials/ipfs-proxy.age".publicKeys = users ++ [ rat ];
 
   "secrets/wg/rat.age".publicKeys = users ++ [ rat ];
   "secrets/wg/diamond.age".publicKeys = users ++ [ diamond ];

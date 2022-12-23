@@ -3,7 +3,7 @@
 # has additional options that affect the web server as a whole, like
 # the user/group to run under.)
 
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 with lib;
 {
@@ -294,6 +294,30 @@ with lib;
         };
       '';
       description = "Declarative location config";
+    };
+
+    onlyCloudflare = mkOption {
+      type = types.bool;
+      default = false;
+      description = ''
+        Whether to only allow connections from Cloudflare IPs.
+        This is useful for sites that are hosted on a VPS and you want to
+        prevent DDOS attacks.
+      '';
+    };
+
+    cloudflareClientCertificate = mkOption {
+      type = types.path;
+      default = pkgs.fetchurl {
+        url = "https://developers.cloudflare.com/ssl/static/authenticated_origin_pull_ca.pem";
+        sha256 = "0hxqszqfzsbmgksfm6k0gp0hsx9k1gqx24gakxqv0391wl6fsky1";
+      };
+      description = ''
+        Path to Cloudflare client certificate.
+        This is used to verify that the connection is coming from Cloudflare.
+        This is useful for sites that are hosted on a VPS and you want to
+        prevent DDOS attacks.
+      '';
     };
   };
 }

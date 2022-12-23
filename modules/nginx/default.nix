@@ -344,6 +344,11 @@ let
             ssl_conf_command Options KTLS;
           ''}
 
+          ${optionalString vhost.onlyCloudflare ''
+            ssl_client_certificate ${vhost.cloudflareClientCertificate};
+            ssl_verify_client on;
+          ''}
+
           ${optionalString (hasSSL && vhost.http3) ''
             # Advertise that HTTP/3 is available
             add_header Alt-Svc 'h3=":443"; ma=86400' always;
@@ -803,7 +808,7 @@ in
 
       virtualHosts = mkOption {
         type = types.attrsOf (types.submodule (import ./vhost-options.nix {
-          inherit config lib;
+          inherit config lib pkgs;
         }));
         default = { };
         example = literalExpression ''

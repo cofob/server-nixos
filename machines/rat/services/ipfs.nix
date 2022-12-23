@@ -7,8 +7,8 @@ with lib; {
     settings = {
       Gateway.PublicGateways = {
         "ipfsqr.ru" = {
-          Paths = [ "/ipfs" "/ipns" ];
-          UseSubdomains = true;
+          Paths = [ "/ipfs" ];
+          UseSubdomains = false;
         };
       };
     };
@@ -18,7 +18,7 @@ with lib; {
     enable = true;
     service = (lib.importJSON ../../../modules/ipfs-cluster/service.json) // {
       api.restapi = {
-        http_listen_multiaddress = "/ip4/0.0.0.0/tcp/9094";
+        http_listen_multiaddress = "/ip4/127.0.0.1/tcp/9094";
         ssl_cert_file = "${config.security.acme.certs."rat.frsqr.xyz".directory}/fullchain.pem";
         ssl_key_file = "${config.security.acme.certs."rat.frsqr.xyz".directory}/key.pem";
         basic_auth_credentials.default = "#BASIC_PASSWORD#";
@@ -26,25 +26,22 @@ with lib; {
     };
   };
 
+  age.secrets.credentials-ipfs-proxy.file = ../../../secrets/credentials/ipfs-proxy.age;
+  services.ipfs-proxy = {
+    enable = true;
+    envFile = config.age.secrets.credentials-ipfs-proxy.path;
+  };
+
   security.acme.certs = {
-    "ipfsqr.ru".extraDomainNames = [
-      "*.ipfsqr.ru"
-      "*.ipfs.ipfsqr.ru"
-      "*.ipns.ipfsqr.ru"
-      "frsqr.xyz"
-      "*.frsqr.xyz"
-      "firesquare.ru"
-      "*.firesquare.ru"
-      "cofob.ru"
-      "*.cofob.ru"
-    ];
+    "ipfs.frsqr.xyz" = { };
     "rat.frsqr.xyz" = {
       group = "ipfs-cluster";
     };
   };
 
-  services.fs-nginx.virtualHosts."_" = {
-    useACMEHost = "ipfsqr.ru";
-    locations."/".proxyPass = "http://127.0.0.1:8080/";
+  services.fs-nginx.virtualHosts."ipfs.frsqr.xyz" = {
+    useACMEHost = "ipfs.frsqr.xyz";
+    locations."/".proxyPass = "http://127.0.0.1:2314/";
+    onlyCloudflare = true;
   };
 }

@@ -6,12 +6,12 @@
     autoPrune.enable = true;
   };
 
-  virtualisation.oci-containers = {
-    backend = "docker";
-    containers.wathtower = {
-      image = "containrrr/watchtower";
-      cmd = [ "--cleanup" "--interval" "600" ];
-      autoStart = true;
-    };
-  };
+  # virtualisation.oci-containers = {
+  #   backend = "docker";
+  #   containers.wathtower = {
+  #     image = "containrrr/watchtower";
+  #     cmd = [ "--cleanup" "--interval" "600" ];
+  #     autoStart = true;
+  #   };
+  # };
 }

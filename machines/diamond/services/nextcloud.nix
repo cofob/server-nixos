@@ -5,7 +5,7 @@
   age.secrets.credentials-nextcloud-admin.owner = "nextcloud";
   age.secrets.credentials-nextcloud-admin.group = "nextcloud";
 
-  services.nextcloud = {
+  services.fs-nextcloud = {
     enable = true;
     https = true;
     package = pkgs.nextcloud25;
@@ -38,24 +38,11 @@
     };
   };
 
-  services.nginx.virtualHosts."cloud.frsqr.xyz" =
-    let
-      cert = pkgs.fetchurl {
-        url = "https://developers.cloudflare.com/ssl/static/authenticated_origin_pull_ca.pem";
-        sha256 = "0hxqszqfzsbmgksfm6k0gp0hsx9k1gqx24gakxqv0391wl6fsky1";
-      };
-    in
-    {
-      sslCertificate = config.age.secrets.cf-certs-frsqr-xyz-cert.path;
-      sslCertificateKey = config.age.secrets.cf-certs-frsqr-xyz-key.path;
-      listen = [
-        { port = 8443; addr = "0.0.0.0"; }
-      ];
-      extraConfig = ''
-        ssl_client_certificate ${cert};
-        ssl_verify_client on;
-      '';
-    };
+  services.fs-nginx.virtualHosts."cloud.frsqr.xyz" = {
+    sslCertificate = config.age.secrets.cf-certs-frsqr-xyz-cert.path;
+    sslCertificateKey = config.age.secrets.cf-certs-frsqr-xyz-key.path;
+    onlyCloudflare = true;
+  };
 
   networking.firewall.allowedTCPPorts = [ 8443 ];
 

@@ -30,6 +30,7 @@
     ./ipfs-proxy.nix
     ./ipfs.nix
     ./maddy.nix
+    ./nextcloud.nix
     # ./minecraft
     # ./mineflake.nix
     ./monitoring-client.nix

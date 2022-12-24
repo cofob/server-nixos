@@ -5,6 +5,8 @@
   age.secrets.cf-certs-frsqr-xyz-key.file = ../secrets/cf-certs/frsqr.xyz-key.age;
   age.secrets.cf-certs-frsqr-xyz-cert.group = "nginx";
   age.secrets.cf-certs-frsqr-xyz-key.group = "nginx";
+  age.secrets.cf-certs-frsqr-xyz-cert.owner = "nginx";
+  age.secrets.cf-certs-frsqr-xyz-key.owner = "nginx";
 
   age.secrets.credentials-ipfs-proxy.file = ../secrets/credentials/ipfs-proxy.age;
   services.ipfs-proxy = {

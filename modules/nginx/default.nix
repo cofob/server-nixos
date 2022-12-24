@@ -896,12 +896,12 @@ in
           '';
         }
 
-        {
-          assertion = !config.services.nginx.enable;
-          message = ''
-            Options services.nginx.enable must be false.
-          '';
-        }
+        # {
+        #   assertion = !config.services.nginx.enable;
+        #   message = ''
+        #     Options services.nginx.enable must be false.
+        #   '';
+        # }
       ] ++ map
         (name: mkCertOwnershipAssertion {
           inherit (cfg) group user;

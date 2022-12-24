@@ -8,6 +8,8 @@
     ./db.nix
 
     ./services
+
+    ../../configs/stateless-sites.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

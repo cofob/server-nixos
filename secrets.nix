@@ -35,4 +35,7 @@ in
   "secrets/syncthing/rat-key.age".publicKeys = users ++ [ rat ];
 
   "secrets/wiki-env.age".publicKeys = users ++ [ rat ];
+
+  "secrets/cf-certs/frsqr.xyz-cert.age".publicKeys = users ++ [ rat diamond ];
+  "secrets/cf-certs/frsqr.xyz-key.age".publicKeys = users ++ [ rat diamond ];
 }

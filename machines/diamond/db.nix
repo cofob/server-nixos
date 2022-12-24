@@ -11,9 +11,16 @@
           "DATABASE nextcloud" = "ALL PRIVILEGES";
         };
       }
+      {
+        name = "grafana";
+        ensurePermissions = {
+          "DATABASE grafana" = "ALL PRIVILEGES";
+        };
+      }
     ];
     ensureDatabases = [
       "nextcloud"
+      "grafana"
     ];
     authentication = ''
       # TYPE  DATABASE        USER            ADDRESS                 METHOD

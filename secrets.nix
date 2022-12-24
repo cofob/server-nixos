@@ -29,6 +29,7 @@ in
   "secrets/credentials/ipfs-proxy.age".publicKeys = all;
   "secrets/credentials/nextcloud-exporter.age".publicKeys = users ++ [ diamond ];
   "secrets/credentials/prometheus-auth.age".publicKeys = users ++ [ diamond ];
+  "secrets/credentials/w3-exporter.age".publicKeys = users ++ [ diamond ];
 
   "secrets/wg/rat.age".publicKeys = users ++ [ rat ];
   "secrets/wg/diamond.age".publicKeys = users ++ [ diamond ];

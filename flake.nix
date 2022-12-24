@@ -38,6 +38,8 @@
     cofob-ru.url = "github:cofob/cofob.ru";
 
     cofob-home.url = "github:cofob/nixos";
+
+    prom-exporters.url = "github:cofob/prom-exporters";
   };
 
   outputs =
@@ -56,6 +58,7 @@
     , cofob-ru
     , firesquare-ru
     , cofob-home
+    , prom-exporters
     }@attrs:
     {
       nixosConfigurations =

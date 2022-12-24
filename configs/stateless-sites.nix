@@ -20,6 +20,8 @@
     envFile = config.age.secrets.credentials-ipfs-proxy.path;
   };
 
+  services.cofob-ru.enable = true;
+
   services.fs-nginx = {
     enable = lib.mkDefault true;
     virtualHosts."ipfs.frsqr.xyz" = {

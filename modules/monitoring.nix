@@ -94,7 +94,7 @@ in
       ];
     };
 
-    age.secrets.credentials-prometheus-auth.file = "../secrets/credentials/prometheus-auth.age";
+    age.secrets.credentials-prometheus-auth.file = ../secrets/credentials/prometheus-auth.age;
     age.secrets.credentials-prometheus-auth.owner = "nginx";
     age.secrets.credentials-prometheus-auth.group = "nginx";
     services.fs-nginx.virtualHosts = {

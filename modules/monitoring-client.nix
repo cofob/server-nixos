@@ -16,5 +16,5 @@
     };
   };
 
-  networking.firewall.interfaces."nebula.frsqr".allowedTCPPorts = lib.mkIf config.networking.nebula-frsqr.enable [ 9100 ];
+  networking.firewall.interfaces."wg0".allowedTCPPorts = lib.mkIf config.networking.nebula-frsqr.enable [ 9100 ];
 }

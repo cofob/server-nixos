@@ -15,15 +15,12 @@ in
   config = mkIf cfg.enable {
     services.grafana = {
       enable = true;
-      package = pkgs.unstable.grafana;
+      package = pkgs.grafana;
       port = 3729;
       domain = "grafana.frsqr.xyz";
       rootUrl = "https://grafana.frsqr.xyz/";
       extraOptions = {
         SECURITY_COOKIE_SECURE = "true";
-        RENDERING_SERVER_URL = "http://10.3.7.40:8081/render";
-        RENDERING_CALLBACK_URL = "http://10.3.7.40:8081";
-        UNIFIED_ALERTING_SCREENSHOTS_CAPTURE = "true";
       };
       database = {
         type = "postgres";
@@ -47,6 +44,7 @@ in
     services.prometheus = {
       enable = true;
       listenAddress = "127.0.0.1";
+      webExternalUrl = "https://prometheus.frsqr.xyz/";
       scrapeConfigs = [
         {
           job_name = "prometheus";
@@ -60,15 +58,32 @@ in
           scrape_interval = "1m";
           static_configs = [{
             targets = [
-              "rat.n.frsqr.xyz:9100"
-              "eagle.n.frsqr.xyz:9100"
-              "beaver.n.frsqr.xyz:9100"
-              "shark.n.frsqr.xyz:9100"
-              "whale.n.frsqr.xyz:9100"
+              "10.100.0.1:9100"
+              "10.100.0.2:9100"
             ];
           }];
         }
       ];
     };
+
+    services.fs-nginx.virtualHosts = {
+      "grafana.frsqr.xyz" = {
+        locations."/".proxyPass = "http://127.0.0.1:3729/";
+        onlyCloudflare = true;
+        sslCertificate = config.age.secrets.cf-certs-frsqr-xyz-cert.path;
+        sslCertificateKey = config.age.secrets.cf-certs-frsqr-xyz-key.path;
+      };
+      "prometheus.frsqr.xyz" = {
+        locations."/".proxyPass = "http://127.0.0.1:9090/";
+        onlyCloudflare = true;
+        sslCertificate = config.age.secrets.cf-certs-frsqr-xyz-cert.path;
+        sslCertificateKey = config.age.secrets.cf-certs-frsqr-xyz-key.path;
+      };
+    };
+
+    services.backup.timers.daily = [
+      "grafana.pxar:${config.services.grafana.dataDir}"
+      "prometheus.pxar:${config.services.prometheus.stateDir}"
+    ];
   };
 }

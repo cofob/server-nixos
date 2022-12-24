@@ -27,7 +27,8 @@ in
   "secrets/credentials/maddy.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/nextcloud-admin.age".publicKeys = users ++ [ diamond ];
   "secrets/credentials/ipfs-proxy.age".publicKeys = all;
-  "secrets/credentials/nextcloud-exporter.age".publicKeys = all;
+  "secrets/credentials/nextcloud-exporter.age".publicKeys = users ++ [ diamond ];
+  "secrets/credentials/prometheus-auth.age".publicKeys = users ++ [ diamond ];
 
   "secrets/wg/rat.age".publicKeys = users ++ [ rat ];
   "secrets/wg/diamond.age".publicKeys = users ++ [ diamond ];

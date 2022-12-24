@@ -42,7 +42,6 @@
     sslCertificate = config.age.secrets.cf-certs-frsqr-xyz-cert.path;
     sslCertificateKey = config.age.secrets.cf-certs-frsqr-xyz-key.path;
     onlyCloudflare = true;
-    recommendedTlsSettings = false;
   };
 
   networking.firewall.allowedTCPPorts = [ 8443 ];

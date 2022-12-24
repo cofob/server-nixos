@@ -91,13 +91,6 @@ in
             targets = [ "localhost:9205" ];
           }];
         }
-        {
-          job_name = "web3-storage";
-          scrape_interval = "10s";
-          static_configs = [{
-            targets = [ "localhost:9325" ];
-          }];
-        }
       ];
     };
 

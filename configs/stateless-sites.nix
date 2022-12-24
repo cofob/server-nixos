@@ -3,6 +3,8 @@
 {
   age.secrets.cf-certs-frsqr-xyz-cert.file = ../secrets/cf-certs/frsqr.xyz-cert.age;
   age.secrets.cf-certs-frsqr-xyz-key.file = ../secrets/cf-certs/frsqr.xyz-key.age;
+  age.secrets.cf-certs-frsqr-xyz-cert.group = "nginx";
+  age.secrets.cf-certs-frsqr-xyz-key.group = "nginx";
 
   age.secrets.credentials-ipfs-proxy.file = ../secrets/credentials/ipfs-proxy.age;
   services.ipfs-proxy = {

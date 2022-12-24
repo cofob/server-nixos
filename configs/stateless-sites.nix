@@ -17,6 +17,7 @@
       onlyCloudflare = true;
       sslCertificate = config.age.secrets.cf-certs-frsqr-xyz-cert.path;
       sslCertificateKey = config.age.secrets.cf-certs-frsqr-xyz-key.path;
+      recommendedTlsSettings = false;
     };
   };
 }

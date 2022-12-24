@@ -74,6 +74,16 @@ in
             ];
           }];
         }
+        {
+          job_name = "postgres";
+          scrape_interval = "1m";
+          static_configs = [{
+            targets = [
+              "localhost:9187"
+              "10.100.0.2:9187"
+            ];
+          }];
+        }
       ];
     };
 

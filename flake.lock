@@ -714,11 +714,11 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1671911007,
-        "narHash": "sha256-yWOhSN7R6nlSECLGc6KwXaUFhQkMEISs58BZF/1yPrE=",
+        "lastModified": 1671911575,
+        "narHash": "sha256-Y/OKlA4nZU/qacTPO97l8X2xFzN+2imWKY9bfo1V+24=",
         "owner": "cofob",
         "repo": "prom-exporters",
-        "rev": "e4a475cb782c94a73898ed686740bafd3f8dc24e",
+        "rev": "663eab2bd8dcbde903205f7db8e1fe460708e5f2",
         "type": "github"
       },
       "original": {

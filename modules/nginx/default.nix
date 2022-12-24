@@ -423,7 +423,7 @@ in
       enable = mkEnableOption "Nginx Web Server";
 
       statusPage = mkOption {
-        default = false;
+        default = true;
         type = types.bool;
         description = "
           Enable status page reachable from localhost on http://127.0.0.1/nginx_status.

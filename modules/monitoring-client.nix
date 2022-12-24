@@ -14,7 +14,11 @@
         "tcpstat"
       ];
     };
+
+    nginx = {
+      enable = true;
+    };
   };
 
-  networking.firewall.interfaces."wg0".allowedTCPPorts = [ 9100 ];
+  networking.firewall.interfaces."wg0".allowedTCPPorts = [ 9100 9113 ];
 }

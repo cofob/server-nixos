@@ -51,6 +51,15 @@
     requirePass = "secret";
   };
 
+  age.secrets.credentials-nextcloud-exporter.file = ../../../secrets/credentials/nextcloud-exporter.age;
+  age.secrets.credentials-nextcloud-exporter.owner = "nextcloud-exporter";
+  age.secrets.credentials-nextcloud-exporter.group = "nextcloud-exporter";
+  services.prometheus.exporters.nextcloud = {
+    enable = true;
+    url = "https://cloud.frsqr.xyz";
+    passwordFile = config.age.secrets.credentials-nextcloud-exporter.path;
+  };
+
   services.backup.timers.daily = [
     "nextcloud.pxar:${config.services.nextcloud.datadir}"
   ];

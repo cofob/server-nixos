@@ -84,6 +84,13 @@ in
             ];
           }];
         }
+        {
+          job_name = "nextcloud";
+          scrape_interval = "1m";
+          static_configs = [{
+            targets = [ "localhost:9205" ];
+          }];
+        }
       ];
     };
 

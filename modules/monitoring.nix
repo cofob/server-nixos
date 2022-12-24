@@ -66,10 +66,10 @@ in
         }
         {
           job_name = "nginx";
-          scrape_interval = "1m";
+          scrape_interval = "10s";
           static_configs = [{
             targets = [
-              "10.100.0.1:9113"
+              "localhost:9113"
               "10.100.0.2:9113"
             ];
           }];

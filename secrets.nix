@@ -36,6 +36,8 @@ in
 
   "secrets/wiki-env.age".publicKeys = users ++ [ rat ];
 
-  "secrets/cf-certs/frsqr.xyz-cert.age".publicKeys = users ++ [ rat diamond ];
-  "secrets/cf-certs/frsqr.xyz-key.age".publicKeys = users ++ [ rat diamond ];
+  "secrets/cf-certs/frsqr.xyz-cert.age".publicKeys = all;
+  "secrets/cf-certs/frsqr.xyz-key.age".publicKeys = all;
+  "secrets/cf-certs/cofob.ru-cert.age".publicKeys = all;
+  "secrets/cf-certs/cofob.ru-key.age".publicKeys = all;
 }

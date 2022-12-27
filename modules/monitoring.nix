@@ -44,6 +44,10 @@ in
 
     services.prometheus = {
       enable = true;
+      pushgateway = {
+        enable = true;
+        web.external-url = "https://prometheus-push.frsqr.xyz/";
+      };
       listenAddress = "127.0.0.1";
       webExternalUrl = "https://prometheus.frsqr.xyz/";
       scrapeConfigs = [
@@ -91,6 +95,14 @@ in
             targets = [ "localhost:9205" ];
           }];
         }
+        {
+          job_name = "pushgateway";
+          scrape_interval = "1m";
+          honor_labels = true;
+          static_configs = [{
+            targets = [ "localhost:9091" ];
+          }];
+        }
       ];
     };
 
@@ -106,6 +118,13 @@ in
       };
       "prometheus.frsqr.xyz" = {
         locations."/".proxyPass = "http://127.0.0.1:9090/";
+        locations."/".basicAuthFile = config.age.secrets.credentials-prometheus-auth.path;
+        onlyCloudflare = true;
+        sslCertificate = config.age.secrets.cf-certs-frsqr-xyz-cert.path;
+        sslCertificateKey = config.age.secrets.cf-certs-frsqr-xyz-key.path;
+      };
+      "prometheus-push.frsqr.xyz" = {
+        locations."/".proxyPass = "http://127.0.0.1:9091/";
         locations."/".basicAuthFile = config.age.secrets.credentials-prometheus-auth.path;
         onlyCloudflare = true;
         sslCertificate = config.age.secrets.cf-certs-frsqr-xyz-cert.path;

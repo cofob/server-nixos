@@ -10,44 +10,9 @@
           "DATABASE vaultwarden" = "ALL PRIVILEGES";
         };
       }
-      {
-        name = "woodpecker";
-        ensurePermissions = {
-          "DATABASE woodpecker" = "ALL PRIVILEGES";
-        };
-      }
-      {
-        name = "grafana";
-        ensurePermissions = {
-          "DATABASE grafana" = "ALL PRIVILEGES";
-        };
-      }
-      {
-        name = "gitea";
-        ensurePermissions = {
-          "DATABASE gitea" = "ALL PRIVILEGES";
-        };
-      }
-      {
-        name = "wiki";
-        ensurePermissions = {
-          "DATABASE wiki" = "ALL PRIVILEGES";
-        };
-      }
-      {
-        name = "maddy";
-        ensurePermissions = {
-          "DATABASE maddy" = "ALL PRIVILEGES";
-        };
-      }
     ];
     ensureDatabases = [
       "vaultwarden"
-      "woodpecker"
-      "grafana"
-      "gitea"
-      "maddy"
-      "wiki"
     ];
   };
 

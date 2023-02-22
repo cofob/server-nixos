@@ -11,7 +11,6 @@ in
 {
   "secrets/passwords/cofob.age".publicKeys = all;
 
-  "secrets/credentials/cloudflare.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/gitea.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/bps.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/tmm.age".publicKeys = users ++ [ rat ];
@@ -41,6 +40,6 @@ in
 
   "secrets/cf-certs/frsqr.xyz-cert.age".publicKeys = all;
   "secrets/cf-certs/frsqr.xyz-key.age".publicKeys = all;
-  "secrets/cf-certs/cofob.ru-cert.age".publicKeys = all;
-  "secrets/cf-certs/cofob.ru-key.age".publicKeys = all;
+  "secrets/cf-certs/cofob.dev-cert.age".publicKeys = all;
+  "secrets/cf-certs/cofob.dev-key.age".publicKeys = all;
 }

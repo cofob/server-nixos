@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
   services.vaultwarden = {
@@ -6,18 +6,20 @@
     dbBackend = "sqlite";
     backupDir = "/var/lib/bitwarden_rs/backup";
     config = {
-      domain = "https://bw.frsqr.xyz";
+      domain = "https://bw.cofob.dev";
       signupsAllowed = false;
       rocketPort = 8222;
       rocketAddress = "127.0.0.1";
     };
   };
 
-  security.acme.certs."bw.frsqr.xyz" = { };
+  security.acme.certs."bw.cofob.dev" = { };
 
-  services.fs-nginx.virtualHosts."bw.frsqr.xyz" = {
-    useACMEHost = "bw.frsqr.xyz";
+  services.fs-nginx.virtualHosts."bw.cofob.dev" = {
+    onlyCloudflare = true;
     locations."/".proxyPass = "http://127.0.0.1:8222/";
+    sslCertificate = config.age.secrets.cf-certs-cofob-dev-cert.path;
+    sslCertificateKey = config.age.secrets.cf-certs-cofob-dev-key.path;
   };
 
   services.backup.timers.daily = [

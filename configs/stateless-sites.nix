@@ -1,18 +1,12 @@
 { lib, config, ... }:
 
 {
-  age.secrets.cf-certs-frsqr-xyz-cert.file = ../secrets/cf-certs/frsqr.xyz-cert.age;
-  age.secrets.cf-certs-frsqr-xyz-key.file = ../secrets/cf-certs/frsqr.xyz-key.age;
-  age.secrets.cf-certs-frsqr-xyz-cert.group = "nginx";
-  age.secrets.cf-certs-frsqr-xyz-key.group = "nginx";
-  age.secrets.cf-certs-frsqr-xyz-cert.owner = "nginx";
-  age.secrets.cf-certs-frsqr-xyz-key.owner = "nginx";
-  age.secrets.cf-certs-cofob-ru-cert.file = ../secrets/cf-certs/cofob.ru-cert.age;
-  age.secrets.cf-certs-cofob-ru-key.file = ../secrets/cf-certs/cofob.ru-key.age;
-  age.secrets.cf-certs-cofob-ru-cert.group = "nginx";
-  age.secrets.cf-certs-cofob-ru-key.group = "nginx";
-  age.secrets.cf-certs-cofob-ru-cert.owner = "nginx";
-  age.secrets.cf-certs-cofob-ru-key.owner = "nginx";
+  age.secrets.cf-certs-cofob-dev-cert.file = ../secrets/cf-certs/cofob.dev-cert.age;
+  age.secrets.cf-certs-cofob-dev-key.file = ../secrets/cf-certs/cofob.dev-key.age;
+  age.secrets.cf-certs-cofob-dev-cert.group = "nginx";
+  age.secrets.cf-certs-cofob-dev-key.group = "nginx";
+  age.secrets.cf-certs-cofob-dev-cert.owner = "nginx";
+  age.secrets.cf-certs-cofob-dev-key.owner = "nginx";
 
   age.secrets.credentials-ipfs-proxy.file = ../secrets/credentials/ipfs-proxy.age;
   services.ipfs-proxy = {
@@ -24,17 +18,17 @@
 
   services.fs-nginx = {
     enable = lib.mkDefault true;
-    virtualHosts."ipfs.frsqr.xyz" = {
+    virtualHosts."ipfs.cofob.dev" = {
       locations."/".proxyPass = "http://127.0.0.1:2314/";
       onlyCloudflare = true;
-      sslCertificate = config.age.secrets.cf-certs-frsqr-xyz-cert.path;
-      sslCertificateKey = config.age.secrets.cf-certs-frsqr-xyz-key.path;
+      sslCertificate = config.age.secrets.cf-certs-cofob-dev-cert.path;
+      sslCertificateKey = config.age.secrets.cf-certs-cofob-dev-key.path;
     };
-    virtualHosts."cofob.ru" = {
+    virtualHosts."cofob.dev" = {
       locations."/".proxyPass = "http://127.0.0.1:3000/";
       onlyCloudflare = true;
-      sslCertificate = config.age.secrets.cf-certs-cofob-ru-cert.path;
-      sslCertificateKey = config.age.secrets.cf-certs-cofob-ru-key.path;
+      sslCertificate = config.age.secrets.cf-certs-cofob-dev-cert.path;
+      sslCertificateKey = config.age.secrets.cf-certs-cofob-dev-key.path;
     };
   };
 }

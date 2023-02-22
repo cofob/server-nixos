@@ -7,7 +7,6 @@
     ../../mounts/aeza.nix
 
     ./db.nix
-    ./syncthing.nix
     ./services
 
     ../../configs/stateless-sites.nix

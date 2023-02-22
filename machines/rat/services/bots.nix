@@ -18,18 +18,4 @@
     enable = true;
     envFile = config.age.secrets.credentials-tgcaptcha.path;
   };
-
-  age.secrets.credentials-archive-bot.file = ../../../secrets/credentials/archive-bot.age;
-  services.archive-bot = {
-    enable = true;
-    domain = "https://archivebot.frsqr.xyz";
-    environment = config.age.secrets.credentials-archive-bot.path;
-  };
-
-  security.acme.certs."archivebot.frsqr.xyz" = { };
-
-  services.fs-nginx.virtualHosts."archivebot.frsqr.xyz" = {
-    useACMEHost = "archivebot.frsqr.xyz";
-    locations."/".root = "${erk-archive.packages.x86_64-linux.static}";
-  };
 }

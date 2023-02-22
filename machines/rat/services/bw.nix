@@ -13,8 +13,6 @@
     };
   };
 
-  security.acme.certs."bw.cofob.dev" = { };
-
   services.fs-nginx.virtualHosts."bw.cofob.dev" = {
     onlyCloudflare = true;
     locations."/".proxyPass = "http://127.0.0.1:8222/";

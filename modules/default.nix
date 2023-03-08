@@ -16,6 +16,7 @@
     agenix.nixosModule
     bps.nixosModule
 
+    ./acme.nix
     ./backup.nix
     ./cockroach.nix
     ./cofob-ru

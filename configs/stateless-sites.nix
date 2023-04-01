@@ -15,18 +15,20 @@
   };
 
   services.cofob-ru.enable = true;
-  security.acme.certs."cofob.dev" = { };
-  security.acme.certs."ipfs.cofob.dev" = { };
 
   services.fs-nginx = {
     enable = lib.mkDefault true;
     virtualHosts."ipfs.cofob.dev" = {
-      useACMEHost = "ipfs.cofob.dev";
       locations."/".proxyPass = "http://127.0.0.1:2314/";
+      onlyCloudflare = true;
+      sslCertificate = config.age.secrets.cf-certs-cofob-dev-cert.path;
+      sslCertificateKey = config.age.secrets.cf-certs-cofob-dev-key.path;
     };
     virtualHosts."cofob.dev" = {
-      useACMEHost = "cofob.dev";
       locations."/".proxyPass = "http://127.0.0.1:3000/";
+      onlyCloudflare = true;
+      sslCertificate = config.age.secrets.cf-certs-cofob-dev-cert.path;
+      sslCertificateKey = config.age.secrets.cf-certs-cofob-dev-key.path;
     };
   };
 }

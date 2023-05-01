@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./alice-gpt.nix
     ./wg.nix
     ./bots.nix
     ./bw.nix

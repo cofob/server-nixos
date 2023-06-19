@@ -32,7 +32,7 @@
         }
         # Cofob
         {
-          publicKey = "Q4EswPBefxCoyD3TEoTYUheM7mQbt13RvFbLaYaC0yE=";
+          publicKey = "/CXzueQeO1PuPG3eLjMNnArc75apmVLvYuP095NLVF4=";
           allowedIPs = [ "10.100.0.100/32" ];
         }
       ];

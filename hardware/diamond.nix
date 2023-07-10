@@ -9,6 +9,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.loader.grub.device = "/dev/nvme0n1";
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/758c4bcb-aee8-4908-a746-5e633ed55040";

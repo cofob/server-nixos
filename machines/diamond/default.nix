@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ./modules
+
     ../../modules
     ../../hardware/diamond.nix
   ];

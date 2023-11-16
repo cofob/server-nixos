@@ -154,13 +154,13 @@
         "lastModified": 1700110542,
         "narHash": "sha256-ggWJ6/4D6hGNFEKCZHwkjj1IgSwtasFiDizP/pUIAZs=",
         "owner": "cofob",
-        "repo": "cofob.dev",
+        "repo": "cofob.ru",
         "rev": "d5434c61c43f48ffc23de8520a7e6a1deed66445",
         "type": "github"
       },
       "original": {
         "owner": "cofob",
-        "repo": "cofob.dev",
+        "repo": "cofob.ru",
         "type": "github"
       }
     },

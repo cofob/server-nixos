@@ -151,11 +151,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1704210941,
-        "narHash": "sha256-geYZEr+WdtmTO6VHHcvXbnATqck8P9tIUUW76xRKn7k=",
+        "lastModified": 1704211409,
+        "narHash": "sha256-5qmp65lvInHI1pq7dpLqs62L305t3SCcRwyRLIseBRY=",
         "owner": "cofob",
         "repo": "cofob.ru",
-        "rev": "2e99c86c604f0e7bf6b80363e98fb66372b9e380",
+        "rev": "7b1c9d591d8b0780dcefc9d97bb2e655e70df5b6",
         "type": "github"
       },
       "original": {

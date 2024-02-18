@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     flake-utils.url = "github:numtide/flake-utils";
 
@@ -20,7 +21,10 @@
 
     tg-captcha.url = "github:cofob/captcha";
 
-    aeza-assistant.url = "github:cofob/aeza-assistant";
+    aeza-assistant = {
+      url = "github:cofob/aeza-assistant";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
     cofob-dev.url = "github:cofob/cofob.dev";
 

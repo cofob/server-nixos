@@ -13,6 +13,13 @@
       locations."/".proxyPass = "http://127.0.0.1:3000/";
     };
 
+    virtualHosts."ipfs.cofob.dev" = {
+      enableACME = true;
+      quic = true;
+      forceSSL = true;
+      locations."/".return = "301 https://ipfs.io$request_uri";
+    };
+
     virtualHosts."cofob.gay" = {
       enableACME = true;
       quic = true;

@@ -11,14 +11,13 @@ in
 {
   "secrets/passwords/cofob.age".publicKeys = all;
 
-  "secrets/credentials/bps.age".publicKeys = users ++ [ rat ];
-  "secrets/credentials/tmm.age".publicKeys = users ++ [ rat ];
-  "secrets/credentials/tgcaptcha.age".publicKeys = users ++ [ rat ];
+  # Tg bots
+  "secrets/credentials/bps.age".publicKeys = users ++ [ incognet ];
+  "secrets/credentials/tmm.age".publicKeys = users ++ [ incognet ];
+  "secrets/credentials/tgcaptcha.age".publicKeys = users ++ [ incognet ];
+
   "secrets/credentials/pbs.age".publicKeys = all;
   "secrets/credentials/pbs-key.age".publicKeys = all;
   "secrets/credentials/cloudflare.age".publicKeys = all;
   "secrets/credentials/maddy.age".publicKeys = users ++ [ rat ];
-
-  "secrets/cf-certs/cofob.dev-cert.age".publicKeys = all;
-  "secrets/cf-certs/cofob.dev-key.age".publicKeys = all;
 }

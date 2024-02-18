@@ -20,6 +20,13 @@
     envFile = config.age.secrets.credentials-tgcaptcha.path;
   };
 
+  age.secrets.credentials-marzbanbot.file = ../../../secrets/credentials/marzbanbot.age;
+  services.marzbanbot = {
+    enable = true;
+    package = pkgs.marzbanbot;
+    envFile = config.age.secrets.credentials-marzbanbot.path;
+  };
+
   age.secrets.credentials-aeza-assistant.file = ../../../secrets/credentials/aeza-assistant.age;
   services.aeza-assistant = {
     enable = true;

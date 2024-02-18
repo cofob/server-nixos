@@ -9,6 +9,8 @@
     virtualHosts."cofob.dev" = {
       enableACME = true;
       quic = true;
+      http3 = true;
+      kTLS = true;
       forceSSL = true;
       locations."/".proxyPass = "http://127.0.0.1:3000/";
     };
@@ -16,6 +18,8 @@
     virtualHosts."ipfs.cofob.dev" = {
       enableACME = true;
       quic = true;
+      http3 = true;
+      kTLS = true;
       forceSSL = true;
       locations."/" = {
         return = "301 https://ipfs.io$request_uri";
@@ -29,6 +33,8 @@
     virtualHosts."cofob.gay" = {
       enableACME = true;
       quic = true;
+      http3 = true;
+      kTLS = true;
       forceSSL = true;
       locations."/".return = "302 https://cofob.dev$request_uri?rainbow";
     };

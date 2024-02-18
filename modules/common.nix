@@ -24,7 +24,7 @@
   services.earlyoom.enable = true;
 
   # Enable QUIC support for nginx
-  services.nginx.package = pkgs.nginxQuic;
+  services.nginx.package = lib.mkDefault pkgs.nginxQuic;
 
   system = {
     stateVersion = "23.11";

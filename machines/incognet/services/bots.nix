@@ -23,6 +23,7 @@
   age.secrets.credentials-aeza-assistant.file = ../../../secrets/credentials/aeza-assistant.age;
   services.aeza-assistant = {
     enable = true;
+    package = pkgs.aeza-assistant;
     envFile = config.age.secrets.credentials-aeza-assistant.path;
   };
 

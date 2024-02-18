@@ -24,4 +24,7 @@
   services.backup.timers.daily = [
     "bitwarden.pxar:/var/lib/bitwarden_rs"
   ];
+  services.telegram-backup.timers.daily = [
+    "/var/lib/bitwarden_rs"
+  ];
 }

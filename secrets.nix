@@ -19,6 +19,7 @@ in
 
   "secrets/credentials/pbs.age".publicKeys = all;
   "secrets/credentials/pbs-key.age".publicKeys = all;
+  "secrets/credentials/telegram-backup.age".publicKeys = all;
   "secrets/credentials/cloudflare.age".publicKeys = all;
   "secrets/credentials/maddy.age".publicKeys = users ++ [ rat ];
 }

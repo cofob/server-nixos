@@ -24,4 +24,8 @@
     "postgresql.pxar:${config.services.postgresql.dataDir}"
     "postgresql_dump.pxar:${config.services.postgresqlBackup.location}"
   ];
+  services.telegram-backup.timers.daily = [
+    config.services.postgresql.dataDir
+    config.services.postgresqlBackup.location
+  ];
 }

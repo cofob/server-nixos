@@ -10,6 +10,7 @@
   ];
 
   services.backup.enable = true;
+  services.telegram-backup.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   services.zerotierone = {

@@ -30,4 +30,7 @@
   services.backup.timers.daily = [
     "tmm.pxar:/var/lib/tmm"
   ];
+  services.telegram-backup.timers.daily = [
+    "/var/lib/tmm"
+  ];
 }

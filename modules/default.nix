@@ -16,6 +16,7 @@
 
     ./acme.nix
     ./backup.nix
+    ./telegram-backup.nix
     ./cofob-dev
     ./common.nix
     ./dns.nix

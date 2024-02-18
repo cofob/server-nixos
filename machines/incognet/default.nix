@@ -5,7 +5,8 @@
     ./modules
 
     ../../modules
-    ../../hardware/diamond.nix
+    ../../hardware/incognet.nix
+    ../../mounts/incognet.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -15,6 +16,6 @@
   };
 
   networking = {
-    hostName = "diamond";
+    hostName = "host";
   };
 }

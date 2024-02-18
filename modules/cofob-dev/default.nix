@@ -1,11 +1,11 @@
-{ config, lib, pkgs, cofob-ru, ... }:
+{ config, lib, pkgs, cofob-dev, ... }:
 
 with lib; let
-  cfg = config.services.cofob-ru;
+  cfg = config.services.cofob-dev;
 in
 {
-  options.services.cofob-ru = {
-    enable = mkEnableOption "Enable cofob.ru website";
+  options.services.cofob-dev = {
+    enable = mkEnableOption "Enable cofob.dev website";
 
     port = mkOption {
       type = types.port;
@@ -15,23 +15,23 @@ in
 
     package = mkOption {
       type = types.package;
-      default = cofob-ru.packages.x86_64-linux.default;
+      default = cofob-dev.packages.x86_64-linux.default;
       description = "Package to use";
     };
   };
 
   config.systemd.services = mkIf cfg.enable {
-    cofob-ru = {
+    cofob-dev = {
       enable = true;
-      description = "cofob.ru website";
-      script = "cofob-ru";
+      description = "cofob.dev website";
+      script = "cofob-dev";
       path = [ cfg.package ];
       unitConfig = {
         Type = "simple";
       };
       serviceConfig = {
-        User = "cofob-ru";
-        Group = "cofob-ru";
+        User = "cofob-dev";
+        Group = "cofob-dev";
         Restart = "on-failure";
         RestartSec = "1s";
       };
@@ -40,14 +40,14 @@ in
   };
 
   config.users = mkIf cfg.enable {
-    users.cofob-ru = {
+    users.cofob-dev = {
       isSystemUser = true;
-      description = "cofob.ru website user";
-      home = "/var/lib/cofob-ru";
+      description = "cofob.dev website user";
+      home = "/var/lib/cofob-dev";
       createHome = true;
-      group = "cofob-ru";
+      group = "cofob-dev";
     };
 
-    groups.cofob-ru = { };
+    groups.cofob-dev = { };
   };
 }

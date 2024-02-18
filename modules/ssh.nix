@@ -4,10 +4,7 @@
   services.openssh = {
     enable = true;
     openFirewall = true;
-    permitRootLogin = "no";
-    passwordAuthentication = false;
+    settings.PermitRootLogin = "no";
+    settings.PasswordAuthentication = false;
   };
-
-  environment.systemPackages = [ pkgs.mosh ];
-  networking.firewall.allowedUDPPortRanges = [{ from = 60000; to = 61000; }];
 }

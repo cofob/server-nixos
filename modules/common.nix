@@ -1,9 +1,9 @@
 { pkgs, config, lib, ... }:
 
 {
-  boot = {
-    cleanTmpDir = true;
-    tmpOnTmpfs = true;
+  boot.tmp = {
+    useTmpfs = true;
+    cleanOnBoot = true;
   };
 
   services.fstrim.enable = true;

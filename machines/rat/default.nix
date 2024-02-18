@@ -6,13 +6,12 @@
     ../../hardware/aeza.nix
     ../../mounts/aeza.nix
 
-    ./db.nix
     ./services
 
     ../../configs/stateless-sites.nix
   ];
 
-  services.fs-nginx.enable = true;
+  services.nginx.enable = true;
 
   services.backup.enable = true;
 

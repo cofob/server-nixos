@@ -7,7 +7,7 @@
     security.acme = {
       acceptTerms = true;
       defaults = {
-        email = "admin@firesquare.ru";
+        email = "cofob@riseup.net";
         dnsResolver = "1.1.1.1:53";
         dnsProvider = "cloudflare";
         credentialsFile = config.age.secrets.credentials-cloudflare.path;

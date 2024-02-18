@@ -28,7 +28,7 @@ in
 
     package = mkOption {
       type = types.package;
-      default = pkgs.tmm;
+      default = pkgs.callPackage ./package.nix { };
       description = "TMM package to use";
     };
   };

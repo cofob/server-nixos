@@ -13,9 +13,9 @@
     tokenEnvFile = config.age.secrets.credentials-tmm.path;
   };
 
-  age.secrets.credentials-tgcaptcha.file = ../../../secrets/credentials/tgcaptcha.age;
-  services.tg-captcha = {
-    enable = true;
-    envFile = config.age.secrets.credentials-tgcaptcha.path;
-  };
+  # age.secrets.credentials-tgcaptcha.file = ../../../secrets/credentials/tgcaptcha.age;
+  # services.tg-captcha = {
+  #   enable = true;
+  #   envFile = config.age.secrets.credentials-tgcaptcha.path;
+  # };
 }

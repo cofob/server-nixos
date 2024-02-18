@@ -1,17 +1,10 @@
 {
-  description = "Firesquare servers configs";
+  description = "Cofob server configs";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
     flake-utils.url = "github:numtide/flake-utils";
-
-    nur.url = "github:nix-community/NUR";
-
-    pkgs-overlay = {
-      url = "github:cofob/nixos-pkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     agenix = {
       url = "github:ryantm/agenix";
@@ -19,46 +12,29 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-22.11";
+      url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ipfs-proxy.url = "github:fire-square/ipfs-proxy";
-
     bps.url = "github:DomesticMoth/bps";
-
-    mineflake.url = "github:nix-community/mineflake";
 
     tg-captcha.url = "github:cofob/captcha";
 
-    erk-archive.url = "github:cofob/erk-archive";
-
-    firesquare-ru.url = "github:cofob/2bu2t-frontend";
-
-    cofob-ru.url = "github:cofob/cofob.ru";
+    cofob-dev.url = "github:cofob/cofob.dev";
 
     cofob-home.url = "github:cofob/nixos";
-
-    prom-exporters.url = "github:cofob/prom-exporters";
   };
 
   outputs =
     { self
     , nixpkgs
     , flake-utils
-    , nur
-    , pkgs-overlay
     , agenix
     , home-manager
-    , ipfs-proxy
     , bps
-    , mineflake
     , tg-captcha
-    , erk-archive
-    , cofob-ru
-    , firesquare-ru
+    , cofob-dev
     , cofob-home
-    , prom-exporters
     }@attrs:
     {
       nixosConfigurations =
@@ -81,8 +57,7 @@
       {
         devShells.default = pkgs.mkShell {
           buildInputs = [
-            agenix.defaultPackage.${system}
-            pkgs.nebula
+            agenix.packages.${system}.default
           ];
         };
       });

@@ -58,6 +58,7 @@
         devShells.default = pkgs.mkShell {
           buildInputs = [
             agenix.packages.${system}.default
+            pkgs.nixpkgs-fmt
           ];
         };
       });

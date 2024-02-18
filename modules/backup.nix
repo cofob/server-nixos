@@ -32,6 +32,7 @@ in
 
       timers = mkOption {
         type = types.attrsOf (types.listOf types.str);
+        default = { };
       };
     };
   };

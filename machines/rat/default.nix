@@ -11,8 +11,6 @@
 
   services.nginx.enable = true;
 
-  services.backup.enable = true;
-
   networking = {
     hostName = "rat";
 

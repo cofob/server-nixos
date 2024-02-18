@@ -9,6 +9,8 @@
     ../../mounts/incognet.nix
   ];
 
+  services.backup.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   services.zerotierone = {
     enable = true;

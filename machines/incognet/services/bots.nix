@@ -19,4 +19,8 @@
     package = pkgs.tg-captcha;
     envFile = config.age.secrets.credentials-tgcaptcha.path;
   };
+
+  services.backup.timers.daily = [
+    "tmm.pxar:/var/lib/tmm"
+  ];
 }

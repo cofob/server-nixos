@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ./bw.nix
-  ];
+  imports = [ ];
 }

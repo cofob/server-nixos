@@ -27,7 +27,7 @@
   services.nginx.package = pkgs.nginxQuic;
 
   system = {
-    stateVersion = "22.05";
+    stateVersion = "23.11";
     autoUpgrade = {
       enable = true;
       allowReboot = false;
@@ -40,8 +40,7 @@
     settings = {
       auto-optimise-store = true;
       allowed-users = [ "@users" ];
-      trusted-users = [ "@wheel" ]
-        ++ (lib.optional (config.networking.hostName == "beaver") "builder");
+      trusted-users = [ "@wheel" ];
       substituters = [
         "https://cache.nixos.org"
         "https://nix-community.cachix.org"

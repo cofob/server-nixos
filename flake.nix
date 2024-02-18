@@ -21,10 +21,7 @@
 
     tg-captcha.url = "github:cofob/captcha";
 
-    aeza-assistant = {
-      url = "github:cofob/aeza-assistant";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+    aeza-assistant.url = "github:cofob/aeza-assistant";
 
     cofob-dev.url = "github:cofob/cofob.dev";
 

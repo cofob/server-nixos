@@ -18,7 +18,6 @@
     ./common.nix
     ./dns.nix
     # ./maddy.nix
-    ./nftables.nix
     ./ssh.nix
     ./tmm
     ./users.nix

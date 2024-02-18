@@ -17,7 +17,13 @@
       enableACME = true;
       quic = true;
       forceSSL = true;
-      locations."/".return = "301 https://ipfs.io$request_uri";
+      locations."/" = {
+        return = "301 https://ipfs.io$request_uri";
+        extraConfig = ''
+          add_header access-control-allow-origin *;
+          add_header access-control-allow-headers *;
+        '';
+      };
     };
 
     virtualHosts."cofob.gay" = {

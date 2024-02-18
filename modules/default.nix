@@ -8,7 +8,7 @@
 {
   imports = [
     home-manager.nixosModule
-    tg-captcha.nixosModule
+    tg-captcha.nixosModules.default
     agenix.nixosModules.default
     bps.nixosModule
 
@@ -20,6 +20,7 @@
     # ./maddy.nix
     ./ssh.nix
     ./tmm
+    ./overlays.nix
     ./users.nix
   ];
 }

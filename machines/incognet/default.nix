@@ -16,6 +16,6 @@
   };
 
   networking = {
-    hostName = "host";
+    hostName = "incognet";
   };
 }

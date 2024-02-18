@@ -16,9 +16,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    bps.url = "github:DomesticMoth/bps";
+    bps = {
+      url = "github:DomesticMoth/bps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    tg-captcha.url = "github:cofob/captcha";
+    tg-captcha = {
+      url = "github:cofob/captcha";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     cofob-dev.url = "github:cofob/cofob.dev";
 

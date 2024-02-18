@@ -7,8 +7,6 @@
     ../../mounts/aeza.nix
 
     ./services
-
-    ../../configs/stateless-sites.nix
   ];
 
   services.nginx.enable = true;
@@ -17,8 +15,6 @@
 
   networking = {
     hostName = "rat";
-
-    nft-firewall.enable = false;
 
     defaultGateway = {
       address = "10.0.0.1";

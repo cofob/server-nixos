@@ -13,6 +13,12 @@ in
       description = "Server port";
     };
 
+    host = mkOption {
+      type = types.str;
+      default = "127.0.0.1";
+      description = "Server host";
+    };
+
     package = mkOption {
       type = types.package;
       default = cofob-dev.packages.x86_64-linux.default;
@@ -28,6 +34,10 @@ in
       path = [ cfg.package ];
       unitConfig = {
         Type = "simple";
+      };
+      environment = {
+        PORT = toString cfg.port;
+        HOST = cfg.host;
       };
       serviceConfig = {
         User = "cofob-dev";

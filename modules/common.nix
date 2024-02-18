@@ -23,6 +23,9 @@
 
   services.earlyoom.enable = true;
 
+  # Enable QUIC support for nginx
+  services.nginx.package = pkgs.nginxQuic;
+
   system = {
     stateVersion = "22.05";
     autoUpgrade = {

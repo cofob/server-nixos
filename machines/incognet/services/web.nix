@@ -20,4 +20,9 @@
       locations."/".return = "302 https://cofob.dev$request_uri?rainbow";
     };
   };
+
+  networking.firewall = {
+    allowedTCPPorts = [ 80 443 ];
+    allowedUDPPorts = [ 443 ];
+  };
 }

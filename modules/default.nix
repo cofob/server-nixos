@@ -2,6 +2,7 @@
 , home-manager
 , bps
 , tg-captcha
+, aeza-assistant
 , ...
 }:
 
@@ -9,6 +10,7 @@
   imports = [
     home-manager.nixosModule
     tg-captcha.nixosModules.default
+    aeza-assistant.nixosModules.default
     agenix.nixosModules.default
     bps.nixosModule
 

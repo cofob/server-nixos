@@ -16,15 +16,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    bps = {
-      url = "github:DomesticMoth/bps";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    bps.url = "github:DomesticMoth/bps";
 
-    tg-captcha = {
-      url = "github:cofob/captcha";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    tg-captcha.url = "github:cofob/captcha";
+
+    aeza-assistant.url = "github:cofob/aeza-assistant";
 
     cofob-dev.url = "github:cofob/cofob.dev";
 
@@ -36,11 +32,11 @@
     , nixpkgs
     , flake-utils
     , agenix
-    , home-manager
     , bps
     , tg-captcha
     , cofob-dev
     , cofob-home
+    , ...
     }@attrs:
     {
       nixosConfigurations =

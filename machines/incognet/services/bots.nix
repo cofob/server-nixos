@@ -20,6 +20,12 @@
     envFile = config.age.secrets.credentials-tgcaptcha.path;
   };
 
+  age.secrets.credentials-aeza-assistant.file = ../../../secrets/credentials/aeza-assistant.age;
+  services.aeza-assistant = {
+    enable = true;
+    envFile = config.age.secrets.credentials-aeza-assistant.path;
+  };
+
   services.backup.timers.daily = [
     "tmm.pxar:/var/lib/tmm"
   ];

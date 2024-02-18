@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   services.vaultwarden = {
@@ -15,6 +15,7 @@
 
   security.acme.certs."bw.cofob.dev" = { };
 
+  services.nginx .enable = lib.mkDefault true;
   services.nginx.virtualHosts."bw.cofob.dev" = {
     locations."/".proxyPass = "http://127.0.0.1:8222/";
     sslCertificate = config.age.secrets.cf-certs-cofob-dev-cert.path;

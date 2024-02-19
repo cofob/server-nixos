@@ -4,6 +4,8 @@
   imports = [
     ./services
 
+    ./ssh.nix
+
     ../../modules
     ../../hardware/incognet.nix
     ../../mounts/incognet.nix

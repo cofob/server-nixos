@@ -26,6 +26,8 @@
   # Enable QUIC support for nginx
   services.nginx.package = lib.mkDefault pkgs.nginxQuic;
 
+  virtualisation.oci-containers.backend = "docker";
+
   system = {
     stateVersion = "23.11";
     autoUpgrade = {

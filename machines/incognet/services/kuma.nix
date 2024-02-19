@@ -1,3 +1,5 @@
+{ lib, ... }:
+
 {
   networking.nat = {
     enable = true;
@@ -26,5 +28,15 @@
 
       system.stateVersion = "23.11";  
     };
+  };
+
+  services.nginx.enable = lib.mkDefault true;
+  services.nginx.virtualHosts."kuma.perchun.it" = {
+    enableACME = true;
+    quic = true;
+    http3 = true;
+    kTLS = true;
+    forceSSL = true;
+    locations."/".proxyPass = "http://192.168.100.11:3001/";
   };
 }

@@ -90,11 +90,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1708326707,
-        "narHash": "sha256-DAS+1tjVEfd8Xq5SAAAeXKnNvqeSQTg0pBk1+GVEsuY=",
+        "lastModified": 1708360181,
+        "narHash": "sha256-kP3haAOpJ1gaRcXpJIUQGSw0nuTeTE08EXczaoPHgxQ=",
         "owner": "cofob",
         "repo": "cofob.dev",
-        "rev": "5ed60280590f3245180a6f4892e4ec0943dc7e27",
+        "rev": "fdd77972a894aafe04b0bdfd09dc6213eb1068ef",
         "type": "github"
       },
       "original": {

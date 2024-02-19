@@ -3,7 +3,7 @@
 {
   networking.nat = {
     enable = true;
-    internalInterfaces = ["ve-+"];
+    internalInterfaces = [ "ve-+" ];
     externalInterface = "ens3";
   };
 
@@ -20,21 +20,21 @@
         isReadOnly = false;
       };
     };
-                
-    config = { lib, ... }: {
-      services.uptime-kuma.enable = true;  
-      services.uptime-kuma.settings = { HOST = "0.0.0.0"; };  
 
-      networking = {  
+    config = { lib, ... }: {
+      services.uptime-kuma.enable = true;
+      services.uptime-kuma.settings = { HOST = "0.0.0.0"; };
+
+      networking = {
         firewall = {
           enable = true;
           allowedTCPPorts = [ 3001 ];
         };
         useHostResolvConf = lib.mkForce false;
-      };  
+      };
       services.resolved.enable = true;
 
-      system.stateVersion = "23.11";  
+      system.stateVersion = "23.11";
     };
   };
 

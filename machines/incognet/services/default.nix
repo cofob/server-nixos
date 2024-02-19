@@ -6,6 +6,6 @@
     ./bw.nix
     ./db.nix
     ./web.nix
-    ./kuma.nix
+    ./perchun-kuma.nix
   ];
 }

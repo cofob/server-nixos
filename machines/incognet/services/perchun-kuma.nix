@@ -7,16 +7,16 @@
     externalInterface = "ens3";
   };
 
-  containers.uptime-kuma = {
+  containers.perchun-uptime-kuma = {
+    ephemeral = true;
     autoStart = true;
     privateNetwork = true;
     hostAddress = "192.168.100.10";
     localAddress = "192.168.100.11";
-    ephemeral = true;
 
     bindMounts = {
       "/var/lib/uptime-kuma" = {
-        hostPath = "/var/lib/uptime-kuma";
+        hostPath = "/var/lib/perchun-uptime-kuma";
         isReadOnly = false;
       };
     };

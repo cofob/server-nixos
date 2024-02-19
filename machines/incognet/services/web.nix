@@ -22,7 +22,7 @@
       kTLS = true;
       forceSSL = true;
       locations."/" = {
-        return = "301 https://ipfs.io$request_uri";
+        return = "301 https://public-ipfs.cofob.dev$request_uri";
         extraConfig = ''
           add_header access-control-allow-origin *;
           add_header access-control-allow-headers *;

@@ -23,6 +23,7 @@
     ./common.nix
     ./dns.nix
     # ./maddy.nix
+    ./nginx-defaults.nix
     ./ssh.nix
     ./tmm
     ./overlays.nix

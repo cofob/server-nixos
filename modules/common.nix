@@ -23,9 +23,6 @@
 
   services.earlyoom.enable = true;
 
-  # Enable QUIC support for nginx
-  services.nginx.package = lib.mkDefault pkgs.nginxQuic;
-
   virtualisation.oci-containers.backend = "docker";
 
   system = {

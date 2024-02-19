@@ -7,7 +7,7 @@
       "127.0.0.1:3001:3001"
     ];
     volumes = [
-      "/var/lib/perchun-uptime-kuma:/var/lib/uptime-kuma"
+      "/var/lib/perchun-uptime-kuma:/app/data"
     ];
   };
 

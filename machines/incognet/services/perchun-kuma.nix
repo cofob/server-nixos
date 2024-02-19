@@ -1,41 +1,14 @@
 { lib, ... }:
 
 {
-  networking.nat = {
-    enable = true;
-    internalInterfaces = [ "ve-+" ];
-    externalInterface = "ens3";
-  };
-
-  containers.perchun-uptime-kuma = {
-    ephemeral = true;
-    autoStart = true;
-    privateNetwork = true;
-    hostAddress = "192.168.100.10";
-    localAddress = "192.168.100.11";
-
-    bindMounts = {
-      "/var/lib/uptime-kuma" = {
-        hostPath = "/var/lib/perchun-uptime-kuma";
-        isReadOnly = false;
-      };
-    };
-
-    config = { lib, ... }: {
-      services.uptime-kuma.enable = true;
-      services.uptime-kuma.settings = { HOST = "0.0.0.0"; };
-
-      networking = {
-        firewall = {
-          enable = true;
-          allowedTCPPorts = [ 3001 ];
-        };
-        useHostResolvConf = lib.mkForce false;
-      };
-      services.resolved.enable = true;
-
-      system.stateVersion = "23.11";
-    };
+  virtualisation.oci-containers.containers.perchun-uptime-kuma = {
+    image = "docker.io/louislam/uptime-kuma:1@sha256:c326fd83d8da2d8fff3feb0e47433546139513bd823d9accc12977176b05b31f";
+    ports = [
+      "127.0.0.1:3001:3001"
+    ];
+    volumes = [
+      "/var/lib/perchun-uptime-kuma:/var/lib/uptime-kuma"
+    ];
   };
 
   services.nginx.enable = lib.mkDefault true;
@@ -45,6 +18,6 @@
     http3 = true;
     kTLS = true;
     forceSSL = true;
-    locations."/".proxyPass = "http://192.168.100.11:3001/";
+    locations."/".proxyPass = "http://127.0.0.1:3001/";
   };
 }

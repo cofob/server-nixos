@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     flake-utils.url = "github:numtide/flake-utils";
 
@@ -17,7 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    bps.url = "github:DomesticMoth/bps";
+    bps = {
+      url = "github:DomesticMoth/bps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     tg-captcha.url = "github:cofob/captcha";
 

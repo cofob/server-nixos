@@ -20,4 +20,8 @@
     forceSSL = true;
     locations."/".proxyPass = "http://127.0.0.1:3001/";
   };
+
+  services.backup.timers.daily = [
+    "perchun-uptime-kuma.pxar:/var/lib/perchun-uptime-kuma"
+  ];
 }

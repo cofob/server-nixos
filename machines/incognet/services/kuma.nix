@@ -12,6 +12,14 @@
     privateNetwork = true;
     hostAddress = "192.168.100.10";
     localAddress = "192.168.100.11";
+    ephemeral = true;
+
+    bindMounts = {
+      "/var/lib/uptime-kuma" = {
+        hostPath = "/var/lib/uptime-kuma";
+        isReadOnly = false;
+      };
+    };
                 
     config = { lib, ... }: {
       services.uptime-kuma.enable = true;  
@@ -24,7 +32,7 @@
         };
         useHostResolvConf = lib.mkForce false;
       };  
-      services.resolved.enable = true;  
+      services.resolved.enable = true;
 
       system.stateVersion = "23.11";  
     };

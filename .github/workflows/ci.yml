@@ -37,3 +37,4 @@ jobs:
           nix build .#tmm
           nix build .#bps
           nix build .#tg-captcha
+          nix build .#cofob-dev

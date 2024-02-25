@@ -73,6 +73,7 @@
           bps = pkgs.callPackage "${bps}/package.nix" { };
           tmm = pkgs.callPackage ./modules/tmm/package.nix { };
           tg-captcha = tg-captcha.packages.${system}.default;
+          cofob-dev = cofob-dev.packages.${system}.default;
         };
       });
 }

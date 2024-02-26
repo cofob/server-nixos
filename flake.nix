@@ -30,6 +30,11 @@
     cofob-dev.url = "github:cofob/cofob.dev";
 
     cofob-home.url = "github:cofob/nixos";
+
+    why-firefox-src = {
+      url = "github:xdettlaff/whyfirefox";
+      flake = false;
+    };
   };
 
   outputs =

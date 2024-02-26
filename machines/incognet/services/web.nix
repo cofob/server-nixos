@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, why-firefox-src, ... }:
 
 {
   services.cofob-dev.enable = true;
@@ -37,6 +37,15 @@
       kTLS = true;
       forceSSL = true;
       locations."/".return = "302 https://cofob.dev$request_uri?rainbow";
+    };
+
+    virtualHosts."useit.info" = {
+      enableACME = true;
+      quic = true;
+      http3 = true;
+      kTLS = true;
+      forceSSL = true;
+      root = why-firefox-src;
     };
   };
 

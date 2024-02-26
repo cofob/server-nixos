@@ -483,7 +483,8 @@
         "home-manager": "home-manager_3",
         "marzbanbot": "marzbanbot",
         "nixpkgs": "nixpkgs_5",
-        "tg-captcha": "tg-captcha"
+        "tg-captcha": "tg-captcha",
+        "why-firefox-src": "why-firefox-src"
       }
     },
     "systems": {
@@ -614,6 +615,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "why-firefox-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1708977955,
+        "narHash": "sha256-GhvBQ1p15BSoQLsOoYOq/C+Gr6RkL+7jN8rfkB2VYfI=",
+        "owner": "xdettlaff",
+        "repo": "whyfirefox",
+        "rev": "cba222da836fe4523cade9cf086da2419470d651",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xdettlaff",
+        "repo": "whyfirefox",
         "type": "github"
       }
     }

@@ -621,11 +621,11 @@
     "why-firefox-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1708977955,
-        "narHash": "sha256-GhvBQ1p15BSoQLsOoYOq/C+Gr6RkL+7jN8rfkB2VYfI=",
+        "lastModified": 1708979233,
+        "narHash": "sha256-QR+O/dj7HcPj+Np0ZivZW4lOWFazyQOroetpvem4vdM=",
         "owner": "xdettlaff",
         "repo": "whyfirefox",
-        "rev": "cba222da836fe4523cade9cf086da2419470d651",
+        "rev": "ee34b0fdb44e7c295f415e8d99ad4726439db866",
         "type": "github"
       },
       "original": {

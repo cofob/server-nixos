@@ -31,8 +31,8 @@
 
     cofob-home.url = "github:cofob/nixos";
 
-    why-firefox-src = {
-      url = "github:xdettlaff/whyfirefox";
+    useit-src = {
+      url = "github:xdettlaff/useit";
       flake = false;
     };
   };

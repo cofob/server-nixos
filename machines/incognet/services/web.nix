@@ -1,4 +1,4 @@
-{ lib, config, pkgs, why-firefox-src, ... }:
+{ lib, config, pkgs, useit-src, ... }:
 
 {
   services.cofob-dev.enable = true;
@@ -45,7 +45,7 @@
       http3 = true;
       kTLS = true;
       forceSSL = true;
-      root = why-firefox-src;
+      root = useit-src;
     };
   };
 

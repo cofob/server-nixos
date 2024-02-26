@@ -484,7 +484,7 @@
         "marzbanbot": "marzbanbot",
         "nixpkgs": "nixpkgs_5",
         "tg-captcha": "tg-captcha",
-        "why-firefox-src": "why-firefox-src"
+        "useit-src": "useit-src"
       }
     },
     "systems": {
@@ -618,19 +618,19 @@
         "type": "github"
       }
     },
-    "why-firefox-src": {
+    "useit-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1708979233,
-        "narHash": "sha256-QR+O/dj7HcPj+Np0ZivZW4lOWFazyQOroetpvem4vdM=",
+        "lastModified": 1708986148,
+        "narHash": "sha256-hkyK/jHSINKWMzBaagwfTYYYFNDC+IlQlI8DuKmdXpU=",
         "owner": "xdettlaff",
-        "repo": "whyfirefox",
-        "rev": "ee34b0fdb44e7c295f415e8d99ad4726439db866",
+        "repo": "useit",
+        "rev": "a6f801ae94ed4020bf8fb2dcdfb8322eefcda181",
         "type": "github"
       },
       "original": {
         "owner": "xdettlaff",
-        "repo": "whyfirefox",
+        "repo": "useit",
         "type": "github"
       }
     }

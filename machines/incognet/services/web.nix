@@ -45,7 +45,7 @@
       http3 = true;
       kTLS = true;
       forceSSL = true;
-      root = useit-src;
+      root = "${useit-src}/site";
     };
   };
 

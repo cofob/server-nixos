@@ -621,11 +621,11 @@
     "useit-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1709133585,
-        "narHash": "sha256-f1AE1x9ddDsqzw+J/zcBBY9dfwQY8NOulmEX2RJqrdI=",
+        "lastModified": 1709133798,
+        "narHash": "sha256-sLKeIfZdj5Pi3M9Ua4NacCRDYAuoeuhCuvU0OkJKrJA=",
         "owner": "xdettlaff",
         "repo": "useit",
-        "rev": "3502b67ff026442529099399f25fdbcf269cea1c",
+        "rev": "18e2c0ec765aa84c228d881b7ffb8a361d4c8de3",
         "type": "github"
       },
       "original": {

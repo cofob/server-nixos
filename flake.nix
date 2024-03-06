@@ -89,6 +89,8 @@
               (pkgs.callPackage "${bps}/package.nix" { })
               (pkgs.callPackage ./modules/tmm/package.nix { })
             ];
+            phases = [ "installPhase" ];
+            installPhase = "echo 'ci-cache' > $out";
           };
         };
       });

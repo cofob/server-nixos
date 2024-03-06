@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
 
 permissions:
@@ -34,7 +34,4 @@ jobs:
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
       - name: Build derivations
         run: |
-          nix build .#tmm
-          nix build .#bps
-          nix build .#tg-captcha
-          nix build .#cofob-dev
+          nix build .#ci-cache

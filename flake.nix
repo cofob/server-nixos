@@ -64,7 +64,10 @@
     } // flake-utils.lib.eachSystem (with flake-utils.lib.system; [ x86_64-linux i686-linux aarch64-linux ])
       (system:
       let
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
       in
       {
         devShells.default = pkgs.mkShell {
@@ -75,10 +78,18 @@
         };
 
         packages = {
-          bps = pkgs.callPackage "${bps}/package.nix" { };
-          tmm = pkgs.callPackage ./modules/tmm/package.nix { };
-          tg-captcha = tg-captcha.packages.${system}.default;
-          cofob-dev = cofob-dev.packages.${system}.default;
+          ci-cache = pkgs.stdenv.mkDerivation {
+            name = "ci-cache";
+            version = "0.1.0";
+            buildInputs = [
+              pkgs.zerotierone
+              pkgs.nginxQuic
+              tg-captcha.packages.${system}.default
+              cofob-dev.packages.${system}.default
+              (pkgs.callPackage "${bps}/package.nix" { })
+              (pkgs.callPackage ./modules/tmm/package.nix { })
+            ];
+          };
         };
       });
 }

@@ -83,7 +83,9 @@
             version = "0.1.0";
             buildInputs = [
               pkgs.zerotierone
-              pkgs.nginxQuic
+              (pkgs.nginxQuic.override {
+                modules = pkgs.lib.unique (pkgs.nginxQuic.modules ++ [pkgs.nginxModules.brotli pkgs.nginxModules.zstd]);
+              })
               tg-captcha.packages.${system}.default
               cofob-dev.packages.${system}.default
               (pkgs.callPackage "${bps}/package.nix" { })

@@ -4,7 +4,7 @@
   config = {
     services.nginx = {
       # Enable QUIC support for nginx
-      package = lib.mkDefault pkgs.nginxQuic;
+      package = lib.mkDefault (pkgs.callPackage ../pkgs/nginx { });
 
       # Reload service instead of restart on nixos switch
       enableReload = true;

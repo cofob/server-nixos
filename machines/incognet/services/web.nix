@@ -14,16 +14,20 @@
       forceSSL = true;
       locations = {
         "/".proxyPass = "http://127.0.0.1:3000/";
-        "/_app/immutable/" = {
-          alias = "${config.services.cofob-dev.package}/client/_app/immutable/";
-          extraConfig = ''
-            add_header cache-control "public, max-age=31536000, immutable";
-          '';
-        };
         "/static/" = {
           alias = "${config.services.cofob-dev.package}/client/static/";
           extraConfig = ''
+            gzip_static on;
+            brotli_static on;
             add_header cache-control "public, max-age=31536000";
+          '';
+        };
+        "/_app/immutable/" = {
+          alias = "${config.services.cofob-dev.package}/client/_app/immutable/";
+          extraConfig = ''
+            gzip_static on;
+            brotli_static on;
+            add_header cache-control "public, max-age=31536000, immutable";
           '';
         };
       };

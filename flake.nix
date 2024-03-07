@@ -84,7 +84,7 @@
             buildInputs = [
               pkgs.zerotierone
               (pkgs.nginxQuic.override {
-                modules = pkgs.lib.unique (pkgs.nginxQuic.modules ++ [pkgs.nginxModules.brotli pkgs.nginxModules.zstd]);
+                modules = pkgs.lib.unique (pkgs.nginxQuic.modules ++ [ pkgs.nginxModules.brotli pkgs.nginxModules.zstd ]);
               })
               tg-captcha.packages.${system}.default
               cofob-dev.packages.${system}.default

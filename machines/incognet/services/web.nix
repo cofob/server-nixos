@@ -12,7 +12,21 @@
       http3 = true;
       kTLS = true;
       forceSSL = true;
-      locations."/".proxyPass = "http://127.0.0.1:3000/";
+      locations = {
+        "/".proxyPass = "http://127.0.0.1:3000/";
+        "/_app/immutable/" = {
+          alias = "${config.services.cofob-dev.package}/client/_app/immutable/";
+          extraConfig = ''
+            add_header cache-control "public, max-age=31536000, immutable";
+          '';
+        };
+        "/static/" = {
+          alias = "${config.services.cofob-dev.package}/client/static/";
+          extraConfig = ''
+            add_header cache-control "public, max-age=31536000";
+          '';
+        };
+      };
     };
 
     virtualHosts."ipfs.cofob.dev" = {

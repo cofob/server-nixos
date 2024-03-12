@@ -41,9 +41,9 @@
       kTLS = true;
       forceSSL = true;
       # Frontend
-      locations."/".proxyPass = "http://127.0.0.1:3001/";
+      locations."/".proxyPass = "http://127.0.0.1:3002/";
       # API backend
-      locations."/balance/".proxyPass = "http://127.0.0.1:3002/balance/";
+      locations."/balance/".proxyPass = "http://127.0.0.1:3003/balance/";
     };
 
     virtualHosts."cofob.gay" = {

@@ -9,7 +9,7 @@ in
 
     frontend-port = mkOption {
       type = types.port;
-      default = 3001;
+      default = 3002;
       description = "Frontend server port";
     };
 
@@ -27,7 +27,7 @@ in
 
     backend-port = mkOption {
       type = types.port;
-      default = 3002;
+      default = 3003;
       description = "Backend server port";
     };
 

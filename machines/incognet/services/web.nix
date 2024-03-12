@@ -2,6 +2,7 @@
 
 {
   services.cofob-dev.enable = true;
+  services.balance-tracker.enable = true;
 
   services.nginx = {
     enable = lib.mkDefault true;
@@ -33,19 +34,16 @@
       };
     };
 
-    virtualHosts."ipfs.cofob.dev" = {
+    virtualHosts."balance-tracker.cofob.dev" = {
       enableACME = true;
       quic = true;
       http3 = true;
       kTLS = true;
       forceSSL = true;
-      locations."/" = {
-        return = "301 https://public-ipfs.cofob.dev$request_uri";
-        extraConfig = ''
-          add_header access-control-allow-origin *;
-          add_header access-control-allow-headers *;
-        '';
-      };
+      # Frontend
+      locations."/".proxyPass = "http://127.0.0.1:3001/";
+      # API backend
+      locations."/balance/".proxyPass = "http://127.0.0.1:3002/balance/";
     };
 
     virtualHosts."cofob.gay" = {

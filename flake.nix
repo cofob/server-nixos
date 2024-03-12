@@ -29,6 +29,11 @@
 
     cofob-dev.url = "github:cofob/cofob.dev";
 
+    balance-tracker = {
+      url = "github:cofob/transport-card-balance-tracker";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     cofob-home.url = "github:cofob/nixos";
 
     useit-src = {
@@ -45,6 +50,7 @@
     , bps
     , tg-captcha
     , cofob-dev
+    , balance-tracker
     , cofob-home
     , ...
     }@attrs:
@@ -88,6 +94,8 @@
               })
               tg-captcha.packages.${system}.default
               cofob-dev.packages.${system}.default
+              balance-tracker.packages.${system}.card-tracker-frontend
+              balance-tracker.packages.${system}.card-tracker-backend
               (pkgs.callPackage "${bps}/package.nix" { })
               (pkgs.callPackage ./modules/tmm/package.nix { })
             ];

@@ -20,6 +20,7 @@
     ./backup.nix
     ./telegram-backup.nix
     ./cofob-dev
+    ./balance-tracker
     ./common.nix
     ./dns.nix
     # ./maddy.nix

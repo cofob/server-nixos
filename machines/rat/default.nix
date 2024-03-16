@@ -7,12 +7,20 @@
     ../../mounts/aeza.nix
 
     ./services
+
+    ./ssh.nix
   ];
 
   services.nginx.enable = true;
 
   services.backup.enable = true;
   services.telegram-backup.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
+  services.zerotierone = {
+    enable = true;
+    joinNetworks = [ "e4da7455b237c59e" ];
+  };
 
   networking = {
     hostName = "rat";

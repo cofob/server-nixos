@@ -9,7 +9,7 @@
   age.secrets.credentials-conduit-config.file = ../../../secrets/credentials/conduit-config.age;
   age.secrets.credentials-conduit-config.owner = "conduit";
   age.secrets.credentials-conduit-config.group = "conduit";
-  age.secrets.credentials-conduit-config.mode = "770";
+  age.secrets.credentials-conduit-config.path = "/var/lib/matrix-conduit/config.toml";
   services.matrix-conduit = {
     enable = true;
     package = conduit.packages.${pkgs.system}.default;
@@ -21,7 +21,6 @@
   age.secrets.credentials-coturn-secret.file = ../../../secrets/credentials/coturn-secret.age;
   age.secrets.credentials-coturn-secret.owner = "turnserver";
   age.secrets.credentials-coturn-secret.group = "turnserver";
-  age.secrets.credentials-coturn-secret.mode = "770";
   services.coturn = {
     enable = true;
     use-auth-secret = true;

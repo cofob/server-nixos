@@ -81,6 +81,22 @@
       locations."/balance/".proxyPass = "http://127.0.0.1:3003/balance/";
     };
 
+    virtualHosts."element.cofob.dev" = {
+      enableACME = true;
+      quic = true;
+      http3 = true;
+      kTLS = true;
+      forceSSL = true;
+
+      root = pkgs.element-web.override {
+        conf = {
+          default_server_config = {
+            "m.homeserver".base_url = "https://cofob.dev";
+          };
+        };
+      };
+    };
+
     virtualHosts."cofob.gay" = {
       enableACME = true;
       quic = true;

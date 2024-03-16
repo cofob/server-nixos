@@ -124,6 +124,10 @@
             proxy_buffering off;
 
             client_max_body_size ${toString config.services.matrix-conduit.settings.global.max_request_size};
+
+            location /_matrix/media/ {
+              add_header cache-control "max-age=3600";
+            }
           '';
         };
 

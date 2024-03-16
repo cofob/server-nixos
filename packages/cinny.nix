@@ -5,7 +5,7 @@ pkgs.cinny.override {
     defaultHomeserver = 0;
     homeserverList = [ "cofob.dev" ];
     allowCustomHomeservers = false;
-    hashRouter.enabled = false;
+    hashRouter.enabled = true;
     hashRouter.basename = "/";
   };
 }

@@ -91,7 +91,8 @@
       root = pkgs.element-web.override {
         conf = {
           default_server_config = {
-            "m.homeserver".base_url = "https://cofob.dev";
+            "m.homeserver".base_url = "https://matrix.cofob.dev";
+            "m.homeserver".server_name = "cofob.dev";
           };
         };
       };

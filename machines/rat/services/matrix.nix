@@ -7,9 +7,7 @@
 
 {
   age.secrets.credentials-conduit-config.file = ../../../secrets/credentials/conduit-config.age;
-  age.secrets.credentials-conduit-config.owner = "conduit";
-  age.secrets.credentials-conduit-config.group = "conduit";
-  age.secrets.credentials-conduit-config.path = "/var/lib/matrix-conduit/config.toml";
+  age.secrets.credentials-conduit-config.mode = "777";
   services.matrix-conduit = {
     enable = true;
     package = conduit.packages.${pkgs.system}.default;

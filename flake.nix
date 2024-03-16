@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     flake-utils.url = "github:numtide/flake-utils";
 
@@ -40,6 +41,11 @@
       url = "github:xdettlaff/useit";
       flake = false;
     };
+
+    conduit = {
+      url = "gitlab:famedly/conduit";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =
@@ -52,6 +58,7 @@
     , cofob-dev
     , balance-tracker
     , cofob-home
+    , conduit
     , ...
     }@attrs:
     {
@@ -96,6 +103,7 @@
               cofob-dev.packages.${system}.default
               balance-tracker.packages.${system}.card-tracker-frontend
               balance-tracker.packages.${system}.card-tracker-backend
+              conduit.packages.${system}.default
               (pkgs.callPackage "${bps}/package.nix" { })
               (pkgs.callPackage ./modules/tmm/package.nix { })
             ];

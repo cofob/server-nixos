@@ -13,25 +13,60 @@
       http3 = true;
       kTLS = true;
       forceSSL = true;
-      locations = {
-        "/".proxyPass = "http://127.0.0.1:3000/";
-        "/static/" = {
-          alias = "${config.services.cofob-dev.package}/client/static/";
-          extraConfig = ''
-            gzip_static on;
-            brotli_static on;
-            add_header cache-control "public, max-age=31536000";
+      locations =
+        let
+          well_known_server = pkgs.writeText "well-known-matrix-server" ''
+            {
+              "m.server": "matrix.cofob.dev:443"
+            }
           '';
-        };
-        "/_app/immutable/" = {
-          alias = "${config.services.cofob-dev.package}/client/_app/immutable/";
-          extraConfig = ''
-            gzip_static on;
-            brotli_static on;
-            add_header cache-control "public, max-age=31536000, immutable";
+          # Build a dervation that stores the content of `${server_name}/.well-known/matrix/client`
+          well_known_client = pkgs.writeText "well-known-matrix-client" ''
+            {
+              "m.homeserver": {
+                "base_url": "https://matrix.cofob.dev"
+              }
+            }
           '';
+        in
+        {
+          # Website config
+          "/".proxyPass = "http://127.0.0.1:3000/";
+          "/static/" = {
+            alias = "${config.services.cofob-dev.package}/client/static/";
+            extraConfig = ''
+              gzip_static on;
+              brotli_static on;
+              add_header cache-control "public, max-age=31536000";
+            '';
+          };
+          "/_app/immutable/" = {
+            alias = "${config.services.cofob-dev.package}/client/_app/immutable/";
+            extraConfig = ''
+              gzip_static on;
+              brotli_static on;
+              add_header cache-control "public, max-age=31536000, immutable";
+            '';
+          };
+
+          # Matrix config
+          "=/.well-known/matrix/server" = {
+            alias = "${well_known_server}";
+            extraConfig = ''
+              # Set the header since by default NGINX thinks it's just bytes
+              default_type application/json;
+            '';
+          };
+          "=/.well-known/matrix/client" = {
+            alias = "${well_known_client}";
+            extraConfig = ''
+              # Set the header since by default NGINX thinks it's just bytes
+              default_type application/json;
+              # https://matrix.org/docs/spec/client_server/r0.4.0#web-browser-clients
+              add_header Access-Control-Allow-Origin "*";
+            '';
+          };
         };
-      };
     };
 
     virtualHosts."balance-tracker.cofob.dev" = {

@@ -11,6 +11,9 @@
 
   services.nginx.enable = true;
 
+  services.backup.enable = true;
+  services.telegram-backup.enable = true;
+
   networking = {
     hostName = "rat";
 

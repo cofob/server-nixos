@@ -30,6 +30,12 @@
             prefixLength = 32;
           }];
         };
+        ipv6 = {
+          addresses = [{
+            address = "2a0e:d602:1:30b::1";
+            prefixLength = 64;
+          }];
+        };
       };
     };
   };

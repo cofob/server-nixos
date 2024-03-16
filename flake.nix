@@ -106,6 +106,8 @@
               conduit.packages.${system}.default
               (pkgs.callPackage "${bps}/package.nix" { })
               (pkgs.callPackage ./modules/tmm/package.nix { })
+              (pkgs.callPackage ./packages/cinny.nix { })
+              (pkgs.callPackage ./packages/element.nix { })
             ];
             phases = [ "installPhase" ];
             installPhase = "echo 'ci-cache' > $out";

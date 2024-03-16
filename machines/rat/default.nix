@@ -21,6 +21,10 @@
       address = "10.0.0.1";
       interface = "ens3";
     };
+    defaultGateway6 = {
+      address = "2a0e:d602:1:30b::1";
+      interface = "ens3";
+    };
 
     interfaces = {
       ens3 = {

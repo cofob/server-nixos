@@ -105,6 +105,24 @@
       };
     };
 
+    virtualHosts."cinny.cofob.dev" = {
+      enableACME = true;
+      quic = true;
+      http3 = true;
+      kTLS = true;
+      forceSSL = true;
+
+      root = pkgs.cinny.override {
+        conf = {
+          defaultHomeserver = 0;
+          homeserverList = [ "cofob.dev" ];
+          allowCustomHomeservers = false;
+          hashRouter.enabled = false;
+          hashRouter.basename = "/";
+        };
+      };
+    };
+
     virtualHosts."cofob.gay" = {
       enableACME = true;
       quic = true;

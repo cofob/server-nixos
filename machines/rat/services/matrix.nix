@@ -15,6 +15,46 @@
   };
   systemd.services.conduit.environment = lib.mkForce { CONDUIT_CONFIG = config.age.secrets.credentials-conduit-config.path; };
 
+  # Matrix bridge
+  age.secrets.credentials-mautrix-telegram-config.file = ../../../secrets/credentials/mautrix-telegram-config.age;
+  services.mautrix-telegram = {
+    enable = true;
+
+    environmentFile = config.age.secrets.credentials-mautrix-telegram-config.path;
+
+    settings = {
+      homeserver = {
+        address = "http://[::1]:${toString config.services.matrix-conduit.settings.global.port}";
+        domain = "cofob.dev";
+      };
+      appservice = {
+        id = "telegram";
+        database = "postgresql:///mautrix-telegram?host=/run/postgresql";
+      };
+      bridge = {
+        relaybot.authless_portals = false;
+        permissions = {
+          "@i:cofob.dev" = "admin";
+        };
+
+        animated_sticker = {
+          target = "gif";
+          args = {
+            width = 256;
+            height = 256;
+            fps = 30; # only for webm
+            background = "020202"; # only for gif, transparency not supported
+          };
+        };
+      };
+    };
+  };
+
+  systemd.services.mautrix-telegram.path = with pkgs; [
+    lottieconverter # for animated stickers conversion, unfree package
+    ffmpeg # if converting animated stickers to webm (very slow!)
+  ];
+
   # TURN server
   age.secrets.credentials-coturn-secret.file = ../../../secrets/credentials/coturn-secret.age;
   age.secrets.credentials-coturn-secret.owner = "turnserver";

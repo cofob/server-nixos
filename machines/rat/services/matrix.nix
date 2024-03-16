@@ -151,8 +151,6 @@
 
   services.backup.timers.daily = [
     "matrix-conduit.pxar:${config.services.matrix-conduit.settings.global.database_path}"
-  ];
-  services.telegram-backup.timers.hourly = [
-    "${config.services.matrix-conduit.settings.global.database_path}"
+    "mautrix-telegram.pxar:/var/lib/mautrix-telegram"
   ];
 }

@@ -1,5 +1,14 @@
-{ ... }:
+{ pkgs, nixpkgs-unstable, ... }:
 
 {
-  nixpkgs.overlays = [ ];
+  nixpkgs.overlays = [
+    (final: prev:
+      {
+        unstable = import nixpkgs-unstable {
+          system = pkgs.system;
+          # config.allowUnfree = true;
+        };
+      }
+    )
+  ];
 }

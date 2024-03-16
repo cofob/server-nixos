@@ -21,7 +21,7 @@ in
 
     frontend-package = mkOption {
       type = types.package;
-      default = balance-tracker.packages.x86_64-linux.card-tracker-frontend;
+      default = balance-tracker.packages.${pkgs.system}.card-tracker-frontend;
       description = "Frontend package to use";
     };
 
@@ -39,7 +39,7 @@ in
 
     backend-package = mkOption {
       type = types.package;
-      default = balance-tracker.packages.x86_64-linux.card-tracker-backend;
+      default = balance-tracker.packages.${pkgs.system}.card-tracker-backend;
       description = "Backend package to use";
     };
   };

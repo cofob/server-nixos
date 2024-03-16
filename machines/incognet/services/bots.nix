@@ -22,21 +22,21 @@
   age.secrets.credentials-tgcaptcha.file = ../../../secrets/credentials/tgcaptcha.age;
   services.tg-captcha = {
     enable = true;
-    package = tg-captcha.packages.x86_64-linux.default;
+    package = tg-captcha.packages.${pkgs.system}.default;
     envFile = config.age.secrets.credentials-tgcaptcha.path;
   };
 
   age.secrets.credentials-marzbanbot.file = ../../../secrets/credentials/marzbanbot.age;
   services.marzbanbot = {
     enable = true;
-    package = marzbanbot.packages.x86_64-linux.default;
+    package = marzbanbot.packages.${pkgs.system}.default;
     envFile = config.age.secrets.credentials-marzbanbot.path;
   };
 
   age.secrets.credentials-aeza-assistant.file = ../../../secrets/credentials/aeza-assistant.age;
   services.aeza-assistant = {
     enable = true;
-    package = aeza-assistant.packages.x86_64-linux.default;
+    package = aeza-assistant.packages.${pkgs.system}.default;
     envFile = config.age.secrets.credentials-aeza-assistant.path;
   };
 

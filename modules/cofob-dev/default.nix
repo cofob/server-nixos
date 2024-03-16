@@ -21,7 +21,7 @@ in
 
     package = mkOption {
       type = types.package;
-      default = cofob-dev.packages.x86_64-linux.default;
+      default = cofob-dev.packages.${pkgs.system}.default;
       description = "Package to use";
     };
   };

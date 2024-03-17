@@ -10,5 +10,8 @@
         };
       }
     )
+
+    (final: prev:
+      { mautrix-telegram = final.unstable.mautrix-telegram; })
   ];
 }

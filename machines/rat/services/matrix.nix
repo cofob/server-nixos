@@ -40,14 +40,14 @@
         encryption.allow = true;
 
         message_formats = {
-          "m.text" = "<b>$sender_displayname</b>:\n$message";
-          "m.notice" = "<b>$sender_displayname</b>:\n$message";
+          "m.text" = "<b>$sender_displayname</b>:<br/>$message";
+          "m.notice" = "<b>$sender_displayname</b>:<br/>$message";
           "m.emote" = "* <b>$sender_displayname</b> $message";
-          "m.file" = "<b>$sender_displayname</b> sent a file:\n$message";
-          "m.image" = "<b>$sender_displayname</b> sent an image:\n$message";
-          "m.audio" = "<b>$sender_displayname</b> sent an audio file:\n$message";
-          "m.video" = "<b>$sender_displayname</b> sent a video:\n$message";
-          "m.location" = "<b>$sender_displayname</b> sent a location:\n$message";
+          "m.file" = "<b>$sender_displayname</b> sent a file:<br/>$message";
+          "m.image" = "<b>$sender_displayname</b> sent an image:<br/>$message";
+          "m.audio" = "<b>$sender_displayname</b> sent an audio file:<br/>$message";
+          "m.video" = "<b>$sender_displayname</b> sent a video:<br/>$message";
+          "m.location" = "<b>$sender_displayname</b> sent a location:<br/>$message";
         };
         state_event_formats = {
           join = "";

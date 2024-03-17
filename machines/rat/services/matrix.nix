@@ -32,6 +32,7 @@
         database = "postgresql:///mautrix-telegram?host=/run/postgresql";
       };
       bridge = {
+        delivery_receipts = true;
         relaybot.authless_portals = false;
         permissions = {
           "@i:cofob.dev" = "admin";

@@ -32,9 +32,32 @@
         database = "postgresql:///mautrix-telegram?host=/run/postgresql";
       };
       bridge = {
+        displayname_template = "{displayname}";
         delivery_receipts = true;
+        pinned_tag = "m.favourite";
+        archive_tag = "m.lowpriority";
         relaybot.authless_portals = false;
+        encryption.allow = true;
+
+        message_formats = {
+          "m.text" = "<b>$sender_displayname</b>:\n$message";
+          "m.notice" = "<b>$sender_displayname</b>:\n$message";
+          "m.emote" = "* <b>$sender_displayname</b> $message";
+          "m.file" = "<b>$sender_displayname</b> sent a file:\n$message";
+          "m.image" = "<b>$sender_displayname</b> sent an image:\n$message";
+          "m.audio" = "<b>$sender_displayname</b> sent an audio file:\n$message";
+          "m.video" = "<b>$sender_displayname</b> sent a video:\n$message";
+          "m.location" = "<b>$sender_displayname</b> sent a location:\n$message";
+        };
+        state_event_formats = {
+          join = "";
+          leave = "";
+          name_change = "";
+        };
+
         permissions = {
+          "*" = "relaybot";
+          "cofob.dev" = "full";
           "@i:cofob.dev" = "admin";
         };
 

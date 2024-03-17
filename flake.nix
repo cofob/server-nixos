@@ -112,6 +112,24 @@
             phases = [ "installPhase" ];
             installPhase = "echo 'ci-cache' > $out";
           };
+
+          system-cache = pkgs.stdenv.mkDerivation {
+            name = "system-cache";
+            version = "0.1.0";
+            buildInputs = builtins.map
+              (key:
+                (nixpkgs.lib.nixosSystem {
+                  system = "x86_64-linux";
+                  specialArgs = attrs;
+                  modules = [
+                    ./machines/${key}
+                  ];
+                }).config.system.build.toplevel
+              )
+              (builtins.attrNames (builtins.readDir ./machines));
+            phases = [ "installPhase" ];
+            installPhase = "echo 'system-cache' > $out";
+          };
         };
       });
 }

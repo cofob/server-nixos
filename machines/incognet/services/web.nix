@@ -87,8 +87,11 @@
       http3 = true;
       kTLS = true;
       forceSSL = true;
-
       root = pkgs.element-cofob-dev;
+      extraConfig = ''
+        gzip_static on;
+        brotli_static on;
+      '';
     };
 
     virtualHosts."cinny.cofob.dev" = {
@@ -97,8 +100,11 @@
       http3 = true;
       kTLS = true;
       forceSSL = true;
-
       root = pkgs.cinny-cofob-dev;
+      extraConfig = ''
+        gzip_static on;
+        brotli_static on;
+      '';
     };
 
     virtualHosts."cofob.gay" = {

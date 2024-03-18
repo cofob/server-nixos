@@ -1,7 +1,4 @@
 pkgs: inputs: {
-  nginx = (pkgs.nginxQuic.override {
-    modules = pkgs.lib.unique (pkgs.nginxQuic.modules ++ [ pkgs.nginxModules.brotli pkgs.nginxModules.zstd ]);
-  });
   tg-captcha = inputs.tg-captcha.packages.${pkgs.system}.default;
   marzbanbot = inputs.marzbanbot.packages.${pkgs.system}.default;
   aeza-assistant = inputs.aeza-assistant.packages.${pkgs.system}.default;

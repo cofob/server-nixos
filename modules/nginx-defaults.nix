@@ -56,8 +56,10 @@
             extraParameters = [ "default_server" "quic" ];
           }
         ];
-        sslCertificate = "${pkgs.default-ssl-cert}/cert.pem";
-        sslCertificateKey = "${pkgs.default-ssl-cert}/key.pem";
+        extraConfig = ''
+          ssl_certificate ${pkgs.default-ssl-cert}/cert.pem;
+          ssl_certificate_key ${pkgs.default-ssl-cert}/key.pem;
+        '';
         locations."/".return = "403";
       };
     };

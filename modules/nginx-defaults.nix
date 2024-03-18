@@ -4,7 +4,7 @@
   config = {
     services.nginx = {
       # Enable QUIC support for nginx
-      package = lib.mkDefault pkgs.nginxQuic;
+      package = pkgs.nginx;
 
       # Reload service instead of restart on nixos switch
       enableReload = true;
@@ -18,6 +18,54 @@
       recommendedProxySettings = true;
       recommendedOptimisation = true;
       recommendedBrotliSettings = true;
+
+      # Stub site
+      virtualHosts."default" = {
+        serverName = "_";
+        enableACME = true;
+        quic = true;
+        http3 = true;
+        kTLS = true;
+        listen = lib.mkForce [
+          {
+            addr = "0.0.0.0";
+            port = 80;
+            extraParameters = [ "default_server" ];
+          }
+          {
+            addr = "[::0]";
+            port = 80;
+            extraParameters = [ "default_server" ];
+          }
+          {
+            addr = "0.0.0.0";
+            port = 443;
+            ssl = true;
+            extraParameters = [ "default_server" ];
+          }
+          {
+            addr = "[::0]";
+            port = 443;
+            ssl = true;
+            extraParameters = [ "default_server" ];
+          }
+          {
+            addr = "0.0.0.0";
+            port = 443;
+            ssl = true;
+            extraParameters = [ "default_server" "quic" ];
+          }
+          {
+            addr = "[::0]";
+            port = 443;
+            ssl = true;
+            extraParameters = [ "default_server" "quic" ];
+          }
+        ];
+        sslCertificate = "${pkgs.default-ssl-cert}/cert.pem";
+        sslCertificateKey = "${pkgs.default-ssl-cert}/key.pem";
+        locations."/".return = "403";
+      };
     };
   };
 }

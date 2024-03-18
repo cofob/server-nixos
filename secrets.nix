@@ -4,12 +4,14 @@ let
 
   rat = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICIo9EB6kxVzY93JU602tDaEYwmo4+V8d5xoYS3c1+aN";
   incognet = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFRUCX14C3h5mYR+mO8OygGVY/KY5JMo7mWU9QX6Ti7o";
+  dev1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMWazK81Hk2EbgoCZCiEFqOUDYMaN/V0Xj34II8O4rqQ";
   systems = [ rat incognet ];
+  foreign-systems = [ dev1 ];
 
   all = users ++ systems;
 in
 {
-  "secrets/passwords/cofob.age".publicKeys = all;
+  "secrets/passwords/cofob.age".publicKeys = all ++ foreign-systems;
 
   # Tg bots
   "secrets/credentials/bps.age".publicKeys = users ++ [ incognet ];

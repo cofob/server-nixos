@@ -11,6 +11,15 @@
 
   services.dev-common.enable = true;
 
+  services.openvscode-server = {
+    enable = true;
+    user = "cofob";
+    group = "cofob";
+    port = 1337;
+    host = "172.26.10.253";
+  };
+  networking.firewall.interfaces.ztwfuehebm.allowedTCPPorts = [ 1337 ];
+
   nixpkgs.config.allowUnfree = true;
   services.zerotierone = {
     enable = true;

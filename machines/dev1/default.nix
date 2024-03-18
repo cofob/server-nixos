@@ -14,7 +14,6 @@
   services.openvscode-server = {
     enable = true;
     user = "cofob";
-    group = "cofob";
     port = 1337;
     host = "172.26.10.253";
   };

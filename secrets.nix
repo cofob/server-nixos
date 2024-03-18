@@ -4,9 +4,12 @@ let
 
   rat = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICIo9EB6kxVzY93JU602tDaEYwmo4+V8d5xoYS3c1+aN";
   incognet = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFRUCX14C3h5mYR+mO8OygGVY/KY5JMo7mWU9QX6Ti7o";
+
   dev1 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMWazK81Hk2EbgoCZCiEFqOUDYMaN/V0Xj34II8O4rqQ";
+  dev2 = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICEd2S0Zx0SmlAAf4Hrj3yEEGUu/FdVe7pGctu/+wNqo";
+
   systems = [ rat incognet ];
-  foreign-systems = [ dev1 ];
+  foreign-systems = [ dev1 dev2 ];
 
   all = users ++ systems;
 in

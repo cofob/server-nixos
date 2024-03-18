@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs-unstable, ... }@attrs:
+{ pkgs, nixpkgs-unstable, self, ... }:
 
 {
   nixpkgs.overlays = [
@@ -14,6 +14,6 @@
     (final: prev:
       { mautrix-telegram = final.unstable.mautrix-telegram; })
 
-    (final: prev: import ../overlay.nix final attrs)
+    self.overlays.default
   ];
 }

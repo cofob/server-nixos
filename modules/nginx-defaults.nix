@@ -22,10 +22,6 @@
       # Stub site
       virtualHosts."default" = {
         serverName = "_";
-        enableACME = true;
-        quic = true;
-        http3 = true;
-        kTLS = true;
         listen = lib.mkForce [
           {
             addr = "0.0.0.0";

@@ -110,27 +110,6 @@
         "type": "github"
       }
     },
-    "bp_2": {
-      "inputs": {
-        "nixpkgs": [
-          "cofob-dev",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1662627485,
-        "narHash": "sha256-Kg8u2ekU0+MsuLzgKqiaus3HquLLo2Qq+oGbQfIppos=",
-        "owner": "serokell",
-        "repo": "nix-npm-buildpackage",
-        "rev": "cab951dd024dd367511d48440de6f93664ee35aa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "serokell",
-        "repo": "nix-npm-buildpackage",
-        "type": "github"
-      }
-    },
     "bps": {
       "inputs": {
         "nixpkgs": [
@@ -153,16 +132,15 @@
     },
     "cofob-dev": {
       "inputs": {
-        "bp": "bp_2",
         "flake-utils": "flake-utils_3",
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1709815077,
-        "narHash": "sha256-k2WSM3rZmWpoDvz+U8OzOhqwIQaPv64MmvXXtO9tI8w=",
+        "lastModified": 1710764238,
+        "narHash": "sha256-KOoKpay0+/r2ZuNp3wNIkE92XYlvY6li1GAD8PSLrww=",
         "owner": "cofob",
         "repo": "cofob.dev",
-        "rev": "0aaca6e7f5b5290ed16d7d30b6b035d2ed00eba0",
+        "rev": "7a9d7b09dc35a72c6ba566d108eed449fa3defb2",
         "type": "github"
       },
       "original": {

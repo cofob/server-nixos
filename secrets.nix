@@ -22,7 +22,6 @@ in
   "secrets/credentials/pbs-key.age".publicKeys = all;
   "secrets/credentials/telegram-backup.age".publicKeys = all;
   "secrets/credentials/cloudflare.age".publicKeys = all;
-  "secrets/credentials/maddy.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/conduit-config.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/coturn-secret.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/mautrix-telegram-config.age".publicKeys = users ++ [ rat ];

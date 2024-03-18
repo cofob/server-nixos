@@ -90,25 +90,18 @@
           ];
         };
 
+        overlays.default = final: prev: import ./overlay.nix final attrs;
+
         packages = {
           ci-cache = pkgs.stdenv.mkDerivation {
             name = "ci-cache";
             version = "0.1.0";
-            buildInputs = [
-              pkgs.zerotierone
-              (pkgs.nginxQuic.override {
-                modules = pkgs.lib.unique (pkgs.nginxQuic.modules ++ [ pkgs.nginxModules.brotli pkgs.nginxModules.zstd ]);
-              })
-              tg-captcha.packages.${system}.default
-              cofob-dev.packages.${system}.default
-              balance-tracker.packages.${system}.card-tracker-frontend
-              balance-tracker.packages.${system}.card-tracker-backend
-              conduit.packages.${system}.default
-              (pkgs.callPackage "${bps}/package.nix" { })
-              (pkgs.callPackage ./modules/tmm/package.nix { })
-              (pkgs.callPackage ./packages/cinny.nix { })
-              (pkgs.callPackage ./packages/element.nix { })
-            ];
+            buildInputs = (
+              [
+                pkgs.zerotierone # zerotier is unfree and not built in nixpkgs cache
+              ] ++
+              builtins.attrValues (import ./overlay.nix pkgs attrs)
+            );
             phases = [ "installPhase" ];
             installPhase = "echo 'ci-cache' > $out";
           };
@@ -130,6 +123,6 @@
             phases = [ "installPhase" ];
             installPhase = "echo 'system-cache' > $out";
           };
-        };
+        } // (import ./overlay.nix pkgs attrs);
       });
 }

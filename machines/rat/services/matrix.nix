@@ -10,7 +10,7 @@
   age.secrets.credentials-conduit-config.mode = "777";
   services.matrix-conduit = {
     enable = true;
-    package = conduit.packages.${pkgs.system}.default;
+    package = pkgs.conduit;
     settings.global.server_name = "cofob.dev"; # makes no differnce, because config is overridden by the config file
   };
   systemd.services.conduit.environment = lib.mkForce { CONDUIT_CONFIG = config.age.secrets.credentials-conduit-config.path; };

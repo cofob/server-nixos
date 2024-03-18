@@ -35,6 +35,11 @@ jobs:
       - name: Build derivations
         run: |
           nix build .#ci-cache
+      - name: Cache inputs
+        run: |
+          nix flake archive --json \
+            | jq -r '.path,(.inputs|to_entries[].value.path)' \
+            | cachix push mycache
 
   system-cache:
     needs: cache

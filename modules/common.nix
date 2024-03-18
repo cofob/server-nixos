@@ -73,19 +73,7 @@
     };
   };
 
-  environment.systemPackages = with pkgs; let
-    upgrade-system = pkgs.writeScriptBin "upgrade-system" ''
-      sudo rm -rf /root/.cache
-
-      branch="$1"
-      if [ -z "$branch" ]; then
-        branch="main"
-      fi
-
-      sudo nixos-rebuild switch --flake "github:cofob/server-nixos/$branch"
-    '';
-  in
-  [
+  environment.systemPackages = with pkgs;[
     git
     vim
     htop

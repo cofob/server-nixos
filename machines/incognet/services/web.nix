@@ -88,7 +88,7 @@
       kTLS = true;
       forceSSL = true;
 
-      root = pkgs.callPackage ../../../packages/element.nix { };
+      root = pkgs.element-cofob-dev;
     };
 
     virtualHosts."cinny.cofob.dev" = {
@@ -98,7 +98,7 @@
       kTLS = true;
       forceSSL = true;
 
-      root = pkgs.callPackage ../../../packages/cinny.nix { };
+      root = pkgs.cinny-cofob-dev;
     };
 
     virtualHosts."cofob.gay" = {

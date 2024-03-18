@@ -11,5 +11,7 @@ in
   config = mkIf cfg.enable {
     virtualisation.docker.enable = true;
     users.users.cofob.extraGroups = [ "docker" ];
+
+    virtualisation.libvirtd.enable = true;
   };
 }

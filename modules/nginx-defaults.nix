@@ -48,13 +48,11 @@
           {
             addr = "0.0.0.0";
             port = 443;
-            ssl = true;
             extraParameters = [ "default_server" "quic" ];
           }
           {
             addr = "[::0]";
             port = 443;
-            ssl = true;
             extraParameters = [ "default_server" "quic" ];
           }
         ];

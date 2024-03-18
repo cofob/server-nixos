@@ -23,6 +23,7 @@
     ./balance-tracker
     ./common.nix
     ./dns.nix
+    ./dev-common.nix
     # ./maddy.nix
     ./nginx-defaults.nix
     ./ssh.nix

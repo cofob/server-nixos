@@ -9,6 +9,8 @@
     ./ssh.nix
   ];
 
+  services.dev-common.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   services.zerotierone = {
     enable = true;

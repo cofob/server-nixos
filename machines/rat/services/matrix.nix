@@ -88,13 +88,9 @@
     use-auth-secret = true;
     static-auth-secret-file = config.age.secrets.credentials-coturn-secret.path;
     realm = "turn.cofob.dev";
-    no-tcp-relay = true;
     cert = "${config.security.acme.certs."turn.cofob.dev".directory}/fullchain.pem";
     pkey = "${config.security.acme.certs."turn.cofob.dev".directory}/privkey.pem";
     extraConfig = ''
-      # VoIP traffic is all UDP. There is no reason to let users connect to arbitrary TCP endpoints via the relay.
-      no-tcp-relay
-
       # don't let the relay ever try to connect to private IP address ranges within your network (if any)
       # given the turn server is likely behind your firewall, remember to include any privileged public IPs too.
       denied-peer-ip=10.0.0.0-10.255.255.255
@@ -170,8 +166,8 @@
     reloadServices = [ "coturn" ];
   };
 
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
-  networking.firewall.allowedUDPPorts = [ 443 ];
+  networking.firewall.allowedTCPPorts = [ 80 443 3478 5349 ];
+  networking.firewall.allowedUDPPorts = [ 443 3478 5349 ];
 
   services.backup.timers.daily = [
     "matrix-conduit.pxar:${config.services.matrix-conduit.settings.global.database_path}"

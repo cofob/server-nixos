@@ -75,7 +75,7 @@
           ))
           (builtins.readDir ./machines);
 
-        overlays.default = final: prev: (import ./overlay.nix final attrs);
+      overlays.default = final: prev: (import ./overlay.nix final attrs);
     } // flake-utils.lib.eachSystem (with flake-utils.lib.system; [ x86_64-linux i686-linux aarch64-linux ])
       (system:
       let

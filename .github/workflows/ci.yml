@@ -36,6 +36,7 @@ jobs:
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
       - name: Build derivations
         run: |
+          sudo mkdir /var/log/nginx
           nix build .#ci-cache
       - name: Cache inputs
         run: |

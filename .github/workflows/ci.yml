@@ -28,6 +28,8 @@ jobs:
       - uses: cachix/install-nix-action@v25
         with:
           nix_path: nixpkgs=channel:nixos-23.11
+          extra_nix_config: |
+            sandbox = true
       - uses: cachix/cachix-action@v14
         with:
           name: cofob

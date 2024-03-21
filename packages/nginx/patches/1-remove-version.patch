@@ -31,12 +31,11 @@
              len = sizeof(ngx_http_server_full_string) - 1;
 --- a/src/http/ngx_http_special_response.c
 +++ b/src/http/ngx_http_special_response.c
-@@ -33,7 +33,7 @@ static u_char ngx_http_error_build_tail[] =
+@@ -33,7 +33,6 @@ static u_char ngx_http_error_build_tail[] =
  
  
  static u_char ngx_http_error_tail[] =
 -"<hr><center>nginx</center>" CRLF
-+"<hr><center>server</center>" CRLF
  "</body>" CRLF
  "</html>" CRLF
  ;

@@ -1,4 +1,4 @@
-{ lib, nginxQuic, nginxModules, modules ? [] }:
+{ lib, nginxQuic, nginxModules, modules ? [ ] }:
 
 (nginxQuic.overrideAttrs (previousAttrs: {
   extraPatches = [ ./patches/1-remove-version.patch ];

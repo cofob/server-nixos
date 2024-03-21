@@ -1,33 +1,5 @@
-From 619ea4f2d9f016880e1c2aa3244cf3aace03e7e0 Mon Sep 17 00:00:00 2001
-From: cofob <cofob@riseup.net>
-Date: Wed, 6 Mar 2024 19:53:23 +0400
-Subject: [PATCH] Remove nginx version
-
----
- src/core/nginx.h                         | 8 ++++----
- src/http/ngx_http_header_filter_module.c | 4 ++--
- src/http/ngx_http_special_response.c     | 2 +-
- src/http/v2/ngx_http_v2_filter_module.c  | 4 ++--
- src/http/v3/ngx_http_v3_filter_module.c  | 4 ++--
- 5 files changed, 11 insertions(+), 11 deletions(-)
-
-diff --git a/src/core/nginx.h b/src/core/nginx.h
-index dc1308f..2a741bc 100644
 --- a/src/core/nginx.h
 +++ b/src/core/nginx.h
-@@ -9,9 +9,9 @@
- #define _NGINX_H_INCLUDED_
- 
- 
--#define nginx_version      1025004
--#define NGINX_VERSION      "1.25.4"
--#define NGINX_VER          "nginx/" NGINX_VERSION
-+#define nginx_version      1000000
-+#define NGINX_VERSION      "1.0.0"
-+#define NGINX_VER          "server/" NGINX_VERSION
- 
- #ifdef NGX_BUILD
- #define NGINX_VER_BUILD    NGINX_VER " (" NGX_BUILD ")"
 @@ -19,7 +19,7 @@
  #define NGINX_VER_BUILD    NGINX_VER
  #endif
@@ -37,8 +9,6 @@ index dc1308f..2a741bc 100644
  #define NGX_OLDPID_EXT     ".oldbin"
  
  
-diff --git a/src/http/ngx_http_header_filter_module.c b/src/http/ngx_http_header_filter_module.c
-index 76f6e96..8457055 100644
 --- a/src/http/ngx_http_header_filter_module.c
 +++ b/src/http/ngx_http_header_filter_module.c
 @@ -283,7 +283,7 @@ ngx_http_header_filter(ngx_http_request_t *r)
@@ -59,8 +29,6 @@ index 76f6e96..8457055 100644
          if (clcf->server_tokens == NGX_HTTP_SERVER_TOKENS_ON) {
              p = ngx_http_server_full_string;
              len = sizeof(ngx_http_server_full_string) - 1;
-diff --git a/src/http/ngx_http_special_response.c b/src/http/ngx_http_special_response.c
-index eaf42e3..9eeac18 100644
 --- a/src/http/ngx_http_special_response.c
 +++ b/src/http/ngx_http_special_response.c
 @@ -33,7 +33,7 @@ static u_char ngx_http_error_build_tail[] =
@@ -72,8 +40,6 @@ index eaf42e3..9eeac18 100644
  "</body>" CRLF
  "</html>" CRLF
  ;
-diff --git a/src/http/v2/ngx_http_v2_filter_module.c b/src/http/v2/ngx_http_v2_filter_module.c
-index 1e2cafa..65a3743 100644
 --- a/src/http/v2/ngx_http_v2_filter_module.c
 +++ b/src/http/v2/ngx_http_v2_filter_module.c
 @@ -217,7 +217,7 @@ ngx_http_v2_header_filter(ngx_http_request_t *r)
@@ -94,28 +60,3 @@ index 1e2cafa..65a3743 100644
  
          if (clcf->server_tokens == NGX_HTTP_SERVER_TOKENS_ON) {
              ngx_log_debug1(NGX_LOG_DEBUG_HTTP, fc->log, 0,
-diff --git a/src/http/v3/ngx_http_v3_filter_module.c b/src/http/v3/ngx_http_v3_filter_module.c
-index 4d2276d..3c1c625 100644
---- a/src/http/v3/ngx_http_v3_filter_module.c
-+++ b/src/http/v3/ngx_http_v3_filter_module.c
-@@ -158,7 +158,7 @@ ngx_http_v3_header_filter(ngx_http_request_t *r)
- 
-     clcf = ngx_http_get_module_loc_conf(r, ngx_http_core_module);
- 
--    if (r->headers_out.server == NULL) {
-+    if (0) {
-         if (clcf->server_tokens == NGX_HTTP_SERVER_TOKENS_ON) {
-             n = sizeof(NGINX_VER) - 1;
- 
-@@ -339,7 +339,7 @@ ngx_http_v3_header_filter(ngx_http_request_t *r)
-         b->last = ngx_sprintf(b->last, "%03ui", r->headers_out.status);
-     }
- 
--    if (r->headers_out.server == NULL) {
-+    if (0) {
-         if (clcf->server_tokens == NGX_HTTP_SERVER_TOKENS_ON) {
-             p = (u_char *) NGINX_VER;
-             n = sizeof(NGINX_VER) - 1;
--- 
-2.44.0
-

@@ -29,14 +29,13 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-23.11
           extra_nix_config: |
-            sandbox = true
+            sandbox = false
       - uses: cachix/cachix-action@v14
         with:
           name: cofob
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
       - name: Build derivations
         run: |
-          sudo mkdir /var/log/nginx
           nix build .#ci-cache
       - name: Cache inputs
         run: |

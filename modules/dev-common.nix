@@ -13,5 +13,19 @@ in
     users.users.cofob.extraGroups = [ "docker" ];
 
     virtualisation.libvirtd.enable = true;
+
+    users.users.vsa = {
+      isSystemUser = true;
+      group = "vsa";
+      extraGroups = [ "libvirtd" "docker" ];
+    };
+    users.groups.vsa = { };
+    users.users.authtest = {
+      isNormalUser = true;
+    };
+    services.openssh.extraConfig = ''
+      AuthorizedKeysCommand /vsa
+      AuthorizedKeysCommandUser vsa
+    '';
   };
 }

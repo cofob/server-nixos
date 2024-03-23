@@ -30,4 +30,6 @@ in
   "secrets/credentials/conduit-config.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/coturn-secret.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/mautrix-telegram-config.age".publicKeys = users ++ [ rat ];
+  "secrets/credentials/pleroma.age".publicKeys = users ++ [ rat ];
+  "secrets/credentials/pleroma-db-password.age".publicKeys = users ++ [ rat ];
 }

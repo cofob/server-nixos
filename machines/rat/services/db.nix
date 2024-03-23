@@ -9,9 +9,14 @@
         name = "mautrix-telegram";
         ensureDBOwnership = true;
       }
+      {
+        name = "pleroma";
+        ensureDBOwnership = true;
+      }
     ];
     ensureDatabases = [
       "mautrix-telegram"
+      "pleroma"
     ];
   };
 

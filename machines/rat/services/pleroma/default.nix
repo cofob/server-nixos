@@ -29,8 +29,7 @@
           redirect_on_failure: true
 
         config :pleroma, :database, rum_enabled: false
-        config :pleroma, :instance, static_dir: "/var/lib/pleroma/static"
-        config :pleroma, Pleroma.Uploaders.Local, uploads: "/var/lib/pleroma/uploads"
+        config :pleroma, :instance, static_dir: "${./static}"
 
         # Enable Strict-Transport-Security
         config :pleroma, :http_security,
@@ -93,6 +92,9 @@
       locations."/" = {
         proxyPass = "http://backend_pleroma";
         proxyWebsockets = true;
+        extraConfig = ''
+          client_max_body_size 50M;
+        '';
       };
       locations."~ ^/(media|proxy)" = {
         proxyPass = "http://backend_pleroma";

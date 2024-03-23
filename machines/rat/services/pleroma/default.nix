@@ -22,7 +22,7 @@
           email: "cofob@riseup.net",
           notify_email: "nonotify@example.com",
           limit: 5000,
-          registrations_open: true
+          registrations_open: false
 
         config :pleroma, :media_proxy,
           enabled: true,
@@ -90,7 +90,10 @@
       kTLS = true;
       forceSSL = true;
 
-      locations."/".proxyPass = "http://backend_pleroma";
+      locations."/" = {
+        proxyPass = "http://backend_pleroma";
+        proxyWebsockets = true;
+      };
       locations."~ ^/(media|proxy)" = {
         proxyPass = "http://backend_pleroma";
         extraConfig = ''

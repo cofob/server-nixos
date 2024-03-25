@@ -51,7 +51,21 @@ in
               zip -9r "$name" ${toString paths}
               gpg --no-tty --keyserver keys.openpgp.org --recv-keys "${cfg.gpgKey}"
               gpg --batch --trust-model always -o "$name.gpg" --encrypt -r "${cfg.gpgKey}" "$name"
-              curl -F document=@"$name.gpg" "https://api.telegram.org/bot$TOKEN/sendDocument?chat_id=$CHAT_ID"
+
+              file_size=$(stat --printf="%s" "$name.gpg")
+              chunk_size=$((15*1024*1024))  # 15 megabytes
+
+              if (( file_size > chunk_size )); then
+                  split -b "$chunk_size" "$name.gpg" "$name.gpg.part"
+
+                  for part_file in $name.gpg.part*; do
+                      curl -F document=@"$part_file" "https://api.telegram.org/bot$TOKEN/sendDocument?chat_id=$CHAT_ID"
+                  done
+
+                  rm "$name.gpg.part"*
+              else
+                  curl -F document=@"$name.gpg" "https://api.telegram.org/bot$TOKEN/sendDocument?chat_id=$CHAT_ID"
+              fi
 
               rm "$name" "$name.gpg" || true
             '';

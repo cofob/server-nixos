@@ -53,7 +53,7 @@ in
               gpg --batch --trust-model always -o "$name.gpg" --encrypt -r "${cfg.gpgKey}" "$name"
 
               file_size=$(stat --printf="%s" "$name.gpg")
-              chunk_size=$((15*1024*1024))  # 15 megabytes
+              chunk_size=$((49*1024*1024))  # 49 megabytes
 
               if (( file_size > chunk_size )); then
                   split -b "$chunk_size" "$name.gpg" "$name.gpg.part"

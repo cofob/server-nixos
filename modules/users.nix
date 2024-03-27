@@ -13,7 +13,7 @@
       cofob = {
         isNormalUser = true;
         description = "Egor Ternovoy";
-        extraGroups = [ "wheel" ];
+        extraGroups = [ "wheel" "libvirtd" ];
         uid = 1001;
         hashedPasswordFile = config.age.secrets.password-cofob.path;
         openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIETMEzhigdZelWae3V4tQ7/LXsub39SRG2X+jPMeoHMx cofob@riseup.net" ];

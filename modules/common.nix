@@ -86,4 +86,5 @@
   ];
 
   networking.firewall.trustedInterfaces = [ "lo" ];
+  networking.domain = "private.cofob.gay";
 }

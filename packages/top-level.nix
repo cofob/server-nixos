@@ -6,4 +6,5 @@
   default-ssl-cert = (callPackage ./default-ssl-cert.nix { });
   upgrade-system = (callPackage ./upgrade-system.nix { });
   nginx = (callPackage ./nginx { });
+  furryfox = (callPackage ./furryfox.nix { });
 }

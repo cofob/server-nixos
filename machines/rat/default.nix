@@ -16,6 +16,8 @@
   services.backup.enable = true;
   services.telegram-backup.enable = true;
 
+  services.shared-web.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   services.zerotierone = {
     enable = true;

@@ -30,5 +30,6 @@
     ./tmm
     ./overlays.nix
     ./users.nix
+    ./shared-web.nix
   ];
 }

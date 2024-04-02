@@ -7,7 +7,7 @@
     backupDir = "/var/lib/bitwarden_rs/backup";
     config = {
       domain = "https://bw.cofob.dev";
-      signupsAllowed = false;
+      signupsAllowed = true;
       rocketPort = 8222;
       rocketAddress = "127.0.0.1";
     };

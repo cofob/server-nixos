@@ -1,6 +1,6 @@
 .direnv
 *.key
 *.crt
-/result
+/result*
 key
 certs/

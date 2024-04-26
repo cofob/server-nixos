@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1708536619,
-        "narHash": "sha256-WRxMUAVxHS+COGzjbTmuG9gpvw3EeOcpNSYRIPrjErw=",
+        "lastModified": 1714167480,
+        "narHash": "sha256-Kne4nYO7WeXnMcEnOYq9CHwniK/cqV/Ge5FhYwDWNHE=",
         "owner": "cofob",
         "repo": "aeza-assistant",
-        "rev": "39294e0b49536789d872039f6640e1fb65afe994",
+        "rev": "009d6abb61dca35a45bdfa47537b5f506e9b592a",
         "type": "github"
       },
       "original": {

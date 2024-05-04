@@ -97,7 +97,7 @@
 
         packages = {
           ci-cache = pkgs.stdenv.mkDerivation {
-            name = "ci-cache";
+            pname = "ci-cache";
             version = "0.1.0";
             buildInputs = (
               [
@@ -110,7 +110,7 @@
           };
 
           system-cache = pkgs.stdenv.mkDerivation {
-            name = "system-cache";
+            pname = "system-cache";
             version = "0.1.0";
             buildInputs = builtins.map
               (key:

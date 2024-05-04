@@ -1,7 +1,7 @@
 { stdenv, openssl }:
 
 stdenv.mkDerivation {
-  name = "default-ssl-cert";
+  pname = "default-ssl-cert";
   version = "1";
 
   buildInputs = [ openssl ];

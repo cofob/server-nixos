@@ -35,7 +35,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    cofob-home.url = "github:cofob/nixos";
+    cofob-home = {
+      url = "github:cofob/nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     useit-src = {
       url = "github:xdettlaff/useit";

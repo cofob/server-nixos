@@ -32,4 +32,6 @@ in
   "secrets/credentials/mautrix-telegram-config.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/pleroma.age".publicKeys = users ++ [ rat ];
   "secrets/credentials/pleroma-db-password.age".publicKeys = users ++ [ rat ];
+
+  "secrets/zones/cofob.dev.age".publicKeys = users ++ [ incognet rat ];
 }

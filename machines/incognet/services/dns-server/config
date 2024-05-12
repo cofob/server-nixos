@@ -1,0 +1,18 @@
+options {
+  directory "/run/named";
+  pid-file "/run/named/named.pid";
+  listen-on port 53 { 23.137.249.154; };
+  allow-query { any; };
+};
+
+logging {
+  channel default_debug {
+    file "data/named.run";
+    severity dynamic;
+  };
+};
+
+zone "cofob.dev" {
+  type master;
+  file "/run/agenix/zones-cofob-dev";
+};

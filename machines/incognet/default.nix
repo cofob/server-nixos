@@ -20,13 +20,6 @@
     joinNetworks = [ "e4da7455b237c59e" ];
   };
 
-  services.selfhosted-dns.enable = true;
-  services.bind.extraConfig = ''
-    options {
-      listen-on port 53 { 23.137.249.154; };
-    }
-  '';
-
   networking = {
     hostName = "incognet";
   };

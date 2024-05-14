@@ -3,6 +3,7 @@
 {
   services.cofob-dev.enable = true;
   services.balance-tracker.enable = true;
+  services.fastside.enable = true;
 
   services.nginx = {
     enable = lib.mkDefault true;
@@ -123,6 +124,15 @@
       kTLS = true;
       forceSSL = true;
       root = "${useit-src}/site";
+    };
+
+    virtualHosts."fastside.link" = {
+      enableACME = true;
+      quic = true;
+      http3 = true;
+      kTLS = true;
+      forceSSL = true;
+      locations."/".proxyPass = "http://127.0.0.1:8080/";
     };
   };
 

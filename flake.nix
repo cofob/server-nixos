@@ -49,6 +49,8 @@
       url = "gitlab:famedly/conduit";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    fastside.url = "github:cofob/fastside";
   };
 
   outputs =

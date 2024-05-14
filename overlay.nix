@@ -8,4 +8,6 @@ pkgs: inputs: {
   conduit = inputs.conduit.packages.${pkgs.system}.default;
   bps = (pkgs.callPackage "${inputs.bps}/package.nix" { });
   tmm = (pkgs.callPackage ./modules/tmm/package.nix { });
+  fastside = inputs.fastside.packages.${pkgs.system}.default;
+  fastside-services = inputs.fastside.packages.${pkgs.system}.services;
 } // (import ./packages/top-level.nix { callPackage = pkgs.callPackage; })

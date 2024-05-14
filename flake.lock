@@ -319,11 +319,11 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1715697375,
-        "narHash": "sha256-kKXA0N0QftEkoEQPftCLW36T8siWTSGvr8RQ0phbf0g=",
+        "lastModified": 1715702438,
+        "narHash": "sha256-CDfKxvpt+R4aPA1gHavMleRV+h9Mmb1ctxTh006kU+4=",
         "owner": "cofob",
         "repo": "fastside",
-        "rev": "94a621d5fdf723188c486d49cbbd62cfa6cc21d4",
+        "rev": "68ebab9383b938a3a5a7a79e509035c7d34baf42",
         "type": "github"
       },
       "original": {

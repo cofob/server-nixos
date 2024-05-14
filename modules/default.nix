@@ -30,7 +30,6 @@
     ./tmm
     ./overlays.nix
     ./users.nix
-    ./dns-server.nix
     ./fastside.nix
   ];
 }

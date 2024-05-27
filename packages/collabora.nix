@@ -210,7 +210,7 @@ let
         "--with-parallelism=$NIX_BUILD_CORES"
       );
 
-      NOCONFIGURE=1 ./autogen.sh
+      NOCONFIGURE=1 ./autogen.sh --with-distro=CPLinux-LOKit --disable-epm --without-package-format --disable-symbols
     '';
 
     configureFlags = [
@@ -272,10 +272,13 @@ let
       chmod +x ./solenv/bin/install-gdb-printers
     '';
 
-    # buildPhase = ''
-    #   head -n 10 ./solenv/bin/install-gdb-printers
-    #   fhjdjhkjdsfhkjdsh
-    # '';
+    buildPhase = ''
+      echo -e "#!/bin/sh\ntrue" > ./solenv/bin/install-gdb-printers
+      make || true
+      ls -lah workdir
+      ls -lah workdir/UnpackedTarget
+      sfdsfds
+    '';
 
     installPhase = ''
       cp -a instdir $out

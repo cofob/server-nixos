@@ -825,4 +825,11 @@
     md5 = "";
     md5name = "126767bb56f8a1f25ae84d233db2e9b9be50d71f5776092d0e170ca0f0ed1862-zxing-cpp-1.4.0.tar.gz";
   }
+  {
+    name = "Java-WebSocket-1.5.4.tar.gz";
+    url = "https://dev-www.libreoffice.org/src/Java-WebSocket-1.5.4.tar.gz";
+    sha256 = "a6828b35d1f938fee2335945f3d3c563cbbfa58ce7eb0bf72778d0fa7a550720";
+    md5 = "";
+    md5name = "a6828b35d1f938fee2335945f3d3c563cbbfa58ce7eb0bf72778d0fa7a550720-Java-WebSocket-1.5.4.tar.gz";
+  }
 ]

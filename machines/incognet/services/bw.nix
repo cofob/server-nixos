@@ -1,10 +1,13 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, self, ... }:
 
 {
+  age.secrets.credentials-vaultwarden.file = "${self}/secrets/credentials/vaultwarden.age";
+
   services.vaultwarden = {
     enable = true;
     dbBackend = "sqlite";
     backupDir = "/var/lib/bitwarden_rs/backup";
+    environmentFile = config.age.secrets.credentials-vaultwarden.path;
     config = {
       domain = "https://bw.cofob.dev";
       signupsAllowed = true;

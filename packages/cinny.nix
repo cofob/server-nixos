@@ -4,7 +4,6 @@
 , brotli
 }:
 
-in
 stdenv.mkDerivation {
   pname = "cinny-compressed";
   version = cinny.version;

@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs-unstable, self, ... }:
+{ pkgs, nixpkgs-unstable, cofob-home, self, ... }:
 
 {
   nixpkgs.overlays = [
@@ -15,5 +15,7 @@
       { mautrix-telegram = final.unstable.mautrix-telegram; })
 
     self.overlays.default
+
+    cofob-home.overlays.default
   ];
 }

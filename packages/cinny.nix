@@ -2,25 +2,14 @@
 , stdenv
 , gzip
 , brotli
-, conf ? {
-    defaultHomeserver = 0;
-    homeserverList = [ "cofob.dev" ];
-    allowCustomHomeservers = true;
-    hashRouter.enabled = true;
-    hashRouter.basename = "/";
-  }
 }:
 
-let
-  cinny-configured = cinny.override {
-    conf = conf;
-  };
 in
 stdenv.mkDerivation {
   pname = "cinny-compressed";
-  version = cinny-configured.version;
+  version = cinny.version;
 
-  src = cinny-configured;
+  src = cinny;
 
   buildInputs = [ gzip brotli ];
 

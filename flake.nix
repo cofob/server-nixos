@@ -21,8 +21,6 @@
 
     tg-captcha.url = "github:cofob/captcha";
 
-    marzbanbot.url = "github:cofob/marzbanbot";
-
     cofob-dev.url = "github:cofob/cofob.dev";
 
     balance-tracker = {

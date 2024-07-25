@@ -20,7 +20,6 @@ in
   "secrets/credentials/bps.age".publicKeys = users ++ [ incognet ];
   "secrets/credentials/tmm.age".publicKeys = users ++ [ incognet ];
   "secrets/credentials/tgcaptcha.age".publicKeys = users ++ [ incognet ];
-  "secrets/credentials/marzbanbot.age".publicKeys = users ++ [ incognet ];
 
   "secrets/credentials/pbs.age".publicKeys = all;
   "secrets/credentials/pbs-key.age".publicKeys = all;

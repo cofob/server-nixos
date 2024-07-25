@@ -2,7 +2,6 @@
 , home-manager
 , bps
 , tg-captcha
-, marzbanbot
 , ...
 }:
 
@@ -10,7 +9,6 @@
   imports = [
     home-manager.nixosModule
     tg-captcha.nixosModules.default
-    marzbanbot.nixosModules.default
     agenix.nixosModules.default
     bps.nixosModule
 

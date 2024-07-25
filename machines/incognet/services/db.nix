@@ -3,15 +3,6 @@
 {
   services.postgresql = {
     enable = true;
-    ensureUsers = [
-      {
-        name = "aeza-assistant";
-        ensureDBOwnership = true;
-      }
-    ];
-    ensureDatabases = [
-      "aeza-assistant"
-    ];
   };
 
   services.postgresqlBackup = {

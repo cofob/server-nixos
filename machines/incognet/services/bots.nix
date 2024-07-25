@@ -32,13 +32,6 @@
     envFile = config.age.secrets.credentials-marzbanbot.path;
   };
 
-  age.secrets.credentials-aeza-assistant.file = ../../../secrets/credentials/aeza-assistant.age;
-  services.aeza-assistant = {
-    enable = true;
-    package = pkgs.aeza-assistant;
-    envFile = config.age.secrets.credentials-aeza-assistant.path;
-  };
-
   services.backup.timers.daily = [
     "tmm.pxar:/var/lib/tmm"
   ];

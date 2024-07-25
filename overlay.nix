@@ -1,7 +1,6 @@
 pkgs: inputs: {
   tg-captcha = inputs.tg-captcha.packages.${pkgs.system}.default;
   marzbanbot = inputs.marzbanbot.packages.${pkgs.system}.default;
-  aeza-assistant = inputs.aeza-assistant.packages.${pkgs.system}.default;
   cofob-dev = inputs.cofob-dev.packages.${pkgs.system}.default;
   card-tracker-frontend = inputs.balance-tracker.packages.${pkgs.system}.card-tracker-frontend;
   card-tracker-backend = inputs.balance-tracker.packages.${pkgs.system}.card-tracker-backend;

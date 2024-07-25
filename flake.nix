@@ -23,8 +23,6 @@
 
     marzbanbot.url = "github:cofob/marzbanbot";
 
-    aeza-assistant.url = "github:cofob/aeza-assistant";
-
     cofob-dev.url = "github:cofob/cofob.dev";
 
     balance-tracker = {

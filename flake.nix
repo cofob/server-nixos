@@ -43,7 +43,7 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    fastside.url = "github:cofob/fastside";
+    fastside.url = "github:cofob/fastside/cofob/refactor-services";
   };
 
   outputs =

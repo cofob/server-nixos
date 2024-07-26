@@ -24,7 +24,7 @@
     enable = true;
     enableGeoIP = false;
     openFirewall = true;
-    torsocks.enable = true;
+    client.enable = true;
     relay = {
       enable = true;
       role = "relay";

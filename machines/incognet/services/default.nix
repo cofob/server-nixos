@@ -7,5 +7,6 @@
     ./db.nix
     ./web.nix
     ./perchun-kuma.nix
+    ./hidden.nix
   ];
 }

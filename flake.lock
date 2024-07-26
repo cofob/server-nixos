@@ -299,16 +299,15 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1722012808,
-        "narHash": "sha256-N5US1qPOoRDOjX1664xiuXMqCLxXmCZSz4mAPgXzkh4=",
+        "lastModified": 1722022861,
+        "narHash": "sha256-iQVc2t5qYbVUK3mBBqfGQhoxQ7UgertcDb3SWwdafjE=",
         "owner": "cofob",
         "repo": "fastside",
-        "rev": "4fa73f77baede99cee02e66f2321596cda9065e3",
+        "rev": "f144eb78613fe62c4ffefd7767bfe9095fa83469",
         "type": "github"
       },
       "original": {
         "owner": "cofob",
-        "ref": "cofob/refactor-services",
         "repo": "fastside",
         "type": "github"
       }

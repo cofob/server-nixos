@@ -135,7 +135,7 @@
       locations."/".proxyPass = "http://127.0.0.1:8080/";
     };
 
-    virtualHosts."fastside.link" = {
+    virtualHosts."ygg.fastside.link" = {
       listen = [{
         addr = "200:691d:578e:f10e:e935:f189:aab4:1d98";
         port = 80;

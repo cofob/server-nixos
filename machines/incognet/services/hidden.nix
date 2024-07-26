@@ -3,8 +3,6 @@
 {
   services.i2pd = {
     enable = true;
-    port = 41782;
-    address = "23.137.249.154";
     proto.http.enable = true;
     proto.httpProxy = {
       enable = true;
@@ -69,10 +67,5 @@
         "tcp://ygg-uplink.thingylabs.io:80"
       ];
     };
-  };
-
-  networking.firewall = {
-    allowedTCPPorts = [ config.services.i2pd.port ];
-    allowedUDPPorts = [ config.services.i2pd.port ];
   };
 }

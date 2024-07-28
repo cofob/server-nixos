@@ -294,16 +294,15 @@
     "fastside": {
       "inputs": {
         "flake-utils": "flake-utils_6",
-        "import-cargo": "import-cargo_2",
-        "nixpkgs": "nixpkgs_4",
-        "rust-overlay": "rust-overlay_2"
+        "naersk": "naersk",
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1722089253,
-        "narHash": "sha256-Yvm7jdCKPHbJODbGyTVdt3OyaOdPauzsVDaKje34Eow=",
+        "lastModified": 1722175003,
+        "narHash": "sha256-eX3706ItaUfXWrKe/2Pw7kmg3Lv6tMlWqUSJiNVd+J0=",
         "owner": "cofob",
         "repo": "fastside",
-        "rev": "90bf5df8d681e82786aedee9b06ded2982d76296",
+        "rev": "efe890a12c437c541a527c5e50838d415345a0e9",
         "type": "github"
       },
       "original": {
@@ -620,18 +619,24 @@
         "type": "github"
       }
     },
-    "import-cargo_2": {
+    "naersk": {
+      "inputs": {
+        "nixpkgs": [
+          "fastside",
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1594305518,
-        "narHash": "sha256-frtArgN42rSaEcEOYWg8sVPMUK+Zgch3c+wejcpX3DY=",
-        "owner": "edolstra",
-        "repo": "import-cargo",
-        "rev": "25d40be4a73d40a2572e0cc233b83253554f06c5",
+        "lastModified": 1721727458,
+        "narHash": "sha256-r/xppY958gmZ4oTfLiHN0ZGuQ+RSTijDblVgVLFi1mw=",
+        "owner": "nix-community",
+        "repo": "naersk",
+        "rev": "3fb418eaf352498f6b6c30592e3beb63df42ef11",
         "type": "github"
       },
       "original": {
-        "owner": "edolstra",
-        "repo": "import-cargo",
+        "owner": "nix-community",
+        "repo": "naersk",
         "type": "github"
       }
     },
@@ -892,31 +897,6 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "rev": "405cdc2652fa89f2fcf392335d5b9364b0adc5c2",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "rust-overlay_2": {
-      "inputs": {
-        "flake-utils": [
-          "fastside",
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "fastside",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1715652909,
-        "narHash": "sha256-aCLEDvzL1j51Rf2mCFOqK1mieMO3pAn5ItCIdr5h2LA=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "1d8fcbbfcfd3476c2665384a46ee9d07ef2b4dd9",
         "type": "github"
       },
       "original": {

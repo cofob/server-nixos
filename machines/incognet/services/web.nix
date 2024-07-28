@@ -132,6 +132,7 @@
       http3 = true;
       kTLS = true;
       forceSSL = true;
+      redirectCode = 307;
       locations."/".proxyPass = "http://127.0.0.1:8080/";
     };
 
@@ -141,6 +142,7 @@
       http3 = true;
       kTLS = true;
       forceSSL = true;
+      redirectCode = 307;
       locations."/".proxyPass = "http://127.0.0.1:8080/";
     };
 
@@ -158,6 +160,7 @@
       http3 = true;
       kTLS = true;
       forceSSL = true;
+      redirectCode = 307;
       locations."/".proxyPass = "http://127.0.0.1:8080/";
     };
   };

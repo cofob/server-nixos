@@ -136,7 +136,12 @@
       kTLS = true;
       forceSSL = true;
       redirectCode = 307;
-      locations."/".proxyPass = "http://127.0.0.1:8080/";
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8080/";
+        extraConfig = ''
+          merge_slashes off;
+        '';
+      };
     };
 
     virtualHosts."fastsi.de" = {
@@ -146,7 +151,12 @@
       kTLS = true;
       forceSSL = true;
       redirectCode = 307;
-      locations."/".proxyPass = "http://127.0.0.1:8080/";
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8080/";
+        extraConfig = ''
+          merge_slashes off;
+        '';
+      };
     };
 
     virtualHosts."ygg.fastside.link" = {
@@ -154,7 +164,12 @@
         addr = "[200:691d:578e:f10e:e935:f189:aab4:1d98]";
         port = 80;
       }];
-      locations."/".proxyPass = "http://127.0.0.1:8080/";
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8080/";
+        extraConfig = ''
+          merge_slashes off;
+        '';
+      };
     };
 
     virtualHosts."cdn.fastside.link" = {
@@ -164,7 +179,12 @@
       kTLS = true;
       forceSSL = true;
       redirectCode = 307;
-      locations."/".proxyPass = "http://127.0.0.1:8080/";
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8080/";
+        extraConfig = ''
+          merge_slashes off;
+        '';
+      };
     };
   };
 

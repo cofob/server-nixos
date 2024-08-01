@@ -33,7 +33,7 @@ in
 
     config = mkOption {
       type = types.attrs;
-      default = {};
+      default = { };
       description = "Configuration";
     };
 
@@ -45,24 +45,26 @@ in
   };
 
   config.systemd.services = mkIf cfg.enable {
-    fastside = let
-      configFile = pkgs.writers.writeJSON "config.json" cfg.config;
-    in {
-      enable = true;
-      description = "fastside website";
-      script = "fastside --config ${configFile} --log-level ${cfg.logLevel} serve --listen ${cfg.host}:${toString cfg.port} --services ${cfg.services}";
-      path = [ cfg.package ];
-      unitConfig = {
-        Type = "simple";
+    fastside =
+      let
+        configFile = pkgs.writers.writeJSON "config.json" cfg.config;
+      in
+      {
+        enable = true;
+        description = "fastside website";
+        script = "fastside --config ${configFile} --log-level ${cfg.logLevel} serve --listen ${cfg.host}:${toString cfg.port} --services ${cfg.services}";
+        path = [ cfg.package ];
+        unitConfig = {
+          Type = "simple";
+        };
+        serviceConfig = {
+          User = "fastside";
+          Group = "fastside";
+          Restart = "on-failure";
+          RestartSec = "1s";
+        };
+        wantedBy = [ "multi-user.target" ];
       };
-      serviceConfig = {
-        User = "fastside";
-        Group = "fastside";
-        Restart = "on-failure";
-        RestartSec = "1s";
-      };
-      wantedBy = [ "multi-user.target" ];
-    };
   };
 
   config.users = mkIf cfg.enable {

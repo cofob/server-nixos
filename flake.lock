@@ -139,11 +139,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1716995569,
-        "narHash": "sha256-vkdvHOAOeNuz2a65e9gobxAbBTt/OxG797Q/6gcAHWA=",
+        "lastModified": 1719748112,
+        "narHash": "sha256-SCKNMX54T5OFuS9QS5zjqcLGPgMCCLoZz/Y/e1PWVpI=",
         "owner": "cofob",
         "repo": "cofob.dev",
-        "rev": "06a0faaddabe33083b4cd9fb04c0d6dfe875d83f",
+        "rev": "2d2ea872d0156ba6f066b84feed1e22d96cfcc4f",
         "type": "github"
       },
       "original": {
@@ -298,11 +298,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1722175003,
-        "narHash": "sha256-eX3706ItaUfXWrKe/2Pw7kmg3Lv6tMlWqUSJiNVd+J0=",
+        "lastModified": 1722517411,
+        "narHash": "sha256-HsnE2ghRoJPF3VJQOk+8pzbaaOVEC77G7gPyelbcgsU=",
         "owner": "cofob",
         "repo": "fastside",
-        "rev": "efe890a12c437c541a527c5e50838d415345a0e9",
+        "rev": "4b2b24d677ec4192e8d36403f87bdead275bdc2c",
         "type": "github"
       },
       "original": {

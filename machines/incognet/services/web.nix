@@ -3,7 +3,10 @@
 {
   services.cofob-dev.enable = true;
   services.balance-tracker.enable = true;
-  services.fastside.enable = true;
+  services.fastside = {
+    enable = true;
+    logLevel = "debug,fastside::crawler=WARN,fastside::config=WARN,reqwest=WARN,hyper_util=WARN,h2=WARN,rustls=WARN";
+  };
 
   services.nginx = {
     enable = lib.mkDefault true;

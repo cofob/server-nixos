@@ -298,11 +298,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1722865227,
-        "narHash": "sha256-k8Hd0o9SvsPPctT12qcn98j8vcTdcw4ajbw9I51m4rE=",
+        "lastModified": 1723241319,
+        "narHash": "sha256-naO/WnGBDg+GqZju2PWuSuYaPFJ9aPVjJX+kbu3Wd30=",
         "owner": "cofob",
         "repo": "fastside",
-        "rev": "7d64c88a9c1e248fe529655b819d338b62dd1e0d",
+        "rev": "5f974283cf3d27774ee6198ddf8de87c29ae53c6",
         "type": "github"
       },
       "original": {

@@ -26,8 +26,8 @@ in
     };
 
     services = mkOption {
-      type = types.path;
-      default = pkgs.fastside-services;
+      type = types.str;
+      default = "${pkgs.fastside-services}";
       description = "Services package to use";
     };
 

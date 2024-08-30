@@ -6,6 +6,7 @@
   services.fastside = {
     enable = true;
     logLevel = "info";
+    services = "https://raw.githubusercontent.com/cofob/fastside/master/services.json";
   };
 
   services.nginx = {

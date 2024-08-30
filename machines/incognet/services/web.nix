@@ -20,6 +20,12 @@
         required_tags = [ "clearnet" "https" "ipv4" ];
         forbidden_tags = [ "cloudflare" ];
       };
+      crawler = {
+        request_timeout = {
+          secs = 10;
+          nanos = 0;
+        };
+      };
     };
   };
 

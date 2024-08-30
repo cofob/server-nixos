@@ -7,6 +7,20 @@
     enable = true;
     logLevel = "info";
     services = "https://raw.githubusercontent.com/cofob/fastside/master/services.json";
+    config = {
+      proxies = {
+        tor = {
+          url = "socks5h://127.0.0.1:9050";
+        };
+        i2p = {
+          url = "http://127.0.0.1:4444";
+        };
+      };
+      default_user_config = {
+        required_tags = [ "clearnet", "https", "ipv4" ];
+        forbidden_tags = [ "cloudflare" ];
+      };
+    };
   };
 
   services.nginx = {

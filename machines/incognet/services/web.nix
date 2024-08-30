@@ -17,7 +17,7 @@
         };
       };
       default_user_config = {
-        required_tags = [ "clearnet", "https", "ipv4" ];
+        required_tags = [ "clearnet" "https" "ipv4" ];
         forbidden_tags = [ "cloudflare" ];
       };
     };

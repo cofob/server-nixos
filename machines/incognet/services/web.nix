@@ -25,6 +25,22 @@
           secs = 10;
           nanos = 0;
         };
+        domain_request_timeouts = [
+          {
+            domain = ".i2p";
+            timeout = {
+              secs = 30;
+              nanos = 0;
+            };
+          }
+          {
+            domain = ".onion";
+            timeout = {
+              secs = 30;
+              nanos = 0;
+            };
+          }
+        ];
       };
     };
   };

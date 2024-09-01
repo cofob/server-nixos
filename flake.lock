@@ -299,11 +299,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1725027001,
-        "narHash": "sha256-Jfd/lgDmcILC0Vn53NQeilK3NfYSM8O65O3uF5qCmA4=",
+        "lastModified": 1725184152,
+        "narHash": "sha256-F+aiFi9yBTo4m+LVCM6HFNStn6Kfq1qq80kDzs6OiwE=",
         "owner": "cofob",
         "repo": "fastside",
-        "rev": "cbafd289234053ce551b990f080a191e0102c90c",
+        "rev": "28ea5f989d9b68f46c22ba280a533f6d73152979",
         "type": "github"
       },
       "original": {
@@ -841,11 +841,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1715534503,
-        "narHash": "sha256-5ZSVkFadZbFP1THataCaSf0JH2cAH3S29hU9rrxTEqk=",
+        "lastModified": 1724819573,
+        "narHash": "sha256-GnR7/ibgIH1vhoy8cYdmXE6iyZqKqFxQSVkFgosBh6w=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "2057814051972fa1453ddfb0d98badbea9b83c06",
+        "rev": "71e91c409d1e654808b2621f28a327acfdad8dc2",
         "type": "github"
       },
       "original": {

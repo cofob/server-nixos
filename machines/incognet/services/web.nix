@@ -29,14 +29,14 @@
           {
             domain = ".i2p";
             timeout = {
-              secs = 30;
+              secs = 60;
               nanos = 0;
             };
           }
           {
             domain = ".onion";
             timeout = {
-              secs = 30;
+              secs = 60;
               nanos = 0;
             };
           }

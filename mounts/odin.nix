@@ -11,23 +11,25 @@
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/efaee11c-d64e-40bf-b190-fe77045e1ad3";
+    {
+      device = "/dev/disk/by-uuid/efaee11c-d64e-40bf-b190-fe77045e1ad3";
       fsType = "btrfs";
       options = [ "compress=zstd" ];
     };
 
   fileSystems."/data" =
-    { device = "/dev/disk/by-uuid/7c12c423-c80a-477a-b781-d754071645e0";
+    {
+      device = "/dev/disk/by-uuid/7c12c423-c80a-477a-b781-d754071645e0";
       fsType = "xfs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/1205-CEFF";
+    {
+      device = "/dev/disk/by-uuid/1205-CEFF";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/551c1b98-b0db-4774-9c82-1abdd6750476"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/551c1b98-b0db-4774-9c82-1abdd6750476"; }];
 }

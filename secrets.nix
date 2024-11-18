@@ -1,6 +1,6 @@
 let
   cofob = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIETMEzhigdZelWae3V4tQ7/LXsub39SRG2X+jPMeoHMx";
-  additional_cofob = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIExfGCQE5rcchNNv7IVc5mIn1A6QGZ/eLrDIW0mJaXTm" ];
+  additional_cofob = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIExfGCQE5rcchNNv7IVc5mIn1A6QGZ/eLrDIW0mJaXTm" "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAzB+g6qthKy95lG3UxnikrHCaVZ9O9njEqzdCIIfXxL cofob@twinkpad" ];
   users = [ cofob ] ++ additional_cofob;
 
   odin = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICFQWIjYX92rTyERnPmyUBvSOjWS/p4neMo6wRSwh5dy";

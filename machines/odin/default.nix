@@ -14,6 +14,7 @@
   services.btrfs.autoScrub.enable = true;
 
   virtualisation.libvirtd.enable = true;
+  users.users.cofob.extraGroups = [ "libvirt" ];
 
   nixpkgs.config.allowUnfree = true;
   services.zerotierone = {

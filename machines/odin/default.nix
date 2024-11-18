@@ -13,6 +13,8 @@
 
   services.btrfs.autoScrub.enable = true;
 
+  virtualisation.libvirtd.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   services.zerotierone = {
     enable = true;

@@ -19,6 +19,7 @@
     enable = true;
     joinNetworks = [ "e4da7455b237c59e" ];
   };
+  services.tailscale.enable = true;
 
   networking = {
     hostName = "incognet";

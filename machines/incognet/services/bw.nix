@@ -1,4 +1,4 @@
-{ config, lib, pkgs, self, ... }:
+{ config, lib, self, ... }:
 
 {
   age.secrets.credentials-vaultwarden.file = "${self}/secrets/credentials/vaultwarden.age";
@@ -6,7 +6,7 @@
   services.vaultwarden = {
     enable = true;
     dbBackend = "sqlite";
-    backupDir = "/var/lib/bitwarden_rs/backup";
+    backupDir = "/var/backup/vaultwarden";
     environmentFile = config.age.secrets.credentials-vaultwarden.path;
     config = {
       domain = "https://bw.cofob.dev";
@@ -25,9 +25,9 @@
   };
 
   services.backup.timers.daily = [
-    "bitwarden.pxar:/var/lib/bitwarden_rs"
+    "bitwarden.pxar:/var/backup/vaultwarden"
   ];
   services.telegram-backup.timers.hourly = [
-    "/var/lib/bitwarden_rs"
+    "/var/backup/vaultwarden"
   ];
 }

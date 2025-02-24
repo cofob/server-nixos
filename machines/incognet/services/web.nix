@@ -122,32 +122,6 @@
       locations."/balance/".proxyPass = "http://127.0.0.1:3003/balance/";
     };
 
-    virtualHosts."element.cofob.dev" = {
-      enableACME = true;
-      quic = true;
-      http3 = true;
-      kTLS = true;
-      forceSSL = true;
-      root = pkgs.element-cofob-dev;
-      extraConfig = ''
-        gzip_static on;
-        brotli_static on;
-      '';
-    };
-
-    virtualHosts."cinny.cofob.dev" = {
-      enableACME = true;
-      quic = true;
-      http3 = true;
-      kTLS = true;
-      forceSSL = true;
-      root = pkgs.cinny-cofob-dev;
-      extraConfig = ''
-        gzip_static on;
-        brotli_static on;
-      '';
-    };
-
     virtualHosts."cofob.gay" = {
       enableACME = true;
       quic = true;
